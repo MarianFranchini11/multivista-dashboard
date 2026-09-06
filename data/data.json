@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T11:30:41.801Z",
+  "generatedAt": "2026-09-06T11:51:29.385Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -7,11 +7,184 @@
       "name": "SCAN",
       "totalIssues": 3099,
       "statusSummary": {
-        "To Do": 18,
-        "In Progress": 49,
+        "To Do": 14,
+        "In Progress": 53,
         "Done": 3032
       },
       "issues": [
+        {
+          "key": "SCAN-6293",
+          "summary": "Scan to Services - DC01 - 89891 - Donohoe Construction - 2201 Wisconsin Ave",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-05T06:40:27.624-0700",
+          "dueDate": "2026-10-02",
+          "created": "2026-09-03T18:37:22.984-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "DC01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 21651.66,
+          "squareFootage": 73092,
+          "projectName": "2201 Wisconsin Ave",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/dc01/89891/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/uiFp3b9iim1f19Rs5",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbzFoYAI/view",
+          "quotedTurnaround": 20,
+          "projectId": "89891",
+          "components": [],
+          "inProgressDate": "2026-09-04",
+          "dataValidatedDate": "2026-09-04",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-04T12:41:36.236-0700",
+              "body": "FTP: /dc01/89891/3D Point Clouds/DC01_89891_Wisconsin.lgsx\n2 more floors will be added to this in the near future (approximately 1.5 weeks: containing Penthouse Mechanical and Cellar 1).   And then the first floor will be added in January 2027.\nFor now, please model these (2) Floors L2 & L3 point cloud (DC01_89891_Wisconsin.lgsx)."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-03T18:37:25.277-0700",
+              "body": "(337 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6291",
+          "summary": "Scan to Services - IL01 - 88487 - KOO Architecture - ABLA Brooks - 1320-32 W 14th St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-05T06:20:17.190-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-03T08:35:46.323-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1451.31,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1320-32 W 14th St",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88487",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88487",
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-09-03",
+          "dataValidatedDate": "2026-09-04",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-04T07:53:24.030-0700",
+              "body": ""
+            },
+            {
+              "author": "Daniel Tufano",
+              "created": "2026-09-04T06:02:39.922-0700",
+              "body": "Files are online now ||Dan Tufano  Senior |\nOperations Manager \nMobile (630) 881-6285  \nwww.multivista.com| LinkedIn| Facebook| X| Instagram  \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> | \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   --"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-09-04T05:01:01.620-0700",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-03T08:35:50.438-0700",
+              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6298",
+          "summary": "Scan to Services - IL01 - 88486 - KOO Architecture - ABLA Brooks - 1334-52 W 14th St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-05T06:03:29.412-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-04T09:21:55.824-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1451.31,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1334-52 W 14th St",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88486",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88486",
+          "components": [],
+          "inProgressDate": "2026-09-04",
+          "dataValidatedDate": "2026-09-04",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-04T13:14:08.760-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-04T09:22:00.002-0700",
+              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6290",
+          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-05T05:25:10.922-0700",
+          "dueDate": "2026-09-24",
+          "created": "2026-09-03T08:34:21.604-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1451.31,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1302-18 W 14th St",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88488",
+          "components": [],
+          "inProgressDate": "2026-09-03",
+          "dataValidatedDate": "2026-09-03",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-03T12:41:44.184-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-03T08:34:26.405-0700",
+              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6296",
           "summary": "Upsell - Scan to Services - PA01 - 89884 - K A M I N S K I + P E W - 1913 s 12th st",
@@ -20,7 +193,7 @@
           "assignee": "Rocio Ferreyra",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-09-05T04:30:18.999-0700",
+          "updated": "2026-09-05T05:00:46.398-0700",
           "dueDate": "2026-09-11",
           "created": "2026-09-04T05:03:22.831-0700",
           "resolutionDate": null,
@@ -255,179 +428,6 @@
               "author": "Multivista",
               "created": "2026-09-02T08:11:19.274-0700",
               "body": "(19.95 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6293",
-          "summary": "Scan to Services - DC01 - 89891 - Donohoe Construction - 2201 Wisconsin Ave",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-04T22:30:58.687-0700",
-          "dueDate": "2026-10-02",
-          "created": "2026-09-03T18:37:22.984-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "DC01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 21651.66,
-          "squareFootage": 73092,
-          "projectName": "2201 Wisconsin Ave",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/dc01/89891/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/uiFp3b9iim1f19Rs5",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbzFoYAI/view",
-          "quotedTurnaround": 20,
-          "projectId": "89891",
-          "components": [],
-          "inProgressDate": "2026-09-04",
-          "dataValidatedDate": "2026-09-04",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-04T12:41:36.236-0700",
-              "body": "FTP: /dc01/89891/3D Point Clouds/DC01_89891_Wisconsin.lgsx\n2 more floors will be added to this in the near future (approximately 1.5 weeks: containing Penthouse Mechanical and Cellar 1).   And then the first floor will be added in January 2027.\nFor now, please model these (2) Floors L2 & L3 point cloud (DC01_89891_Wisconsin.lgsx)."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-03T18:37:25.277-0700",
-              "body": "(337 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6291",
-          "summary": "Scan to Services - IL01 - 88487 - KOO Architecture - ABLA Brooks - 1320-32 W 14th St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-04T22:29:20.313-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-03T08:35:46.323-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1451.31,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1320-32 W 14th St",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88487",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88487",
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-09-03",
-          "dataValidatedDate": "2026-09-04",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-04T07:53:24.030-0700",
-              "body": ""
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-09-04T06:02:39.922-0700",
-              "body": "Files are online now ||Dan Tufano  Senior |\nOperations Manager \nMobile (630) 881-6285  \nwww.multivista.com| LinkedIn| Facebook| X| Instagram  \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> | \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   --"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-04T05:01:01.620-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-03T08:35:50.438-0700",
-              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6290",
-          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-04T22:27:54.601-0700",
-          "dueDate": "2026-09-24",
-          "created": "2026-09-03T08:34:21.604-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1451.31,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1302-18 W 14th St",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88488",
-          "components": [],
-          "inProgressDate": "2026-09-03",
-          "dataValidatedDate": "2026-09-03",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-03T12:41:44.184-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-03T08:34:26.405-0700",
-              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6298",
-          "summary": "Scan to Services - IL01 - 88486 - KOO Architecture - ABLA Brooks - 1334-52 W 14th St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-04T22:24:19.365-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-04T09:21:55.824-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1451.31,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1334-52 W 14th St",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88486",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88486",
-          "components": [],
-          "inProgressDate": "2026-09-04",
-          "dataValidatedDate": "2026-09-04",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-04T13:14:08.760-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-04T09:22:00.002-0700",
-              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
             }
           ]
         },
