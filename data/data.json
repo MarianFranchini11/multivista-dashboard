@@ -1,66 +1,605 @@
 {
-  "generatedAt": "2026-09-25T13:08:22.650Z",
+  "generatedAt": "2026-09-26T12:35:17.526Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 3163,
+      "totalIssues": 3166,
       "statusSummary": {
-        "To Do": 20,
-        "In Progress": 51,
-        "Done": 3092
+        "To Do": 23,
+        "In Progress": 43,
+        "Done": 3100
       },
       "issues": [
         {
-          "key": "SCAN-6373",
-          "summary": "Scan to Services - PA01 - 90241 - K A M I N S K I + P E W - 2024 Delancey Pl",
+          "key": "SCAN-6368",
+          "summary": "Scan to Services - OH03 - 90055 - Independence Construction - St. Barnabas Church",
           "status": "S2S Backlog",
           "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-26T04:30:25.882-0700",
+          "dueDate": "2026-10-08",
+          "created": "2026-09-22T11:46:42.295-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "OH03",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 2500,
+          "squareFootage": 18252,
+          "projectName": "St. Barnabas Church",
+          "projectType": "Recreation",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/oh03/90055/3DPointCloud",
+          "mapLink": "https://maps.app.goo.gl/343Pp3grBoXsPEiM8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zKDvdYAG/view",
+          "quotedTurnaround": 9,
+          "projectId": "90055",
+          "components": [],
+          "inProgressDate": "2026-09-23",
+          "dataValidatedDate": "2026-09-25",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-25T12:14:56.303-0700",
+              "body": "Hi Chris,\nI understand your perspective, and I agree that the open floor area significantly reduces the overall complexity compared to a typical building of the same size.\nFrom our standpoint, the C1 classification is generally reserved for spaces that are both open and geometrically simple. While this building has very few interior partitions, the ceiling and roof geometry add a level of modeling complexity that would typically place it above a C1 classification. If the scope were limited to Floor Plans only, where the ceiling and roof geometry are not required, a lower complexity classification could certainly be considered.\nWhen the quote was reviewed, the assumption was that the project aligned with a typical C2 open-area condition. After reviewing the scan data, we found that some of the geometric features are more involved than originally anticipated.\nThat said, I completely understand that the client has already accepted the proposal and the scan work has been completed. To keep the project moving forward, we will proceed with the current approved budget and start production under the existing pricing. Please consider this an exception based on the circumstances of this project.\nFor future opportunities, it would be very helpful to include additional information about the spaces being scanned, such as photos, reference drawings, or notes regarding ceiling and roof conditions. We also recommend using the new complexity checklist during the quoting process, as it helps ensure that complexity is evaluated consistently before pricing is finalized.\nThanks,"
+            },
+            {
+              "author": "Chris Winter",
+              "created": "2026-09-25T09:01:48.883-0700",
+              "body": "Martin, My understanding was that this project had already been reviewed and approved as C2. We put real thought into the C2 classification, particularly since there are no interior walls. While I understand the ceiling is more complex, the 18,000 SF of open floor space would clearly be C1 if it had a flat ceiling. The client has already accepted the C2 pricing, and the scan has been completed, so we need to move forward with having it modeled. Please let me know what the next steps should be. Thanks,Chris \n  Chris Winter  Managing Principal  Operations  Multivista, part of Hexagon  M: 614-419-4984  E: c.winter@multivista.com  \n1001 Eastwind Drive Suite 110  Westerville Ohio 43081  United States   multivista.com| LinkedIn"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-09-25T05:00:56.551-0700",
+              "body": "Email sent to customer asking for clarification."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-24T12:28:55.016-0700",
+              "body": "Hi Team,\nAfter reviewing the point cloud, we believe this project should not be classified as a C2 complexity level. While the space is generally open, the ceiling conditions are significantly more complex than initially anticipated.\nAs a result, we would need to upgrade the project complexity to C3 and adjust the pricing accordingly.\nPlease confirm if you are okay with this change so we can move forward and release the project to production.\nThank you."
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-09-23T07:45:00.708-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-22T11:46:45.150-0700",
+              "body": "(213 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6381",
+          "summary": "Scan to Services - GA02 - 89874 - Court Atkins Group - Wooliver Residence",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-26T04:30:25.001-0700",
+          "dueDate": "2026-10-07",
+          "created": "2026-09-25T10:58:16.805-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 1534.13,
+          "squareFootage": 3756,
+          "projectName": "Wooliver Residence",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/89874/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/NF4d27ar5WNAExNy6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000yc55oYAA/view",
+          "quotedTurnaround": 8,
+          "projectId": "89874",
+          "components": [],
+          "inProgressDate": "2026-09-25",
+          "dataValidatedDate": "2026-09-25",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-25T11:55:01.736-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-25T10:58:18.881-0700",
+              "body": "(211 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6383",
+          "summary": "Scan to Services - CA10 - 90262 - Legoland California Resort - Ninjago Courtyard",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T22:07:14.690-0700",
+          "dueDate": null,
+          "created": "2026-09-25T22:07:11.663-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "CA10",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbrjzYAA/view",
+          "quotedTurnaround": null,
+          "projectId": "90262",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-09-25T22:07:14.535-0700",
+              "body": "(266 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6153",
+          "summary": "Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T13:14:38.393-0700",
+          "dueDate": "2026-10-07",
+          "created": "2026-07-28T10:52:45.204-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NV01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 49920,
+          "squareFootage": 400000,
+          "projectName": "Paris LV Bordeaux Tower",
+          "projectType": "Hospitality",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/89321/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/bnoqPc6gwvMYKm3C6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pc4wBYAQ/view",
+          "quotedTurnaround": 50,
+          "projectId": "89321",
+          "components": [
+            "Checklist Missing"
+          ],
+          "inProgressDate": "2026-07-28",
+          "dataValidatedDate": "2026-07-29",
+          "comments": [
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-08-26T01:33:21.985-0700",
+              "body": "Hi   we will submit Level 32 by"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-21T13:03:29.480-0700",
+              "body": "Hi  We have a new level for this project. Please review the point cloud and start working.Also provide a date for this sector,\nThanks"
+            },
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-08-11T12:59:39.467-0700",
+              "body": "Hi Team,\nThe agreed-upon deliverables for Levels 31 and 33 are now available on the FTP.\nBest regards,"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-08-11T05:11:40.009-0700",
+              "body": "Level 33 and 31: Delivery"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T09:39:33.664-0700",
+              "body": "Hi team,\nPlease start with this 2 point clouds, when can you have them ready the plans as a partial delivery?\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T09:38:49.344-0700",
+              "body": "Thanks Jacob for the information.\nBest Regards"
+            },
+            {
+              "author": "Jacob Wilkinson",
+              "created": "2026-07-29T09:15:16.384-0700",
+              "body": "Hello Martin,\nI apologize for the confusion; this is a tricky project. Level 31 and level 33 are two separate floors that will each need their own scan to plan.  We are trying to get certain areas accessible to our client as soon as possible because they hold more importance than the rest of the project. Our deadline for these two floors is as soon as possible, and we have ops guys going back out next week to finish scanning the rest of the project.\nThis is an image of level 31, and the highlighted areas the data set submitted for level 31 covers.[cid:c4a2fb1f-349a-4ad5-8d32-cb67b5b19991]\nThis is an image of level 33, and the highlighted areas the data set submitted for level 33 covers.\n[cid:8ace664f-4f98-4548-88b6-131f26ff60fa]\nLevel 31 and level 33 are two separate floors and are not connected.\nAs far as a schedule goes for deadlines, I will coordinate with Tianna and Skylar to get you guys a timeline of when we will need these deliverables.\nAttached below is an updated scan to plan checklist with the requested information filled out.\nI apologize for the confusion, and please reach out if you need any more info from my end.\nBest,\nJacob WilkinsonJr Data ManagerBusiness Operations\nMultivista, part of HexagonM: 602-688-0301multivista.com<https://www.multivista.com/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Wednesday, July 29, 2026 7:34 AMTo: Jacob Wilkinson - Multivista <j.wilkinson@multivista.com>Subject:  Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Jacob,\nI downloaded the point clouds and noticed that they are not coordinated with each other. Please see the attached image as an example.\nRed Lvl 31 and Blue Lvl 33\n[image-20260729-143148.png]\nI understand this is a Scan to Plan project; however, we still need to understand the relative location of the different datasets in order to properly develop the plans. Could you please help clarify this?\nI also understand this is a large project, and we need to plan our production activities accordingly. Would it be possible to share a scanning and point cloud delivery schedule with us?\nIn addition, we will need some form of graphic reference indicating:\n  Which areas have already been scanned and delivered.\n\n  Which areas are still pending.\n\n  The expected sequence of future deliveries.\n\nWorking without a complete view of the project makes coordination very difficult and can result in significant inefficiencies and rework.\nCould you also clarify whether all areas will be delivered in this way, as isolated datasets with no connection between them, or if there will eventually be a coordinated master dataset covering the entire project?\nAdditionally, could you please complete the CAD Drawing Methodology and Project Coordinate System fields in the checklist? This information is currently missing, and it is important for us to understand how the drawings are expected to be developed and how the datasets relate to each other spatially.\nCould you also confirm Metric is required?\n[image-20260729-143303.png]\nAny additional information that helps us better understand the overall project strategy would be greatly appreciated.\nThanks for your help.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6153?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY4Mjc2MGE4OGZhZTQ2ZGZjZTc2YmU5ODliZWIyZWFkMDIyYTE5NjY4ODY4ODkxZjg3OWU0ZDI4MWEyZGI1NzIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMzI4NjkiLCJpc3N1ZSI6IlNDQU4tNjE1MyJ9LCJleHAiOjE3ODc3NTQ4NDMsImlhdCI6MTc4NTMzNTY0M30.IsdxKlmzFBHt_sFtt5vIH1UD42fbN_0zXMICSosJobw&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6153/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJlMWZjN2RiNzUyNDViM2FiMDEzM2I2N2I5YjY3YjhmMDhmNzk5YWUwMjllOWI4ZTdkODQ5YjYxYjliYjU4NmUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjcyN2U4MGItMWFlMy00NDA4LWJmZjItOGVlNzVkMTI2MGIxIiwiaXNzdWUiOiJTQ0FOLTYxNTMifSwiZXhwIjoxNzg3NzU0ODQzLCJpYXQiOjE3ODUzMzU2NDN9.7o4BcIKSkcmyPWbCc7VL093o0T9c22_d30zaNJK4dpQ>\nThis is shared with Jacob Wilkinson.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 29, 2026 7:34:03 AM PDThttps://usw2-track.atlassian.com/CI0/0101019fae4c04a0-f79f22a5-7db2-43e9-967a-d7607c7dda6a-000000/Myil9njFbGnIi3Y7UimTPXLLgVldFW14aqmQydxiiwI=452\n (253 kB)"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-07-29T07:33:39.817-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T07:33:31.403-0700",
+              "body": "Hi Jacob,\nI downloaded the point clouds and noticed that they are not coordinated with each other. Please see the attached image as an example.\nRed Lvl 31 and Blue Lvl 33\nI understand this is a Scan to Plan project; however, we still need to understand the relative location of the different datasets in order to properly develop the plans. Could you please help clarify this?\nI also understand this is a large project, and we need to plan our production activities accordingly. Would it be possible to share a scanning and point cloud delivery schedule with us?\nIn addition, we will need some form of graphic reference indicating:\nWhich areas have already been scanned and delivered.\n\nWhich areas are still pending.\n\nThe expected sequence of future deliveries.\n\nWorking without a complete view of the project makes coordination very difficult and can result in significant inefficiencies and rework.\nCould you also clarify whether all areas will be delivered in this way, as isolated datasets with no connection between them, or if there will eventually be a coordinated master dataset covering the entire project?\nAdditionally, could you please complete the CAD Drawing Methodology and Project Coordinate System fields in the checklist? This information is currently missing, and it is important for us to understand how the drawings are expected to be developed and how the datasets relate to each other spatially.\nCould you also confirm Metric is required?\nAny additional information that helps us better understand the overall project strategy would be greatly appreciated.\nThanks for your help.\nBest regards,\nMartin"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-28T10:52:47.543-0700",
+              "body": "(241 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6362",
+          "summary": "Scan to Services - TN01 - 90159 - Daniel S Dunn Architect - 3055 Carters Creek Pk",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Yasmin Soria",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T13:06:43.141-0700",
+          "dueDate": "2026-09-29",
+          "created": "2026-09-20T11:16:34.432-0700",
+          "resolutionDate": "2026-09-25T13:06:34.042-0700",
+          "deliveryStatus": "On time",
+          "territory": "TN01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 750,
+          "squareFootage": 2306,
+          "projectName": "3055 Carters Creek Pk",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/90159/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/NTtsxK6uK6WMRrKJA",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zuVKYYA2/view",
+          "quotedTurnaround": 6,
+          "projectId": "90159",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6325",
+          "summary": "Scan to Services - TN01 - 90090 - Merrill Construction - 1511 Ferguson",
+          "status": "Done",
+          "statusCategory": "Done",
           "assignee": "Rocio Ferreyra",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-09-25T06:07:18.711-0700",
+          "updated": "2026-09-25T12:28:20.930-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-11T16:39:26.803-0700",
+          "resolutionDate": "2026-09-25T12:28:20.900-0700",
+          "deliveryStatus": "On time",
+          "territory": "TN01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1552.99,
+          "squareFootage": 3415,
+          "projectName": "1511 Ferguson",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/90090/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/n6CyyxG9b2osBa1m8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zhm34YAA/view",
+          "quotedTurnaround": 8,
+          "projectId": "90090",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6217",
+          "summary": "Scan to Services - TN01 - 89386 - WeGo Public Transit - 130 Nestor St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T11:54:54.120-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-08-17T17:45:09.519-0700",
+          "resolutionDate": "2026-09-25T11:54:54.095-0700",
+          "deliveryStatus": "On time",
+          "territory": "TN01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 77429.52,
+          "squareFootage": 110000,
+          "projectName": " WeGo Public Transit - 130 Nestor St",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/89386/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/FfYXQC6Ys26MNRTv6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000wkFvVYAU/view",
+          "quotedTurnaround": 25,
+          "projectId": "89386",
+          "components": [
+            "Registration Error",
+            "Rush Request",
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6360",
+          "summary": "Scan to Services - AZ02 - 89707 - LFG Growth Partners Inc. - KEG Chandler",
+          "status": "S2S QC",
+          "statusCategory": "In Progress",
+          "assignee": "Melina Aldana Gavioli",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T11:52:35.081-0700",
           "dueDate": "2026-10-07",
-          "created": "2026-09-23T05:38:49.560-0700",
+          "created": "2026-09-18T15:03:15.712-0700",
           "resolutionDate": null,
           "deliveryStatus": null,
-          "territory": "PA01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 2478.22,
-          "squareFootage": 5900,
-          "projectName": "2024 Delancey Pl",
+          "territory": "AZ02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 4136.87,
+          "squareFootage": 10775,
+          "projectName": "KEG Chandler",
+          "projectType": "Retail",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/az02/89707/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/op3YD1i4X3B7Q2EZ8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000y4R3wYAE/view",
+          "quotedTurnaround": 12,
+          "projectId": "89707",
+          "components": [],
+          "inProgressDate": "2026-09-21",
+          "dataValidatedDate": "2026-09-21",
+          "comments": [
+            {
+              "author": "Melina Aldana Gavioli",
+              "created": "2026-09-25T11:29:01.356-0700",
+              "body": "Jaden, we can add the front & back exterior elevations, those would be 2 elevations.\nAs per the interior elevations, which rooms do you need to be included? Usually its 4 elevations per room, you have 10 elevations left. Please let us know how to proceed."
+            },
+            {
+              "author": "Jaden Gwaltney",
+              "created": "2026-09-25T09:12:29.204-0700",
+              "body": "Hi Melina,  \nIncluding Martin for guidance as he initially helped me with the pricing. For context - see the attached email.  \nThe client wanted interior and exterior elevations for the \"front and back of house\". We had just put them as building sections for now and for each KEG project, I included pricing for x12 of them. I guess my point is that we priced them as building sections but they really should cover interior and exterior elevations. I realize now that I put them on the checklist as building sections which is an error.  \nCan you apply this same exercise to the elevations? \n  Jaden Gwaltney  Account Executive  Multivista, part of Hexagon  M: 480-489-0606  multivista.com\n (213 kB)"
+            },
+            {
+              "author": "Melina Aldana Gavioli",
+              "created": "2026-09-25T05:48:11.216-0700",
+              "body": "Hi team, please let us know if these 12 proposed sections look good to proceed.\nLet me know if you have any feedback. Thanks!"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-21T10:45:33.886-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-18T15:03:18.027-0700",
+              "body": "(213 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6358",
+          "summary": "Scan to Services - TN01 - 89386 - WeGo Public Transit - 130 Nestor St - WIP",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "Sub-task",
+          "updated": "2026-09-25T11:43:41.993-0700",
+          "dueDate": null,
+          "created": "2026-09-18T07:27:52.521-0700",
+          "resolutionDate": "2026-09-24T12:15:59.805-0700",
+          "deliveryStatus": null,
+          "territory": null,
+          "serviceType": null,
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": null,
+          "quotedTurnaround": null,
+          "projectId": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6382",
+          "summary": "Scan to Services - CA01 - 90067 - Matt Hollis Architects - 4018-4022 19th St. Floor Plans and Elevations WIP",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Rojes Malachi",
+          "priority": "High",
+          "type": "Sub-task",
+          "updated": "2026-09-25T11:10:09.526-0700",
+          "dueDate": null,
+          "created": "2026-09-25T11:09:50.040-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": null,
+          "serviceType": null,
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": null,
+          "quotedTurnaround": null,
+          "projectId": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6378",
+          "summary": "Scan to Services - CA01 - 90067 - Matt Hollis Architects - 4018-4022 19th St.",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Rojes Malachi",
+          "priority": "High",
+          "type": "ScanTo",
+          "updated": "2026-09-25T11:08:21.488-0700",
+          "dueDate": "2026-10-12",
+          "created": "2026-09-23T17:45:36.277-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "CA01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 4089.12,
+          "squareFootage": 6500,
+          "projectName": "4018-4022 19th St.",
           "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/pa01/90241/90241/3d point clouds",
-          "mapLink": "https://maps.app.goo.gl/xPq6UuU932ztG2zp7",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zneZ4YAI/view",
-          "quotedTurnaround": 9,
-          "projectId": "90241",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ca01/90067/PointClouds",
+          "mapLink": "https://maps.app.goo.gl/ZvePbGw6bs1YRoCL7",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zEBeoYAG/view",
+          "quotedTurnaround": 12,
+          "projectId": "90067",
           "components": [],
           "inProgressDate": "2026-09-24",
           "dataValidatedDate": "2026-09-24",
           "comments": [
             {
+              "author": "Kia Ehya",
+              "created": "2026-09-25T10:00:30.297-0700",
+              "body": "Hello Martin,  \nDiscussing this with Andrew and he would really like to do well by the client here and make sure they have enough time to receive these WIP elevation and floorplans by next Friday. We would be willing to pay to expedite these plans. Can you look into that and let us know if your team can deliver and what the cost would be for that?  \nThank you very much, \n   \nKia Ehya \nVirtual Data Capture Systems Manager - N California Region  \nand Video Dept Manager  \n510-672-3800  \nk.ehya@multivista.com \nwww.multivista.com \n245 S Spruce Ave # 800 – Unit G2B  \nSouth San Francisco, CA 9408"
+            },
+            {
               "author": "Martin Isola",
-              "created": "2026-09-24T12:55:04.055-0700",
-              "body": "there are walls out back where a garage will go the client needs the context of these walls as well the the data included of the neighboring buildings"
+              "created": "2026-09-25T05:10:46.776-0700",
+              "body": "Hi Kia,Let me check with the team and try to get them ready for the client.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-25T05:10:13.540-0700",
+              "body": "Hello Team,\nThe client has an upcoming city submittal deadline and has asked if we can provide a work-in-progress package ahead of our current delivery date.\nCould you please prioritize this project and deliver a WIP version of the Floor Plans and Elevations before 10/07 so we can support the client's needs? At this stage, MEP plans are not required for the submittal.\nYour help in expediting this portion of the deliverables would be greatly appreciated.\nThank you!"
+            },
+            {
+              "author": "Kia Ehya",
+              "created": "2026-09-24T16:18:35.826-0700",
+              "body": "Hello Martin,  \nDiscussing the dates with this client, they have a deadline to provide some plans to the city as submittals by10/8. A that is 3 business days earlier than the estimate, I discussed that we could potentially deliver some work-in-progress plans by that date. He said he could use just the Floor plans and Elevation plans without the MEP. Do you think we could deliver those by 10/7 or the morning of 10/8? This would be very much appreciated. Let me know what you think.  \nThank you! \n   \nKia Ehya \nVirtual Data Capture Systems Manager - N California Region  \nand Video Dept Manager  \n510-672-3800  \nk.ehya@multivista.com \nwww.multivista.com \n245 S Spruce Ave # 800 – Unit G2B  \nSouth San Francisco, CA 9408"
+            },
+            {
+              "author": "Kia Ehya",
+              "created": "2026-09-24T13:04:32.493-0700",
+              "body": "Thank you Martin \n   \nKia Ehya \nVirtual Data Capture Systems Manager - N California Region  \nand Video Dept Manager  \n510-672-3800  \nk.ehya@multivista.com \nwww.multivista.com \n245 S Spruce Ave # 800 – Unit G2B  \nSouth San Francisco, CA 9408"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-24T12:38:36.841-0700",
+              "body": "Hi Kia,\nThe delivery date for this project is set by \nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-24T12:34:59.982-0700",
+              "body": ""
+            },
+            {
+              "author": "Kia Ehya",
+              "created": "2026-09-24T07:28:06.674-0700",
+              "body": "Sorry to ask again, but could I get an ETA for this one today? I would just like to give the client a date for this one.   \nThank you! \nKia Ehya  Virtual Data Capture Systems Manager - N California Region and Video Dept Manager  510-672-3800  k.ehya@multivista.com"
             },
             {
               "author": "Multivista",
-              "created": "2026-09-23T05:38:51.944-0700",
-              "body": "(213 kB)"
+              "created": "2026-09-23T17:45:38.299-0700",
+              "body": "(201 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6270",
+          "summary": "Scan to Services - GA02 - 89873 - CDH Partners Architecture - Pooler Early Learning Center",
+          "status": "Reopened",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T11:01:42.004-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-08-28T03:52:47.039-0700",
+          "resolutionDate": "2026-09-25T07:46:18.783-0700",
+          "deliveryStatus": "On time",
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 9210.31,
+          "squareFootage": 38751,
+          "projectName": "Pooler Early Learning Center",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/89873",
+          "mapLink": "https://maps.app.goo.gl/6AxgvJmjeHNcLjZ39",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000006jEY10AM/view",
+          "quotedTurnaround": 19,
+          "projectId": "89873",
+          "components": [
+            "Checklist Missing"
+          ],
+          "inProgressDate": "2026-08-28",
+          "dataValidatedDate": "2026-08-31",
+          "comments": [
+            {
+              "author": "sirajudheen",
+              "created": "2026-09-08T05:21:33.726-0700",
+              "body": "I need confirmation on the exact scope area for the site portion. Please refer to the figures.\nThe first figure shows the main scan data, which covers only the area around the building. The second figure shows a much larger area, but this data is drone data.\nPlease review and confirm whether the entire drone-covered area needs to be considered as part of the site scope."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-02T11:03:18.790-0700",
+              "body": "Hi Team, use this option\nthanks"
+            },
+            {
+              "author": "Brett Feemster",
+              "created": "2026-09-02T09:45:59.198-0700",
+              "body": "Please model to as is conditions not as intended \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-02T09:32:18.521-0700",
+              "body": "Hi team,\nCould you please confirm this option so we can start the modeling?\nTHanks"
+            },
+            {
+              "author": "sirajudheen",
+              "created": "2026-09-02T06:13:03.133-0700",
+              "body": "Need to be confirm."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-31T08:32:15.220-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-28T12:51:53.885-0700",
+              "body": "Hi Zack, please send the quote for approval to be able to get it ready.\nThanks"
+            },
+            {
+              "author": "Zack Alderson",
+              "created": "2026-08-28T12:49:33.894-0700",
+              "body": "Martin, \nSorry about that. \nlightning.force.com \n <https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbllzYAA/view> \nhttps://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbllzYAA/view] \nZack Alderson  MULTIVISTA / HEXAGON  Southeast Regional Partner  Mobile: 919-672-6521   \n125 Park of Commerce Drive, Suite 215, Savannah, GA 31405  Tel: (912) 659-7987 <tel:(678)%20779-3145>, www.multivista.com"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-28T12:40:49.170-0700",
+              "body": "Hi team, \nCould you please provide a Salesforce quote link with an approved version?We can´t start this project without an approved quote.\nIf you don´t have an approved one, please send it for approval.\nThanks,"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-08-28T03:52:49.135-0700",
+              "body": "(229 kB)"
             }
           ]
         },
         {
           "key": "SCAN-6372",
           "summary": "Scan to Services - PA01 - 90196 - THREADNEEDLE ARCHITECTURE & DESIGN - St Bernadette Church",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Melina Aldana Gavioli",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-09-25T06:06:02.898-0700",
+          "updated": "2026-09-25T10:53:02.316-0700",
           "dueDate": "2026-10-12",
           "created": "2026-09-23T05:10:41.556-0700",
           "resolutionDate": null,
@@ -82,6 +621,16 @@
           "inProgressDate": "2026-09-23",
           "dataValidatedDate": "2026-09-24",
           "comments": [
+            {
+              "author": "Michael Wileczek",
+              "created": "2026-09-25T07:18:32.991-0700",
+              "body": "I'll get this information over to Justin so he can inform the client. Thank you"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-25T07:03:11.245-0700",
+              "body": "Hi Michael,\nAfter reviewing the point cloud, we found that the area originally estimated for this project was approximately 26,000 sqft. Based on measurements from the received point cloud, the actual site area is approximately 130,000 sqft, which represents an increase of roughly 100,000 sqft over the original estimate.\nAs shown in the attached screenshot, the additional cost for the Site Model scope would be $5,250. However, we can offer a discount and reduce this additional cost to $3,000.\nPlease note that the Site Model would include only the church building. The other buildings on the property would not be modeled in detail. If needed, we can represent those structures as simple massing boxes to indicate their approximate volume and location, but without architectural detail.\nPlease confirm whether this approach meets your needs. If detailed modeling of the additional buildings is required, please submit an upsell request so we can review and price the additional scope accordingly.\nThank you."
+            },
             {
               "author": "Michael Wileczek",
               "created": "2026-09-25T04:55:06.455-0700",
@@ -107,12 +656,12 @@
         {
           "key": "SCAN-6113",
           "summary": "Scan to Services - GBR06 - 503418 - Sheffield Children's NHS Foundation Trust - Sheffield Childrens Hospital Theatre Scan",
-          "status": "Revisions",
+          "status": "S2S Final QC",
           "statusCategory": "In Progress",
           "assignee": "Rojes Malachi",
           "priority": "High",
           "type": "ScanTo",
-          "updated": "2026-09-25T05:53:44.152-0700",
+          "updated": "2026-09-25T09:27:33.185-0700",
           "dueDate": "2026-10-02",
           "created": "2026-07-14T01:21:00.831-0700",
           "resolutionDate": null,
@@ -187,46 +736,330 @@
           ]
         },
         {
-          "key": "SCAN-6360",
-          "summary": "Scan to Services - AZ02 - 89707 - LFG Growth Partners Inc. - KEG Chandler",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Melina Aldana Gavioli",
+          "key": "SCAN-6354",
+          "summary": "Scan to Services - GBR06 - 503418 - Sheffield Children's NHS Foundation Trust - Sheffield Childrens Hospital Theatre Scan - WIP",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "Sub-task",
+          "updated": "2026-09-25T09:26:41.769-0700",
+          "dueDate": null,
+          "created": "2026-09-17T11:33:28.772-0700",
+          "resolutionDate": "2026-09-25T09:26:41.741-0700",
+          "deliveryStatus": null,
+          "territory": null,
+          "serviceType": null,
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": null,
+          "quotedTurnaround": null,
+          "projectId": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6291",
+          "summary": "Scan to Services - IL01 - 88487 - KOO Architecture - ABLA Brooks - 1320-32 W 14th St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-09-25T05:48:11.312-0700",
-          "dueDate": "2026-10-07",
-          "created": "2026-09-18T15:03:15.712-0700",
+          "updated": "2026-09-25T09:13:30.550-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-03T08:35:46.323-0700",
+          "resolutionDate": "2026-09-25T09:13:30.528-0700",
+          "deliveryStatus": "On time",
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1451.31,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1320-32 W 14th St",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88487",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88487",
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6290",
+          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T08:57:39.721-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-03T08:34:21.604-0700",
+          "resolutionDate": "2026-09-25T08:57:39.702-0700",
+          "deliveryStatus": "On time",
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1451.31,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1302-18 W 14th St",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88488",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-5472",
+          "summary": "Revisions - Scan to Services - GBR02 - 502429 - NHS University Hospitals Bristol and Weston - Bristol Royal Infirmary - Theatres",
+          "status": "Revisions",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "High",
+          "type": "ScanTo",
+          "updated": "2026-09-25T08:20:34.679-0700",
+          "dueDate": "2026-09-27",
+          "created": "2026-01-07T03:58:35.383-0800",
           "resolutionDate": null,
           "deliveryStatus": null,
-          "territory": "AZ02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 4136.87,
-          "squareFootage": 10775,
-          "projectName": "KEG Chandler",
-          "projectType": "Retail",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/az02/89707/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/op3YD1i4X3B7Q2EZ8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000y4R3wYAE/view",
-          "quotedTurnaround": 12,
-          "projectId": "89707",
-          "components": [],
-          "inProgressDate": "2026-09-21",
-          "dataValidatedDate": "2026-09-21",
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 9468.45,
+          "squareFootage": 19376,
+          "projectName": "502429 - Bristol Royal Infirmary - Phase 2",
+          "projectType": "Heathcare",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/502429/3D Point Cloud/Phase 2 - 2025",
+          "mapLink": "https://maps.app.goo.gl/GoRxe8PLc2ec1Bf6A",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006Ht00000xYUJWIA4/view",
+          "quotedTurnaround": 17,
+          "projectId": "502429",
+          "components": [
+            "Revisions - Free Fix"
+          ],
+          "inProgressDate": "2026-01-07",
+          "dataValidatedDate": "2026-01-07",
           "comments": [
             {
-              "author": "Melina Aldana Gavioli",
-              "created": "2026-09-25T05:48:11.216-0700",
-              "body": "Hi team, please let us know if these 12 proposed sections look good to proceed.\nLet me know if you have any feedback. Thanks!"
+              "author": "Alvin Chan",
+              "created": "2026-01-12T05:29:40.714-0800",
+              "body": "Hi Team,\nPlease find the LGS is finally exported and ready on ftp.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-01-12T05:00:59.718-0800",
+              "body": "Email sent to customer asking for clarification."
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-01-12T03:28:22.559-0800",
+              "body": "Hi Alvin, could you please upload the LGS files for this new phase? Thanks."
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-01-10T02:59:34.873-0800",
+              "body": "we donot have the lgs for the latest files can you please upload them"
             },
             {
               "author": "Martin Isola",
-              "created": "2026-09-21T10:45:33.886-0700",
-              "body": ""
+              "created": "2026-01-07T10:31:38.613-0800",
+              "body": "Hi Team,\nPlease review the comments and the enclosed files before starting with the project.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-01-07T10:30:52.876-0800",
+              "body": "Thanks Alvin,\nI just sent it to production. Let´s us know when the LGS are uploaded\nBest"
+            },
+            {
+              "author": "Alvin Chan",
+              "created": "2026-01-07T06:49:25.433-0800",
+              "body": "Hi Martin,\nThe RCS file is now uploaded. We failed to export LGS as it crashes during export and we keep on trying again.\nHope the team can still start working on this.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
+            },
+            {
+              "author": "Alvin Chan",
+              "created": "2026-01-07T05:26:09.265-0800",
+              "body": "Hi Martin,\nThe file is uploading now. It should be available in a few hours.\nSorry to change the requirements, the client is requesting us to build 2 new Revit models - 1 for Arch & 1 for MEP for the newly captured areas.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-01-07T05:18:48.094-0800",
+              "body": "Hi Team,\nI cannot find the LGS files on the FTP, could you please let me know when they are ready?\nThanks"
             },
             {
               "author": "Multivista",
-              "created": "2026-09-18T15:03:18.027-0700",
+              "created": "2026-01-07T03:58:39.647-0800",
+              "body": "(2.79 MB)\n (1.37 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6316",
+          "summary": "Scan to Services - GA02 - 89984 - St Josephs Candler Hospital - St Josephs GME On Call Rooms",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T08:13:26.394-0700",
+          "dueDate": "2026-09-25",
+          "created": "2026-09-11T08:25:27.271-0700",
+          "resolutionDate": "2026-09-25T07:51:30.649-0700",
+          "deliveryStatus": "On time",
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 750,
+          "squareFootage": 1050,
+          "projectName": "St Josephs GME On Call Rooms",
+          "projectType": "Heathcare",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/89984/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/gC6wbUkcEHCrHvi99",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000z2e6HYAQ/view",
+          "quotedTurnaround": 7,
+          "projectId": "89984",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6302",
+          "summary": "Scan to Services - SC01 - 89599 - LS3P - SC State Crawford Hall",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T07:46:40.888-0700",
+          "dueDate": "2026-10-07",
+          "created": "2026-09-06T16:01:15.313-0700",
+          "resolutionDate": "2026-09-25T06:50:29.024-0700",
+          "deliveryStatus": "On time",
+          "territory": "SC01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 3127.5,
+          "squareFootage": 30000,
+          "projectName": "SC State Crawford Hall",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/sc01/89599/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/g1cyJwBkopB8oQbu8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000v0YfBYAU/view",
+          "quotedTurnaround": 18,
+          "projectId": "89599",
+          "components": [
+            "Checklist Missing"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6367",
+          "summary": "Scan to Services - ON01 - 90065 - LFG Growth Partners/ Hawksworth RG - The Keg - York St. ",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T06:55:17.679-0700",
+          "dueDate": "2026-10-12",
+          "created": "2026-09-21T16:04:10.250-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "ON01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 6140.95,
+          "squareFootage": 15500,
+          "projectName": "The Keg - York St.",
+          "projectType": "Other",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/90065/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/FB7weXdAEfCMMsrKA",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000yhpkfYAA/view",
+          "quotedTurnaround": 13,
+          "projectId": "90065",
+          "components": [
+            "Checklist Missing"
+          ],
+          "inProgressDate": "2026-09-22",
+          "dataValidatedDate": "2026-09-23",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-23T12:01:36.451-0700",
+              "body": ""
+            },
+            {
+              "author": "Mike Auger",
+              "created": "2026-09-23T05:14:20.544-0700",
+              "body": "Mike Auger  Account Executive, Construction Technology Services  Construction Software and Services Division  Multivista, part of Hexagon  T: 416-716-9025  E: mike.auger@multivistasystems.com  LI: www.linkedin.com/in/mrmikeauger/  multivista.com| LinkedIn\n (264 kB)"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-09-23T05:00:09.959-0700",
+              "body": "Follow-up email sent to customer requesting checklist."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-09-22T08:58:37.445-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-21T16:04:12.970-0700",
+              "body": "(1.10 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6373",
+          "summary": "Scan to Services - PA01 - 90241 - K A M I N S K I + P E W - 2024 Delancey Pl",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-09-25T06:07:18.711-0700",
+          "dueDate": "2026-10-07",
+          "created": "2026-09-23T05:38:49.560-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "PA01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 2478.22,
+          "squareFootage": 5900,
+          "projectName": "2024 Delancey Pl",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/pa01/90241/90241/3d point clouds",
+          "mapLink": "https://maps.app.goo.gl/xPq6UuU932ztG2zp7",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zneZ4YAI/view",
+          "quotedTurnaround": 9,
+          "projectId": "90241",
+          "components": [],
+          "inProgressDate": "2026-09-24",
+          "dataValidatedDate": "2026-09-24",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-09-24T12:55:04.055-0700",
+              "body": "there are walls out back where a garage will go the client needs the context of these walls as well the the data included of the neighboring buildings"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-09-23T05:38:51.944-0700",
               "body": "(213 kB)"
             }
           ]
@@ -300,46 +1133,6 @@
               "author": "Multivista",
               "created": "2026-09-14T10:44:51.031-0700",
               "body": "(197 kB)\n (117 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6362",
-          "summary": "Scan to Services - TN01 - 90159 - Daniel S Dunn Architect - 3055 Carters Creek Pk",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Yasmin Soria",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-25T05:30:29.780-0700",
-          "dueDate": "2026-09-29",
-          "created": "2026-09-20T11:16:34.432-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TN01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 750,
-          "squareFootage": 2306,
-          "projectName": "3055 Carters Creek Pk",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/90159/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/NTtsxK6uK6WMRrKJA",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zuVKYYA2/view",
-          "quotedTurnaround": 6,
-          "projectId": "90159",
-          "components": [],
-          "inProgressDate": "2026-09-21",
-          "dataValidatedDate": "2026-09-21",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-21T10:52:07.428-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-20T11:16:37.404-0700",
-              "body": "(220 kB)"
             }
           ]
         },
@@ -515,76 +1308,6 @@
               "author": "Multivista",
               "created": "2026-09-10T08:04:13.568-0700",
               "body": "(219 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6378",
-          "summary": "Scan to Services - CA01 - 90067 - Matt Hollis Architects - 4018-4022 19th St.",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "High",
-          "type": "ScanTo",
-          "updated": "2026-09-25T05:10:52.381-0700",
-          "dueDate": "2026-10-12",
-          "created": "2026-09-23T17:45:36.277-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "CA01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 4089.12,
-          "squareFootage": 6500,
-          "projectName": "4018-4022 19th St.",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ca01/90067/PointClouds",
-          "mapLink": "https://maps.app.goo.gl/ZvePbGw6bs1YRoCL7",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zEBeoYAG/view",
-          "quotedTurnaround": 12,
-          "projectId": "90067",
-          "components": [],
-          "inProgressDate": "2026-09-24",
-          "dataValidatedDate": "2026-09-24",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-25T05:10:46.776-0700",
-              "body": "Hi Kia,Let me check with the team and try to get them ready for the client.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-25T05:10:13.540-0700",
-              "body": "Hello Team,\nThe client has an upcoming city submittal deadline and has asked if we can provide a work-in-progress package ahead of our current delivery date.\nCould you please prioritize this project and deliver a WIP version of the Floor Plans and Elevations before 10/07 so we can support the client's needs? At this stage, MEP plans are not required for the submittal.\nYour help in expediting this portion of the deliverables would be greatly appreciated.\nThank you!"
-            },
-            {
-              "author": "Kia Ehya",
-              "created": "2026-09-24T16:18:35.826-0700",
-              "body": "Hello Martin,  \nDiscussing the dates with this client, they have a deadline to provide some plans to the city as submittals by10/8. A that is 3 business days earlier than the estimate, I discussed that we could potentially deliver some work-in-progress plans by that date. He said he could use just the Floor plans and Elevation plans without the MEP. Do you think we could deliver those by 10/7 or the morning of 10/8? This would be very much appreciated. Let me know what you think.  \nThank you! \n   \nKia Ehya \nVirtual Data Capture Systems Manager - N California Region  \nand Video Dept Manager  \n510-672-3800  \nk.ehya@multivista.com \nwww.multivista.com \n245 S Spruce Ave # 800 – Unit G2B  \nSouth San Francisco, CA 9408"
-            },
-            {
-              "author": "Kia Ehya",
-              "created": "2026-09-24T13:04:32.493-0700",
-              "body": "Thank you Martin \n   \nKia Ehya \nVirtual Data Capture Systems Manager - N California Region  \nand Video Dept Manager  \n510-672-3800  \nk.ehya@multivista.com \nwww.multivista.com \n245 S Spruce Ave # 800 – Unit G2B  \nSouth San Francisco, CA 9408"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-24T12:38:36.841-0700",
-              "body": "Hi Kia,\nThe delivery date for this project is set by \nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-24T12:34:59.982-0700",
-              "body": ""
-            },
-            {
-              "author": "Kia Ehya",
-              "created": "2026-09-24T07:28:06.674-0700",
-              "body": "Sorry to ask again, but could I get an ETA for this one today? I would just like to give the client a date for this one.   \nThank you! \nKia Ehya  Virtual Data Capture Systems Manager - N California Region and Video Dept Manager  510-672-3800  k.ehya@multivista.com"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-23T17:45:38.299-0700",
-              "body": "(201 kB)"
             }
           ]
         },
@@ -1021,56 +1744,6 @@
               "author": "Multivista",
               "created": "2026-09-04T03:14:12.498-0700",
               "body": "(3.28 MB)\n (1.12 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6368",
-          "summary": "Scan to Services - OH03 - 90055 - Independence Construction - St. Barnabas Church",
-          "status": "Waiting for Info",
-          "statusCategory": "To Do",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-25T05:00:56.663-0700",
-          "dueDate": null,
-          "created": "2026-09-22T11:46:42.295-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "OH03",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": 18252,
-          "projectName": "St. Barnabas Church",
-          "projectType": "Recreation",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/oh03/90055/3DPointCloud",
-          "mapLink": "https://maps.app.goo.gl/343Pp3grBoXsPEiM8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zKDvdYAG/view",
-          "quotedTurnaround": 9,
-          "projectId": "90055",
-          "components": [],
-          "inProgressDate": "2026-09-23",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-25T05:00:56.551-0700",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-24T12:28:55.016-0700",
-              "body": "Hi Team,\nAfter reviewing the point cloud, we believe this project should not be classified as a C2 complexity level. While the space is generally open, the ceiling conditions are significantly more complex than initially anticipated.\nAs a result, we would need to upgrade the project complexity to C3 and adjust the pricing accordingly.\nPlease confirm if you are okay with this change so we can move forward and release the project to production.\nThank you."
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-09-23T07:45:00.708-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-22T11:46:45.150-0700",
-              "body": "(213 kB)"
             }
           ]
         },
@@ -1597,63 +2270,6 @@
           ]
         },
         {
-          "key": "SCAN-6367",
-          "summary": "Scan to Services - ON01 - 90065 - LFG Growth Partners/ Hawksworth RG - The Keg - York St. ",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-25T04:30:15.135-0700",
-          "dueDate": "2026-10-12",
-          "created": "2026-09-21T16:04:10.250-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "ON01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 6140.95,
-          "squareFootage": 15500,
-          "projectName": "The Keg - York St.",
-          "projectType": "Other",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/90065/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/FB7weXdAEfCMMsrKA",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000yhpkfYAA/view",
-          "quotedTurnaround": 13,
-          "projectId": "90065",
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-09-22",
-          "dataValidatedDate": "2026-09-23",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-23T12:01:36.451-0700",
-              "body": ""
-            },
-            {
-              "author": "Mike Auger",
-              "created": "2026-09-23T05:14:20.544-0700",
-              "body": "Mike Auger  Account Executive, Construction Technology Services  Construction Software and Services Division  Multivista, part of Hexagon  T: 416-716-9025  E: mike.auger@multivistasystems.com  LI: www.linkedin.com/in/mrmikeauger/  multivista.com| LinkedIn\n (264 kB)"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-23T05:00:09.959-0700",
-              "body": "Follow-up email sent to customer requesting checklist."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-22T08:58:37.445-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-21T16:04:12.970-0700",
-              "body": "(1.10 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6317",
           "summary": "Scan to Services - GA02 - 89985 - St Josephs Candler Hospital - Candler GME On Call Rooms",
           "status": "Done",
@@ -1712,126 +2328,6 @@
           "comments": []
         },
         {
-          "key": "SCAN-6354",
-          "summary": "Scan to Services - GBR06 - 503418 - Sheffield Children's NHS Foundation Trust - Sheffield Childrens Hospital Theatre Scan - WIP",
-          "status": "In Progress",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "Sub-task",
-          "updated": "2026-09-24T12:31:31.697-0700",
-          "dueDate": null,
-          "created": "2026-09-17T11:33:28.772-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": null,
-          "serviceType": null,
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": null,
-          "quotedTurnaround": null,
-          "projectId": null,
-          "components": [],
-          "inProgressDate": "2026-09-17",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-09-24T12:31:31.606-0700",
-              "body": "please deliver the WIP agreed. Thanks"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6217",
-          "summary": "Scan to Services - TN01 - 89386 - WeGo Public Transit - 130 Nestor St",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-24T12:26:05.216-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-08-17T17:45:09.519-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TN01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 77429.52,
-          "squareFootage": 110000,
-          "projectName": " WeGo Public Transit - 130 Nestor St",
-          "projectType": "Manufacturing & Warehouse",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/89386/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/FfYXQC6Ys26MNRTv6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000wkFvVYAU/view",
-          "quotedTurnaround": 25,
-          "projectId": "89386",
-          "components": [
-            "Registration Error",
-            "Rush Request",
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-08-18",
-          "dataValidatedDate": "2026-08-24",
-          "comments": [
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-21T09:56:23.748-0700",
-              "body": "Martin, \nCan I get an estimated delivery date on this ASAP? I need to give the client something today. \nThanks!"
-            },
-            {
-              "author": "Kevin Smith",
-              "created": "2026-08-20T17:10:27.066-0700",
-              "body": "This has been fixed and Re-uploaded to the FTP Server. The new files have a _2 at the end.  \nRemote ID: /tn01/89386/3D Point Cloud \nNew File name path: TN01_89386_WeGo Public Transit_130 Nestor St_2 \nThank you  \nKevin Smith  \n615-880-0372"
-            },
-            {
-              "author": "Kevin Smith",
-              "created": "2026-08-20T17:10:21.594-0700",
-              "body": "This has been fixed and Re-uploaded. The new files have a _2 at the end.  \nRemote ID: /tn01/89386/3D Point Cloud \nNew File name path: TN01_89386_WeGo Public Transit_130 Nestor St_2 \nThank you  \nKevin Smith  \n615-880-0372"
-            },
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-20T13:46:29.287-0700",
-              "body": "Where are we on this? \nGuys this is a high profile project with a rush fee associated with it so this needs to be at the top of everyone’s to-do list."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-08-20T05:00:26.897-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Kevin Smith",
-              "created": "2026-08-19T12:35:34.853-0700",
-              "body": "Yes ill get these fixed and re-exported \nSent from Samsung Galaxy smartphone.Get Outlook for Android"
-            },
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-19T12:31:59.441-0700",
-              "body": "Can you take a look at these when you get a chance? I know we just talked about this."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-19T12:18:37.094-0700",
-              "body": "Hi  \nI was checking the point cloud, and I found some registration issues. I can see double lines on the exterior envelope\nI found the errors on these locations but please review the entire point cloud to be sure we have accurate information to start.\nThanks"
-            },
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-18T08:52:59.931-0700",
-              "body": "If possible can we start the project and deliver a WIP model on the “back bay” portion of this scan \n \nFrom: Multivista <jira@multivista.atlassian.net> Sent: Monday, August 17, 2026 7:46 PMTo: Daniel Ryan - Multivista <d.ryan@multivista.com>Subject:  Scan to Services - TN01 - 89386 - WeGo Public Transit - 130 Nestor St   \n—-—-—-—   \nReply above this line.    \nHi Daniel Ryan, \nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\n>Respectfully yours, \nHexagon Scan to Servicesscantoservices@multivista.com \nView request· Turn off this request's notifications \nThis is shared with Kevin Smith and Daniel Ryan. \nPowered by Jira Service Management  \nSent on August 17, 2026 5:46:11 PM PDT"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-08-17T17:45:12.596-0700",
-              "body": "(262 kB)\n (3.66 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6376",
           "summary": "Scan to Services - TX02 - 87557 - Mansfield ISD - Mansfield City Hall - Level 1 - Update Roof and Exterior Model",
           "status": "Backlog",
@@ -1843,35 +2339,6 @@
           "dueDate": null,
           "created": "2026-09-23T11:56:52.743-0700",
           "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": null,
-          "serviceType": null,
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": null,
-          "quotedTurnaround": null,
-          "projectId": null,
-          "components": [],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": []
-        },
-        {
-          "key": "SCAN-6358",
-          "summary": "Scan to Services - TN01 - 89386 - WeGo Public Transit - 130 Nestor St - WIP",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "Sub-task",
-          "updated": "2026-09-24T12:15:59.826-0700",
-          "dueDate": null,
-          "created": "2026-09-18T07:27:52.521-0700",
-          "resolutionDate": "2026-09-24T12:15:59.805-0700",
           "deliveryStatus": null,
           "territory": null,
           "serviceType": null,
@@ -2884,68 +3351,6 @@
           "comments": []
         },
         {
-          "key": "SCAN-6302",
-          "summary": "Scan to Services - SC01 - 89599 - LS3P - SC State Crawford Hall",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-24T07:37:23.685-0700",
-          "dueDate": "2026-10-07",
-          "created": "2026-09-06T16:01:15.313-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "SC01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 3127.5,
-          "squareFootage": 30000,
-          "projectName": "SC State Crawford Hall",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/sc01/89599/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/g1cyJwBkopB8oQbu8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000v0YfBYAU/view",
-          "quotedTurnaround": 18,
-          "projectId": "89599",
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-09-07",
-          "dataValidatedDate": "2026-09-11",
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-09-16T01:47:02.518-0700",
-              "body": "Hi   we have started the model will try to finish this one  early"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-15T12:17:14.546-0700",
-              "body": "Hi  \nCould we get is earlier?\nThanks"
-            },
-            {
-              "author": "Cade Loyd",
-              "created": "2026-09-09T06:19:11.929-0700",
-              "body": "Cade Loyd \nAccount Executive\n>Multivista, part of Hexagon \nM:478-919-1231 \nmultivista.com\n (231 kB)"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-09T05:01:40.472-0700",
-              "body": "Follow-up email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-07T11:33:58.385-0700",
-              "body": "There is also UAV Roof mapping for this as well. Please download it from MDS"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-07T11:17:28.805-0700",
-              "body": "Email sent to customer requesting checklist."
-            }
-          ]
-        },
-        {
           "key": "SCAN-6318",
           "summary": "Scan to Services - NY02 - 89834 - Workshop/APD - 57 Birchall",
           "status": "Done",
@@ -3732,158 +4137,6 @@
           ]
         },
         {
-          "key": "SCAN-6316",
-          "summary": "Scan to Services - GA02 - 89984 - St Josephs Candler Hospital - St Josephs GME On Call Rooms",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-23T22:07:49.928-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-11T08:25:27.271-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GA02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 750,
-          "squareFootage": 1050,
-          "projectName": "St Josephs GME On Call Rooms",
-          "projectType": "Heathcare",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/89984/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/gC6wbUkcEHCrHvi99",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000z2e6HYAQ/view",
-          "quotedTurnaround": 7,
-          "projectId": "89984",
-          "components": [],
-          "inProgressDate": "2026-09-14",
-          "dataValidatedDate": "2026-09-16",
-          "comments": [
-            {
-              "author": "Brett Feemster",
-              "created": "2026-09-16T06:22:02.964-0700",
-              "body": "Thank you! \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "landon@bainc.com",
-              "created": "2026-09-16T06:21:06.154-0700",
-              "body": "Brett, \nPlease see below link to our Revit template. Let us know if you have any questions. \nhttps://www.dropbox.com/scl/fi/t84v6x2lr6ayds11ejs08/BA_New-Project_R26.rte?rlkey=g3c2tjosiqm5d64xuhxgfm2ey&st=1jhujvu6&dl=0 \nThanks, \n \n <https://www.linkedin.com/company/batson-associates-inc.>\n <https://www.facebook.com/batsonassociates/> \n <https://www.instagram.com/batsonassociates/?hl=en> \nLandon Hannah  :  Assoc. AIA  Designer \n 864-775-5278 : cell 864-561-8752 \nlandon@bainc.com 415 W. Washington Street : Greenville, SC 29601 www.batsonassociates.com \n Experience Purposeful Design"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-09-16T06:10:49.010-0700",
-              "body": "Landon if you can send us drop box link, I believe that would work. \nThanks! \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-16T05:00:58.444-0700",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-09-15T11:47:22.637-0700",
-              "body": "Hey Landon, \nCan you send us a link to your template please? \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-15T11:43:10.070-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-15T11:43:01.672-0700",
-              "body": "Hi team, Could you please provide the Client´s Revit template file?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-11T08:25:30.326-0700",
-              "body": "(201 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6270",
-          "summary": "Scan to Services - GA02 - 89873 - CDH Partners Architecture - Pooler Early Learning Center",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-23T22:07:28.160-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-08-28T03:52:47.039-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GA02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 9210.31,
-          "squareFootage": 38751,
-          "projectName": "Pooler Early Learning Center",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/89873",
-          "mapLink": "https://maps.app.goo.gl/6AxgvJmjeHNcLjZ39",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000006jEY10AM/view",
-          "quotedTurnaround": 19,
-          "projectId": "89873",
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-08-28",
-          "dataValidatedDate": "2026-08-31",
-          "comments": [
-            {
-              "author": "sirajudheen",
-              "created": "2026-09-08T05:21:33.726-0700",
-              "body": "I need confirmation on the exact scope area for the site portion. Please refer to the figures.\nThe first figure shows the main scan data, which covers only the area around the building. The second figure shows a much larger area, but this data is drone data.\nPlease review and confirm whether the entire drone-covered area needs to be considered as part of the site scope."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-02T11:03:18.790-0700",
-              "body": "Hi Team, use this option\nthanks"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-09-02T09:45:59.198-0700",
-              "body": "Please model to as is conditions not as intended \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-02T09:32:18.521-0700",
-              "body": "Hi team,\nCould you please confirm this option so we can start the modeling?\nTHanks"
-            },
-            {
-              "author": "sirajudheen",
-              "created": "2026-09-02T06:13:03.133-0700",
-              "body": "Need to be confirm."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-31T08:32:15.220-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-28T12:51:53.885-0700",
-              "body": "Hi Zack, please send the quote for approval to be able to get it ready.\nThanks"
-            },
-            {
-              "author": "Zack Alderson",
-              "created": "2026-08-28T12:49:33.894-0700",
-              "body": "Martin, \nSorry about that. \nlightning.force.com \n <https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbllzYAA/view> \nhttps://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbllzYAA/view] \nZack Alderson  MULTIVISTA / HEXAGON  Southeast Regional Partner  Mobile: 919-672-6521   \n125 Park of Commerce Drive, Suite 215, Savannah, GA 31405  Tel: (912) 659-7987 <tel:(678)%20779-3145>, www.multivista.com"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-28T12:40:49.170-0700",
-              "body": "Hi team, \nCould you please provide a Salesforce quote link with an approved version?We can´t start this project without an approved quote.\nIf you don´t have an approved one, please send it for approval.\nThanks,"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-08-28T03:52:49.135-0700",
-              "body": "(229 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6365",
           "summary": "Scan to Services - IL01 - 90199 - LBBA - 2715 Harrison",
           "status": "S2S Production",
@@ -3948,88 +4201,6 @@
               "author": "Automation for Jira",
               "created": "2026-09-22T08:48:50.034-0700",
               "body": "Email sent to customer requesting checklist."
-            }
-          ]
-        },
-        {
-          "key": "SCAN-5472",
-          "summary": "Revisions - Scan to Services - GBR02 - 502429 - NHS University Hospitals Bristol and Weston - Bristol Royal Infirmary - Theatres",
-          "status": "Revisions",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "High",
-          "type": "ScanTo",
-          "updated": "2026-09-23T13:34:01.615-0700",
-          "dueDate": "2026-09-27",
-          "created": "2026-01-07T03:58:35.383-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 9468.45,
-          "squareFootage": 19376,
-          "projectName": "502429 - Bristol Royal Infirmary - Phase 2",
-          "projectType": "Heathcare",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/502429/3D Point Cloud/Phase 2 - 2025",
-          "mapLink": "https://maps.app.goo.gl/GoRxe8PLc2ec1Bf6A",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006Ht00000xYUJWIA4/view",
-          "quotedTurnaround": 17,
-          "projectId": "502429",
-          "components": [
-            "Revisions - Free Fix"
-          ],
-          "inProgressDate": "2026-01-07",
-          "dataValidatedDate": "2026-01-07",
-          "comments": [
-            {
-              "author": "Alvin Chan",
-              "created": "2026-01-12T05:29:40.714-0800",
-              "body": "Hi Team,\nPlease find the LGS is finally exported and ready on ftp.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-01-12T05:00:59.718-0800",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-01-12T03:28:22.559-0800",
-              "body": "Hi Alvin, could you please upload the LGS files for this new phase? Thanks."
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-01-10T02:59:34.873-0800",
-              "body": "we donot have the lgs for the latest files can you please upload them"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-01-07T10:31:38.613-0800",
-              "body": "Hi Team,\nPlease review the comments and the enclosed files before starting with the project.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-01-07T10:30:52.876-0800",
-              "body": "Thanks Alvin,\nI just sent it to production. Let´s us know when the LGS are uploaded\nBest"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-01-07T06:49:25.433-0800",
-              "body": "Hi Martin,\nThe RCS file is now uploaded. We failed to export LGS as it crashes during export and we keep on trying again.\nHope the team can still start working on this.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-01-07T05:26:09.265-0800",
-              "body": "Hi Martin,\nThe file is uploading now. It should be available in a few hours.\nSorry to change the requirements, the client is requesting us to build 2 new Revit models - 1 for Arch & 1 for MEP for the newly captured areas.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-01-07T05:18:48.094-0800",
-              "body": "Hi Team,\nI cannot find the LGS files on the FTP, could you please let me know when they are ready?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-01-07T03:58:39.647-0800",
-              "body": "(2.79 MB)\n (1.37 MB)"
             }
           ]
         },
@@ -5274,99 +5445,6 @@
           ]
         },
         {
-          "key": "SCAN-6291",
-          "summary": "Scan to Services - IL01 - 88487 - KOO Architecture - ABLA Brooks - 1320-32 W 14th St",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-23T05:30:17.590-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-03T08:35:46.323-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1451.31,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1320-32 W 14th St",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88487",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88487",
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-09-03",
-          "dataValidatedDate": "2026-09-04",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-04T07:53:24.030-0700",
-              "body": ""
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-09-04T06:02:39.922-0700",
-              "body": "Files are online now ||Dan Tufano  Senior |\nOperations Manager \nMobile (630) 881-6285  \nwww.multivista.com| LinkedIn| Facebook| X| Instagram  \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> | \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   --"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-09-04T05:01:01.620-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-03T08:35:50.438-0700",
-              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6325",
-          "summary": "Scan to Services - TN01 - 90090 - Merrill Construction - 1511 Ferguson",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-23T05:30:16.159-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-11T16:39:26.803-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TN01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1552.99,
-          "squareFootage": 3415,
-          "projectName": "1511 Ferguson",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/90090/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/n6CyyxG9b2osBa1m8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zhm34YAA/view",
-          "quotedTurnaround": 8,
-          "projectId": "90090",
-          "components": [],
-          "inProgressDate": "2026-09-14",
-          "dataValidatedDate": "2026-09-15",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-15T11:54:07.192-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-11T16:39:29.278-0700",
-              "body": "(506 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6357",
           "summary": "Scan to Services - GA02 - 89828 - LS3P - 208 Bull Street",
           "status": "S2S Queue",
@@ -5500,46 +5578,6 @@
               "author": "Multivista",
               "created": "2026-09-14T18:47:17.760-0700",
               "body": "(203 kB)\n (786 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6290",
-          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-22T22:53:53.234-0700",
-          "dueDate": "2026-09-25",
-          "created": "2026-09-03T08:34:21.604-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1451.31,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1302-18 W 14th St",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000yPdoXYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7359f5ed8a644681f51e08def80c1e53%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639220928096647759%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2wfE8yYV4Z9B8JmEDHr%2F6qO5%2B3KH4KI6NsPfsKJmEIc%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88488",
-          "components": [],
-          "inProgressDate": "2026-09-03",
-          "dataValidatedDate": "2026-09-03",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-09-03T12:41:44.184-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-09-03T08:34:26.405-0700",
-              "body": "(264 kB)\n (1.09 MB)\n (3.19 MB)"
             }
           ]
         },
@@ -5678,88 +5716,6 @@
               "author": "Multivista",
               "created": "2026-09-16T08:36:24.821-0700",
               "body": "(265 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6153",
-          "summary": "Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-09-22T04:30:23.733-0700",
-          "dueDate": "2026-10-07",
-          "created": "2026-07-28T10:52:45.204-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NV01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 49920,
-          "squareFootage": 400000,
-          "projectName": "Paris LV Bordeaux Tower",
-          "projectType": "Hospitality",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/89321/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/bnoqPc6gwvMYKm3C6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pc4wBYAQ/view",
-          "quotedTurnaround": 50,
-          "projectId": "89321",
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-07-28",
-          "dataValidatedDate": "2026-07-29",
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-08-26T01:33:21.985-0700",
-              "body": "Hi   we will submit Level 32 by"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-21T13:03:29.480-0700",
-              "body": "Hi  We have a new level for this project. Please review the point cloud and start working.Also provide a date for this sector,\nThanks"
-            },
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-08-11T12:59:39.467-0700",
-              "body": "Hi Team,\nThe agreed-upon deliverables for Levels 31 and 33 are now available on the FTP.\nBest regards,"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-08-11T05:11:40.009-0700",
-              "body": "Level 33 and 31: Delivery"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T09:39:33.664-0700",
-              "body": "Hi team,\nPlease start with this 2 point clouds, when can you have them ready the plans as a partial delivery?\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T09:38:49.344-0700",
-              "body": "Thanks Jacob for the information.\nBest Regards"
-            },
-            {
-              "author": "Jacob Wilkinson",
-              "created": "2026-07-29T09:15:16.384-0700",
-              "body": "Hello Martin,\nI apologize for the confusion; this is a tricky project. Level 31 and level 33 are two separate floors that will each need their own scan to plan.  We are trying to get certain areas accessible to our client as soon as possible because they hold more importance than the rest of the project. Our deadline for these two floors is as soon as possible, and we have ops guys going back out next week to finish scanning the rest of the project.\nThis is an image of level 31, and the highlighted areas the data set submitted for level 31 covers.[cid:c4a2fb1f-349a-4ad5-8d32-cb67b5b19991]\nThis is an image of level 33, and the highlighted areas the data set submitted for level 33 covers.\n[cid:8ace664f-4f98-4548-88b6-131f26ff60fa]\nLevel 31 and level 33 are two separate floors and are not connected.\nAs far as a schedule goes for deadlines, I will coordinate with Tianna and Skylar to get you guys a timeline of when we will need these deliverables.\nAttached below is an updated scan to plan checklist with the requested information filled out.\nI apologize for the confusion, and please reach out if you need any more info from my end.\nBest,\nJacob WilkinsonJr Data ManagerBusiness Operations\nMultivista, part of HexagonM: 602-688-0301multivista.com<https://www.multivista.com/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Wednesday, July 29, 2026 7:34 AMTo: Jacob Wilkinson - Multivista <j.wilkinson@multivista.com>Subject:  Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Jacob,\nI downloaded the point clouds and noticed that they are not coordinated with each other. Please see the attached image as an example.\nRed Lvl 31 and Blue Lvl 33\n[image-20260729-143148.png]\nI understand this is a Scan to Plan project; however, we still need to understand the relative location of the different datasets in order to properly develop the plans. Could you please help clarify this?\nI also understand this is a large project, and we need to plan our production activities accordingly. Would it be possible to share a scanning and point cloud delivery schedule with us?\nIn addition, we will need some form of graphic reference indicating:\n  Which areas have already been scanned and delivered.\n\n  Which areas are still pending.\n\n  The expected sequence of future deliveries.\n\nWorking without a complete view of the project makes coordination very difficult and can result in significant inefficiencies and rework.\nCould you also clarify whether all areas will be delivered in this way, as isolated datasets with no connection between them, or if there will eventually be a coordinated master dataset covering the entire project?\nAdditionally, could you please complete the CAD Drawing Methodology and Project Coordinate System fields in the checklist? This information is currently missing, and it is important for us to understand how the drawings are expected to be developed and how the datasets relate to each other spatially.\nCould you also confirm Metric is required?\n[image-20260729-143303.png]\nAny additional information that helps us better understand the overall project strategy would be greatly appreciated.\nThanks for your help.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6153?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY4Mjc2MGE4OGZhZTQ2ZGZjZTc2YmU5ODliZWIyZWFkMDIyYTE5NjY4ODY4ODkxZjg3OWU0ZDI4MWEyZGI1NzIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMzI4NjkiLCJpc3N1ZSI6IlNDQU4tNjE1MyJ9LCJleHAiOjE3ODc3NTQ4NDMsImlhdCI6MTc4NTMzNTY0M30.IsdxKlmzFBHt_sFtt5vIH1UD42fbN_0zXMICSosJobw&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6153/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJlMWZjN2RiNzUyNDViM2FiMDEzM2I2N2I5YjY3YjhmMDhmNzk5YWUwMjllOWI4ZTdkODQ5YjYxYjliYjU4NmUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjcyN2U4MGItMWFlMy00NDA4LWJmZjItOGVlNzVkMTI2MGIxIiwiaXNzdWUiOiJTQ0FOLTYxNTMifSwiZXhwIjoxNzg3NzU0ODQzLCJpYXQiOjE3ODUzMzU2NDN9.7o4BcIKSkcmyPWbCc7VL093o0T9c22_d30zaNJK4dpQ>\nThis is shared with Jacob Wilkinson.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 29, 2026 7:34:03 AM PDThttps://usw2-track.atlassian.com/CI0/0101019fae4c04a0-f79f22a5-7db2-43e9-967a-d7607c7dda6a-000000/Myil9njFbGnIi3Y7UimTPXLLgVldFW14aqmQydxiiwI=452\n (253 kB)"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-29T07:33:39.817-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T07:33:31.403-0700",
-              "body": "Hi Jacob,\nI downloaded the point clouds and noticed that they are not coordinated with each other. Please see the attached image as an example.\nRed Lvl 31 and Blue Lvl 33\nI understand this is a Scan to Plan project; however, we still need to understand the relative location of the different datasets in order to properly develop the plans. Could you please help clarify this?\nI also understand this is a large project, and we need to plan our production activities accordingly. Would it be possible to share a scanning and point cloud delivery schedule with us?\nIn addition, we will need some form of graphic reference indicating:\nWhich areas have already been scanned and delivered.\n\nWhich areas are still pending.\n\nThe expected sequence of future deliveries.\n\nWorking without a complete view of the project makes coordination very difficult and can result in significant inefficiencies and rework.\nCould you also clarify whether all areas will be delivered in this way, as isolated datasets with no connection between them, or if there will eventually be a coordinated master dataset covering the entire project?\nAdditionally, could you please complete the CAD Drawing Methodology and Project Coordinate System fields in the checklist? This information is currently missing, and it is important for us to understand how the drawings are expected to be developed and how the datasets relate to each other spatially.\nCould you also confirm Metric is required?\nAny additional information that helps us better understand the overall project strategy would be greatly appreciated.\nThanks for your help.\nBest regards,\nMartin"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-28T10:52:47.543-0700",
-              "body": "(241 kB)"
             }
           ]
         },
