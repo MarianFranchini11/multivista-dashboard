@@ -39,6 +39,7 @@
         <a href="laser-support.html" class="nav-link">3D Laser Support</a>
         <a href="resource-management.html" class="nav-link">Resource Management</a>
         <a href="time-tracking.html" class="nav-link">Time Tracking</a>
+        <a href="franchise-tracking.html" class="nav-link">Franchise Tracking</a>
       </nav>
       <div class="sync-status" id="sync-status">
         <span class="pulse" id="pulse"></span>
@@ -51,10 +52,19 @@
 
       <section class="filter-bar">
         <div class="filter-group">
-          <label for="territory-filter">Territory</label>
-          <select id="territory-filter">
-            <option value="">All</option>
-          </select>
+          <label for="territory-details">Territory</label>
+          <details id="territory-details" class="due-date-filter">
+            <summary id="territory-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="territory-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="territory-clear">Clear</button>
+                <button type="button" id="territory-apply">Apply</button>
+              </div>
+            </div>
+          </details>
         </div>
         <div class="filter-group">
           <label for="service-filter">Service type</label>

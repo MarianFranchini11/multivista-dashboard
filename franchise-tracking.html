@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Franchise Tracking · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <img src="logo.svg" alt="Hexagon Multivista" class="gate-logo" />
+      <h1 class="gate-title">Project Dashboard</h1>
+      <p class="gate-sub">Sign in to continue.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="text" id="gate-username" placeholder="Username" autocomplete="username" />
+        <input type="password" id="gate-password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Incorrect username or password.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
+        <span class="brand-sub">Project Dashboard</span>
+      </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="issues.html" class="nav-link">Tickets</a>
+        <a href="laser-support.html" class="nav-link">3D Laser Support</a>
+        <a href="resource-management.html" class="nav-link">Resource Management</a>
+        <a href="time-tracking.html" class="nav-link">Time Tracking</a>
+        <a href="franchise-tracking.html" class="nav-link active">Franchise Tracking</a>
+      </nav>
+      <div class="sync-status" id="sync-status">
+        <button id="logout-btn" class="logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <nav class="rm-subnav">
+        <a href="#" class="rm-subnav-link active" data-fttab="log">Log a Meeting</a>
+        <a href="#" class="rm-subnav-link" data-fttab="actions">Open Action Items</a>
+        <a href="#" class="rm-subnav-link" data-fttab="history">Meeting History</a>
+      </nav>
+
+      <!-- TAB 1: Log a Meeting -->
+      <div id="ft-tab-log" class="rm-tab-panel">
+
+        <section class="rm-add-section" id="ft-meeting-form-section">
+          <div class="panel-head">
+            <h2>New Meeting</h2>
+          </div>
+          <form id="ft-meeting-form" class="rm-add-form">
+            <div class="rm-field">
+              <label for="ft-meeting-date">Date</label>
+              <input type="date" id="ft-meeting-date" required />
+            </div>
+            <div class="rm-field">
+              <label for="ft-meeting-territory">Territory / Franchise</label>
+              <input type="text" id="ft-meeting-territory" list="ft-territory-suggestions" required placeholder="e.g. GBR02" />
+              <datalist id="ft-territory-suggestions"></datalist>
+            </div>
+            <div class="rm-field" style="flex:2;">
+              <label for="ft-meeting-notes">Meeting notes (optional)</label>
+              <input type="text" id="ft-meeting-notes" placeholder="Quarterly check-in call" />
+            </div>
+            <button type="submit" class="rm-add-btn">Start Meeting</button>
+          </form>
+        </section>
+
+        <section id="ft-active-meeting" class="rm-roster-section" style="display:none;">
+          <div class="panel-head">
+            <h2 id="ft-active-meeting-title">Meeting</h2>
+            <a href="#" id="ft-finish-meeting" class="rm-roster-hint">Finish &amp; start a new meeting</a>
+          </div>
+
+          <div id="ft-items-list" style="margin-bottom:16px;">
+            <!-- injected by franchise-tracking.js -->
+          </div>
+
+          <div class="rm-addrow" style="flex-direction:column;align-items:stretch;">
+            <div class="rm-multiassign-label">Add an item</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+              <input type="text" id="ft-project-search" class="rm-search" placeholder="Search existing project (key or name)&hellip;" style="flex:1;min-width:220px;" />
+              <span class="muted" style="align-self:center;">or</span>
+              <input type="text" id="ft-new-potential" class="rm-search" placeholder="+ New potential project name" style="min-width:200px;" />
+            </div>
+            <div id="ft-search-results" style="margin-bottom:8px;"></div>
+            <div id="ft-selected-target" class="rm-roster-hint" style="margin-bottom:8px;"></div>
+            <textarea id="ft-comment-text" placeholder="Comment / notes from the meeting..." style="width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:3px;font-family:var(--font-body);font-size:0.88rem;min-height:60px;box-sizing:border-box;margin-bottom:8px;"></textarea>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+              <label style="font-size:0.85rem;display:flex;align-items:center;gap:5px;"><input type="checkbox" id="ft-is-action" /> This is an action item</label>
+              <input type="text" id="ft-action-owner" placeholder="Owner" style="display:none;padding:7px 9px;border:1px solid var(--line);border-radius:3px;font-size:0.82rem;width:140px;" />
+              <input type="date" id="ft-action-due" style="display:none;padding:7px 9px;border:1px solid var(--line);border-radius:3px;font-size:0.82rem;" />
+              <button type="button" id="ft-add-item-btn" class="rm-add-btn" style="margin-left:auto;">+ Add item</button>
+            </div>
+            <p id="ft-add-item-error" class="gate-error" hidden></p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- TAB 2: Open Action Items -->
+      <div id="ft-tab-actions" class="rm-tab-panel" style="display:none;">
+        <section class="rm-roster-section">
+          <div class="panel-head">
+            <h2>Open Action Items <span id="ft-actions-count" class="panel-subtitle"></span></h2>
+            <span class="rm-roster-hint">Across all meetings &middot; sorted by due date &middot; check off when done</span>
+          </div>
+          <div class="filter-bar" style="margin-bottom:14px;">
+            <div class="filter-group">
+              <label for="ft-actions-territory">Territory</label>
+              <select id="ft-actions-territory"><option value="">All</option></select>
+            </div>
+          </div>
+          <div id="ft-actions-list"></div>
+        </section>
+      </div>
+
+      <!-- TAB 3: Meeting History -->
+      <div id="ft-tab-history" class="rm-tab-panel" style="display:none;">
+        <section class="rm-roster-section">
+          <div class="panel-head">
+            <h2>Meeting History</h2>
+          </div>
+          <div class="filter-bar" style="margin-bottom:14px;">
+            <div class="filter-group">
+              <label for="ft-history-territory">Territory</label>
+              <select id="ft-history-territory"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+              <label for="ft-history-search">Search</label>
+              <input type="text" id="ft-history-search" class="rm-search" placeholder="Search meetings&hellip;" />
+            </div>
+          </div>
+          <div id="ft-history-list"></div>
+        </section>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      Meeting notes and action items are stored in Firebase.
+    </footer>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="shared.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="franchise-tracking.js"></script>
+</body>
+</html>

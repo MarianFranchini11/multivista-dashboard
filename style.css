@@ -546,6 +546,13 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 
 .month-checkbox-grid input { margin: 0; accent-color: var(--steel); }
 
+.territory-checkbox-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 220px;
+  overflow-y: auto;
+  min-width: 280px;
+}
+
 .due-date-panel-actions {
   display: flex;
   justify-content: space-between;

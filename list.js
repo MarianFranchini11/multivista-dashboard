@@ -3,6 +3,7 @@
 
 let allData = null;
 let activeProjectKey = null;
+let selectedTerritoriesTickets = new Set();
 
 async function initListPage() {
   try {
@@ -24,9 +25,39 @@ async function initListPage() {
     renderTable();
   });
   document.getElementById("status-filter").addEventListener("change", renderTable);
-  document.getElementById("territory-filter").addEventListener("change", renderTable);
   document.getElementById("service-filter").addEventListener("change", renderTable);
   document.getElementById("search-filter").addEventListener("input", renderTable);
+
+  document.getElementById("territory-apply").addEventListener("click", () => {
+    selectedTerritoriesTickets = new Set(
+      Array.from(document.querySelectorAll("#territory-checkboxes input:checked")).map((el) => el.value)
+    );
+    updateTicketsTerritorySummary();
+    document.getElementById("territory-details").open = false;
+    renderTable();
+  });
+  document.getElementById("territory-clear").addEventListener("click", () => {
+    document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
+    selectedTerritoriesTickets = new Set();
+    updateTicketsTerritorySummary();
+    document.getElementById("territory-details").open = false;
+    renderTable();
+  });
+  document.addEventListener("click", (e) => {
+    const details = document.getElementById("territory-details");
+    if (details.open && !details.contains(e.target)) details.open = false;
+  });
+}
+
+function updateTicketsTerritorySummary() {
+  const summary = document.getElementById("territory-summary");
+  if (selectedTerritoriesTickets.size === 0) {
+    summary.textContent = "All";
+  } else if (selectedTerritoriesTickets.size <= 2) {
+    summary.textContent = Array.from(selectedTerritoriesTickets).sort().join(", ");
+  } else {
+    summary.textContent = `${selectedTerritoriesTickets.size} selected`;
+  }
 }
 
 function renderProjectFilter() {
@@ -40,19 +71,17 @@ function renderProjectFilter() {
 }
 
 function renderTerritoryFilter() {
-  const select = document.getElementById("territory-filter");
+  const container = document.getElementById("territory-checkboxes");
   const territories = new Set();
   for (const project of allData.projects) {
     for (const issue of project.issues) {
       territories.add(issue.territory || "Unassigned");
     }
   }
-  for (const t of Array.from(territories).sort()) {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    select.appendChild(opt);
-  }
+  container.innerHTML = Array.from(territories)
+    .sort()
+    .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
+    .join("");
 }
 
 function renderServiceFilter() {
@@ -80,7 +109,6 @@ function renderTable() {
   const body = document.getElementById("issues-body");
   const emptyState = document.getElementById("empty-state");
   const statusFilter = document.getElementById("status-filter").value;
-  const territoryFilter = document.getElementById("territory-filter").value;
   const serviceFilter = document.getElementById("service-filter").value;
   const searchTerm = document.getElementById("search-filter").value.trim().toLowerCase();
 
@@ -91,8 +119,8 @@ function renderTable() {
   }
 
   if (statusFilter) issues = issues.filter((i) => i.statusCategory === statusFilter);
-  if (territoryFilter) {
-    issues = issues.filter((i) => (i.territory || "Unassigned") === territoryFilter);
+  if (selectedTerritoriesTickets.size > 0) {
+    issues = issues.filter((i) => selectedTerritoriesTickets.has(i.territory || "Unassigned"));
   }
   if (serviceFilter) issues = issues.filter((i) => i.serviceType === serviceFilter);
   if (searchTerm) {

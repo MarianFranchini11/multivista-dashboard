@@ -24,6 +24,7 @@ const MONTH_NAMES = [
 let selectedYear = "2026";
 let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
+let selectedTerritories = new Set();
 
 async function initDashboardPage() {
   let data;
@@ -43,14 +44,13 @@ async function initDashboardPage() {
   updateDueDateSummary();
   renderAll();
 
-  document.getElementById("territory-filter").addEventListener("change", renderAll);
   document.getElementById("service-filter").addEventListener("change", renderAll);
   document.getElementById("status-filter").addEventListener("change", renderAll);
 
   document.getElementById("due-date-apply").addEventListener("click", () => {
     selectedYear = document.getElementById("year-select").value;
     selectedMonths = new Set(
-      Array.from(document.querySelectorAll(".month-checkbox-grid input:checked")).map(
+      Array.from(document.querySelectorAll("#month-checkboxes input:checked")).map(
         (el) => el.value
       )
     );
@@ -61,11 +61,28 @@ async function initDashboardPage() {
 
   document.getElementById("due-date-clear").addEventListener("click", () => {
     document.getElementById("year-select").value = "";
-    document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
+    document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
     selectedYear = "";
     selectedMonths = new Set();
     updateDueDateSummary();
     document.getElementById("due-date-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("territory-apply").addEventListener("click", () => {
+    selectedTerritories = new Set(
+      Array.from(document.querySelectorAll("#territory-checkboxes input:checked")).map((el) => el.value)
+    );
+    updateTerritorySummary();
+    document.getElementById("territory-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("territory-clear").addEventListener("click", () => {
+    document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
+    selectedTerritories = new Set();
+    updateTerritorySummary();
+    document.getElementById("territory-details").open = false;
     renderAll();
   });
 
@@ -79,11 +96,13 @@ async function initDashboardPage() {
   });
 
   document.getElementById("clear-filters").addEventListener("click", () => {
-    document.getElementById("territory-filter").value = "";
+    document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
+    selectedTerritories = new Set();
+    updateTerritorySummary();
     document.getElementById("service-filter").value = "";
     document.getElementById("status-filter").value = "";
     document.getElementById("year-select").value = "";
-    document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
+    document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
     selectedYear = "";
     selectedMonths = new Set();
     selectedTier = "";
@@ -94,10 +113,10 @@ async function initDashboardPage() {
   });
 
   document.addEventListener("click", (e) => {
-    const details = document.getElementById("due-date-details");
-    if (details.open && !details.contains(e.target)) {
-      details.open = false;
-    }
+    ["due-date-details", "territory-details"].forEach((id) => {
+      const details = document.getElementById(id);
+      if (details.open && !details.contains(e.target)) details.open = false;
+    });
   });
 }
 
@@ -114,6 +133,17 @@ function updateDueDateSummary() {
   summary.textContent = parts.length > 0 ? parts.join(" \u00b7 ") : "All";
 }
 
+function updateTerritorySummary() {
+  const summary = document.getElementById("territory-summary");
+  if (selectedTerritories.size === 0) {
+    summary.textContent = "All";
+  } else if (selectedTerritories.size <= 2) {
+    summary.textContent = Array.from(selectedTerritories).sort().join(", ");
+  } else {
+    summary.textContent = `${selectedTerritories.size} selected`;
+  }
+}
+
 function populateFilters(issues) {
   const territories = new Set();
   const services = new Set();
@@ -122,13 +152,11 @@ function populateFilters(issues) {
     if (issue.serviceType) services.add(issue.serviceType);
   }
 
-  const territorySelect = document.getElementById("territory-filter");
-  for (const t of Array.from(territories).sort()) {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    territorySelect.appendChild(opt);
-  }
+  const territoryContainer = document.getElementById("territory-checkboxes");
+  territoryContainer.innerHTML = Array.from(territories)
+    .sort()
+    .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
+    .join("");
 
   const serviceSelect = document.getElementById("service-filter");
   for (const s of Array.from(services).sort()) {
@@ -158,12 +186,11 @@ function populateFilters(issues) {
 }
 
 function getFilteredIssues() {
-  const territory = document.getElementById("territory-filter").value;
   const service = document.getElementById("service-filter").value;
   const status = document.getElementById("status-filter").value;
 
   return allIssues.filter((issue) => {
-    if (territory && (issue.territory || "Unassigned") !== territory) return false;
+    if (selectedTerritories.size > 0 && !selectedTerritories.has(issue.territory || "Unassigned")) return false;
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
     if (selectedTier && priceTier(issue.price) !== selectedTier) return false;

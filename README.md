@@ -85,6 +85,23 @@ Usa las mismas colecciones de Firestore que Resource Management
 (`resources`, `assignments`, `assignment_history`), así que todo queda
 sincronizado en ambos sentidos automáticamente.
 
+## Sobre "Franchise Tracking"
+
+Pestaña nueva, sin PIN (acceso libre, igual que Time Tracking). Sirve para
+las reuniones de seguimiento con franquicias:
+
+- **Log a Meeting**: creás una reunión (fecha + territorio), y le vas
+  agregando ítems — cada uno apunta a un ticket real de Jira o a un
+  "proyecto potencial" nuevo (que se crea al vuelo si no existe), con un
+  comentario y, opcionalmente, marcado como acción con responsable y fecha
+- **Open Action Items**: todas las acciones pendientes de todas las
+  reuniones, ordenadas por fecha, con checkbox para marcarlas hechas
+- **Meeting History**: reuniones pasadas, agrupadas y filtrables por
+  territorio
+
+Usa 3 colecciones nuevas de Firestore: `meetings`, `meeting_items`,
+`potential_projects`. Se crean solas, no hace falta tocar nada en Firebase.
+
 ## Sobre el login
 
 El dashboard pide usuario y contraseña antes de mostrar nada. Las
