@@ -47,7 +47,13 @@ function escapeHtml(str) {
 
 function formatDate(iso) {
   if (!iso) return "\u2014";
-  const d = new Date(iso);
+  // iso is a plain date like "2026-07-24" (no time/timezone). Parsing that
+  // directly with `new Date(iso)` treats it as UTC midnight, which then
+  // renders as the *previous* day in any timezone behind UTC (e.g.
+  // Argentina). Build the Date from the parts instead, in local time, so
+  // the calendar date never shifts regardless of the viewer's timezone.
+  const [year, month, day] = iso.slice(0, 10).split("-").map(Number);
+  const d = new Date(year, month - 1, day);
   return d.toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" });
 }
 

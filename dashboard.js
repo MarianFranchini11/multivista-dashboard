@@ -492,15 +492,6 @@ function dueSoonEffectiveDate(issue) {
   return issue.originalDueDate;
 }
 
-// issue.comments comes from Jira's real comment thread (fetched for
-// active tickets), already sorted newest-first.
-function dueSoonLatestCommentText(issue) {
-  if (!issue.comments || issue.comments.length === 0) return "\u2014";
-  const c = issue.comments[0];
-  const snippet = c.body.length > 70 ? c.body.slice(0, 70).trim() + "\u2026" : c.body;
-  return `${c.author}: ${snippet}`;
-}
-
 function renderDueSoonSection(filteredIssues) {
   const inProgress = filteredIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
   const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
@@ -531,7 +522,7 @@ function renderDueSoonSection(filteredIssues) {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Latest Comment</th><th>Original Due Date</th><th></th></tr>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Original Due Date</th><th></th></tr>
         </thead>
         <tbody>
           ${rows
@@ -539,7 +530,6 @@ function renderDueSoonSection(filteredIssues) {
             .map(({ issue, daysLeft }) => {
               const u = dueSoonUrgency(daysLeft);
               const components = issue.components && issue.components.length ? issue.components.join(", ") : "\u2014";
-              const latestComment = dueSoonLatestCommentText(issue);
               const additionalInfoFull = issue.additionalInfo || "";
               const additionalInfoShort =
                 additionalInfoFull.length > 70 ? additionalInfoFull.slice(0, 70).trim() + "\u2026" : additionalInfoFull || "\u2014";
@@ -550,7 +540,6 @@ function renderDueSoonSection(filteredIssues) {
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
                 <td>${escapeHtml(components)}</td>
                 <td style="max-width:200px;font-size:0.8rem;color:var(--slate);" title="${escapeHtml(additionalInfoFull)}">${escapeHtml(additionalInfoShort)}</td>
-                <td style="max-width:220px;font-size:0.8rem;color:var(--slate);" title="${escapeHtml(issue.comments && issue.comments[0] ? issue.comments[0].author + ': ' + issue.comments[0].body : '')}">${escapeHtml(latestComment)}</td>
                 <td class="col-updated">${formatDate(dueSoonEffectiveDate(issue))}</td>
                 <td><span class="daysbadge-${u}">${dueSoonLabel(daysLeft)}</span></td>
               </tr>`;
