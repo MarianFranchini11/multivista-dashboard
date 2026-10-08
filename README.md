@@ -85,14 +85,25 @@ Usa las mismas colecciones de Firestore que Resource Management
 (`resources`, `assignments`, `assignment_history`), así que todo queda
 sincronizado en ambos sentidos automáticamente.
 
-## Sobre "Flagged Projects"
+## Sobre "Flagged Projects" y el formulario público
 
-Pestaña nueva, sin PIN. Cualquiera (incluida una franquicia) puede
-buscar un proyecto real de Jira y "flaguearlo" con una categoría
-(reclamo de cliente, deadline incumplida, etc.) y una descripción. Se
-guarda en Firestore (colección `flags`) y aparece en una lista
-filtrable por estado/territorio/categoría — click en el proyecto abre
-el mismo recuadro de detalle completo que usan las demás pestañas.
+Son dos páginas distintas que comparten la misma colección de Firestore
+(`flags`):
+
+- **`flag-form.html`** — formulario público, **sin login ni nada de la
+  plataforma visible**. Cualquiera con el link puede buscar un proyecto
+  real de Jira y reportar un problema (categoría + descripción + nombre
+  opcional). Pensado para compartir con las franquicias directamente
+  (por email, etc.) — nunca entran al resto del dashboard.
+- **`flagged-projects.html`** (pestaña "Flagged Projects" en la
+  plataforma, con login) — acá ya no se puede *crear* un flag, solo
+  verlos y gestionarlos: filtrar por estado/territorio/categoría, marcar
+  resuelto/reabrir, y click en el proyecto abre el detalle completo.
+  Arriba de la lista hay un botón para copiar el link al formulario
+  público, para compartirlo.
+
+El link exacto al formulario depende de dónde esté publicado el sitio,
+por ejemplo: `https://tu-usuario.github.io/tu-repo/flag-form.html`
 
 ## Sobre la secci\u00f3n "In Progress: Due Soon & Overdue" (Dashboard)
 

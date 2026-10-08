@@ -50,37 +50,11 @@
 
     <main class="content">
 
-      <section class="rm-add-section">
-        <div class="panel-head">
-          <h2>Report a Flag</h2>
-          <span class="rm-roster-hint">Franchises: use this when a project needs close attention</span>
-        </div>
-
-        <div style="margin-bottom:10px;">
-          <input type="text" id="flag-project-search" class="rm-search" placeholder="Search project by key, Project ID, or name&hellip;" style="width:100%;max-width:420px;box-sizing:border-box;" />
-          <div id="flag-search-results"></div>
-          <div id="flag-selected-target" class="rm-roster-hint" style="margin-top:6px;"></div>
-        </div>
-
-        <form id="flag-form" class="rm-add-form">
-          <div class="rm-field">
-            <label for="flag-category">Category</label>
-            <select id="flag-category">
-              <option>Client complaint</option>
-              <option>Missed deadline</option>
-              <option>Quality issue</option>
-              <option>Needs close follow-up</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="rm-field" style="flex:3;">
-            <label for="flag-description">Description</label>
-            <input type="text" id="flag-description" required placeholder="What's going on with this project?" />
-          </div>
-          <button type="submit" class="rm-add-btn">Flag this project</button>
-        </form>
-        <p id="flag-form-error" class="gate-error" hidden></p>
-      </section>
+      <div class="rm-history-panel" style="margin-top:0;margin-bottom:20px;">
+        New flags come in through a separate, no-login form &mdash; share this link with franchises:
+        <br /><code id="flag-form-link" style="font-size:0.85rem;"></code>
+        <button type="button" id="flag-copy-link-btn" class="clear-filters-btn" style="margin-left:8px;">Copy link</button>
+      </div>
 
       <section class="rm-roster-section">
         <div class="panel-head">

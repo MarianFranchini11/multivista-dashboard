@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Report a Project Issue · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body style="background:var(--canvas);">
+
+  <header class="topbar" style="position:static;">
+    <div class="brand">
+      <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
+      <span class="brand-sub">Report a Project Issue</span>
+    </div>
+  </header>
+
+  <main class="content" style="max-width:560px;">
+
+    <div id="flagform-card" class="tt-identify-card" style="margin:20px auto;max-width:520px;text-align:left;">
+      <h2 style="margin-bottom:4px;">Flag a project</h2>
+      <p class="rm-roster-hint" style="margin-bottom:18px;">Use this if a project needs attention \u2014 a client complaint, a missed deadline, or anything else worth flagging. No login needed.</p>
+
+      <div style="margin-bottom:14px;">
+        <label for="flag-project-search" style="display:block;font-size:0.72rem;font-weight:600;color:var(--slate);text-transform:uppercase;margin-bottom:5px;">Project</label>
+        <input type="text" id="flag-project-search" class="rm-search" placeholder="Search by key, Project ID, or name&hellip;" style="width:100%;box-sizing:border-box;" autocomplete="off" />
+        <div id="flag-search-results"></div>
+        <div id="flag-selected-target" class="rm-roster-hint" style="margin-top:6px;"></div>
+      </div>
+
+      <form id="flag-form">
+        <div style="margin-bottom:14px;">
+          <label for="flag-category" style="display:block;font-size:0.72rem;font-weight:600;color:var(--slate);text-transform:uppercase;margin-bottom:5px;">Category</label>
+          <select id="flag-category" style="width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:3px;font-family:var(--font-body);font-size:0.9rem;box-sizing:border-box;">
+            <option>Client complaint</option>
+            <option>Missed deadline</option>
+            <option>Quality issue</option>
+            <option>Needs close follow-up</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label for="flag-description" style="display:block;font-size:0.72rem;font-weight:600;color:var(--slate);text-transform:uppercase;margin-bottom:5px;">What's going on?</label>
+          <textarea id="flag-description" required placeholder="Describe the issue..." style="width:100%;min-height:90px;padding:9px 10px;border:1px solid var(--line);border-radius:3px;font-family:var(--font-body);font-size:0.9rem;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label for="flag-reporter" style="display:block;font-size:0.72rem;font-weight:600;color:var(--slate);text-transform:uppercase;margin-bottom:5px;">Your name (optional)</label>
+          <input type="text" id="flag-reporter" placeholder="So we know who to follow up with" style="width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:3px;font-family:var(--font-body);font-size:0.9rem;box-sizing:border-box;" />
+        </div>
+        <button type="submit" style="width:100%;padding:12px;border:none;border-radius:3px;background:var(--ink);color:#fff;font-weight:600;font-size:0.95rem;cursor:pointer;">Submit Flag</button>
+      </form>
+      <p id="flag-form-error" class="gate-error" hidden style="margin-top:10px;"></p>
+    </div>
+
+    <div id="flagform-success" class="tt-identify-card" style="display:none;margin:20px auto;max-width:520px;text-align:center;">
+      <h2 style="color:var(--moss);">Thanks \u2014 flag submitted</h2>
+      <p class="rm-roster-hint">Someone from the team will follow up on this.</p>
+      <button type="button" id="flag-another-btn" style="margin-top:10px;padding:10px 18px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink-text);font-weight:600;cursor:pointer;">Flag another project</button>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    This form does not require logging in. For full project management, contact your Hexagon Multivista representative.
+  </footer>
+
+  <script src="shared.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="flag-form.js"></script>
+</body>
+</html>
