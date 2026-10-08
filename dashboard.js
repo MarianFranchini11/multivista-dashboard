@@ -44,14 +44,13 @@ async function initDashboardPage() {
   document.getElementById("year-select").value = selectedYear;
   updateDueDateSummary();
   renderAll();
-  renderDueSoonSection();
 
   document.querySelectorAll("#due-soon-chips .rm-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
       document.querySelectorAll("#due-soon-chips .rm-chip").forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
       dueSoonUrgencyFilter = chip.dataset.urgency;
-      renderDueSoonSection();
+      renderAll();
     });
   });
 
@@ -224,6 +223,7 @@ function renderAll() {
   renderTierChart(issues);
   renderTerritoryBreakdown(issues);
   renderProjectsTable(issues);
+  renderDueSoonSection(issues);
 }
 
 function groupByTerritory(issues) {
@@ -485,11 +485,11 @@ function dueSoonLabel(daysLeft) {
   return `${daysLeft}d left`;
 }
 
-// Original Due Date is the field we calculate against here (it's the one
-// the team actually tracks delays/urgency against); falls back to the
-// native Due Date for tickets where it hasn't been set.
+// Original Due Date is the only field this section calculates against
+// (no fallback) -- tickets where it hasn't been set simply don't appear
+// here, since there's nothing to judge urgency against.
 function dueSoonEffectiveDate(issue) {
-  return issue.originalDueDate || issue.dueDate;
+  return issue.originalDueDate;
 }
 
 // issue.comments comes from Jira's real comment thread (fetched for
@@ -501,8 +501,8 @@ function dueSoonLatestCommentText(issue) {
   return `${c.author}: ${snippet}`;
 }
 
-function renderDueSoonSection() {
-  const inProgress = allIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
+function renderDueSoonSection(filteredIssues) {
+  const inProgress = filteredIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
   const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
   const overdueCount = withUrgency.filter((r) => r.daysLeft < 0).length;
 
@@ -531,7 +531,7 @@ function renderDueSoonSection() {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Latest Comment</th><th>Original Due Date</th><th></th></tr>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Latest Comment</th><th>Original Due Date</th><th></th></tr>
         </thead>
         <tbody>
           ${rows
@@ -540,12 +540,16 @@ function renderDueSoonSection() {
               const u = dueSoonUrgency(daysLeft);
               const components = issue.components && issue.components.length ? issue.components.join(", ") : "\u2014";
               const latestComment = dueSoonLatestCommentText(issue);
+              const additionalInfoFull = issue.additionalInfo || "";
+              const additionalInfoShort =
+                additionalInfoFull.length > 70 ? additionalInfoFull.slice(0, 70).trim() + "\u2026" : additionalInfoFull || "\u2014";
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
                 <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
                 <td>${escapeHtml(issue.projectName)}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
                 <td>${escapeHtml(components)}</td>
+                <td style="max-width:200px;font-size:0.8rem;color:var(--slate);" title="${escapeHtml(additionalInfoFull)}">${escapeHtml(additionalInfoShort)}</td>
                 <td style="max-width:220px;font-size:0.8rem;color:var(--slate);" title="${escapeHtml(issue.comments && issue.comments[0] ? issue.comments[0].author + ': ' + issue.comments[0].body : '')}">${escapeHtml(latestComment)}</td>
                 <td class="col-updated">${formatDate(dueSoonEffectiveDate(issue))}</td>
                 <td><span class="daysbadge-${u}">${dueSoonLabel(daysLeft)}</span></td>

@@ -55,6 +55,7 @@ const CUSTOM_FIELD_NAMES = [
   "Quoted Turnaround",
   "Project ID",
   "Original Due Date",
+  "Additional Info or Comments",
 ];
 
 async function resolveCustomFieldIds() {
@@ -261,6 +262,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       const quotedTurnaroundId = customFieldIds["Quoted Turnaround"];
       const projectIdId = customFieldIds["Project ID"];
       const originalDueDateId = customFieldIds["Original Due Date"];
+      const additionalInfoId = customFieldIds["Additional Info or Comments"];
       const resolutionDate = issue.fields.resolutiondate || null;
       let deliveryStatus = null;
       if (resolutionDate && issue.fields.duedate) {
@@ -299,6 +301,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
           : null,
         projectId: projectIdId ? extractFieldValue(issue.fields[projectIdId]) : null,
         originalDueDate: originalDueDateId ? extractFieldValue(issue.fields[originalDueDateId]) : null,
+        additionalInfo: additionalInfoId ? extractFieldValue(issue.fields[additionalInfoId]) : null,
         components: (issue.fields.components || []).map((c) => c.name),
         inProgressDate: null,
         dataValidatedDate: null,
