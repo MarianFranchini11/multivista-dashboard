@@ -485,9 +485,16 @@ function dueSoonLabel(daysLeft) {
   return `${daysLeft}d left`;
 }
 
+// Original Due Date is the field we calculate against here (it's the one
+// the team actually tracks delays/urgency against); falls back to the
+// native Due Date for tickets where it hasn't been set.
+function dueSoonEffectiveDate(issue) {
+  return issue.originalDueDate || issue.dueDate;
+}
+
 function renderDueSoonSection() {
-  const inProgress = allIssues.filter((i) => i.statusCategory === "In Progress" && i.dueDate);
-  const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(i.dueDate) }));
+  const inProgress = allIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
+  const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
   const overdueCount = withUrgency.filter((r) => r.daysLeft < 0).length;
 
   const banner = document.getElementById("overdue-alert-banner");
@@ -515,19 +522,21 @@ function renderDueSoonSection() {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Due Date</th><th></th></tr>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Original Due Date</th><th></th></tr>
         </thead>
         <tbody>
           ${rows
             .slice(0, 300)
             .map(({ issue, daysLeft }) => {
               const u = dueSoonUrgency(daysLeft);
+              const components = issue.components && issue.components.length ? issue.components.join(", ") : "\u2014";
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
                 <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
                 <td>${escapeHtml(issue.projectName)}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
-                <td class="col-updated">${formatDate(issue.dueDate)}</td>
+                <td>${escapeHtml(components)}</td>
+                <td class="col-updated">${formatDate(dueSoonEffectiveDate(issue))}</td>
                 <td><span class="daysbadge-${u}">${dueSoonLabel(daysLeft)}</span></td>
               </tr>`;
             })
