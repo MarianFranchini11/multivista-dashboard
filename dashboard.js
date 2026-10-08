@@ -16,6 +16,12 @@ let territoryChartInstance = null;
 let statusChartInstance = null;
 let tierChartInstance = null;
 
+// If set (by another page reusing this same script, e.g. Top Franchises)
+// before calling initDashboardPage(), only issues whose territory is in
+// this list are considered at all -- everything else (KPIs, charts, the
+// Due Soon section, the table) is scoped to it automatically.
+let DASHBOARD_SCOPE_TERRITORIES = null;
+
 const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
@@ -39,6 +45,9 @@ async function initDashboardPage() {
 
   renderSyncStatus(data);
   allIssues = flattenIssues(data);
+  if (DASHBOARD_SCOPE_TERRITORIES) {
+    allIssues = allIssues.filter((i) => DASHBOARD_SCOPE_TERRITORIES.includes(i.territory));
+  }
 
   populateFilters(allIssues);
   document.getElementById("year-select").value = selectedYear;
@@ -555,4 +564,3 @@ function renderDueSoonSection(filteredIssues) {
   });
 }
 
-initDashboardPage();

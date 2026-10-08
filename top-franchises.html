@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
     <header class="topbar">
       <div class="brand">
         <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
-        <span class="brand-sub">Project Dashboard</span>
+        <span class="brand-sub">Top Franchises</span>
       </div>
       <nav class="mainnav">
         <a href="index.html" class="nav-link">Dashboard</a>
@@ -43,46 +44,180 @@
         <a href="top-franchises.html" class="nav-link active">Top Franchises</a>
       </nav>
       <div class="sync-status" id="sync-status">
-        <span id="pulse" class="pulse"></span>
-        <span id="sync-text"></span>
+        <span class="pulse" id="pulse"></span>
+        <span id="sync-text">Loading sync status&hellip;</span>
         <button id="logout-btn" class="logout-btn">Log out</button>
       </div>
     </header>
 
     <main class="content">
 
-      <section class="rm-roster-section">
+      <div id="tf-scope-banner" class="rm-history-panel" style="margin-bottom:20px;">
+        Loading franchise scope&hellip;
+      </div>
+
+      <section class="filter-bar">
+        <div class="filter-group">
+          <label for="territory-details">Territory</label>
+          <details id="territory-details" class="due-date-filter">
+            <summary id="territory-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="territory-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="territory-clear">Clear</button>
+                <button type="button" id="territory-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="filter-group">
+          <label for="service-filter">Service type</label>
+          <select id="service-filter">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="status-filter">Status</label>
+          <select id="status-filter">
+            <option value="">All</option>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="due-date-details">Due date</label>
+          <details id="due-date-details" class="due-date-filter">
+            <summary id="due-date-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <label for="year-select">Year</label>
+                <select id="year-select">
+                  <option value="">All years</option>
+                </select>
+              </div>
+              <div class="due-date-panel-row">
+                <label>Months</label>
+                <div id="month-checkboxes" class="month-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="due-date-clear">Clear</button>
+                <button type="button" id="due-date-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <button id="clear-filters" class="clear-filters-btn">Clear filters</button>
+      </section>
+
+      <section class="rm-chip-group" style="margin-bottom:20px;" id="tier-chips">
+        <button type="button" class="rm-chip active" data-tier="">All Tiers</button>
+        <button type="button" class="rm-chip" data-tier="A">Tier A (&le;$7.5k)</button>
+        <button type="button" class="rm-chip" data-tier="B">Tier B ($7.5k&ndash;$20k)</button>
+        <button type="button" class="rm-chip" data-tier="C">Tier C (&gt;$20k)</button>
+      </section>
+
+      <section class="kpi-section">
+        <div class="kpi-grid" id="kpi-grid">
+          <!-- KPI cards injected by dashboard.js -->
+        </div>
+      </section>
+
+      <div id="overdue-alert-banner" class="alert-banner" style="display:none;"></div>
+
+      <details class="rm-roster-section due-soon-details" style="margin-bottom:28px;">
+        <summary class="panel-head due-soon-summary">
+          <h2>In Progress: Due Soon &amp; Overdue <span id="due-soon-count" class="panel-subtitle"></span></h2>
+          <span class="rm-roster-hint">Calculated against Original Due Date only &middot; tickets without it set won't appear here &middot; respects the filters above &middot; click a row for full detail</span>
+        </summary>
+        <div class="rm-chip-group" id="due-soon-chips" style="margin-bottom:14px;margin-top:14px;">
+          <button type="button" class="rm-chip active" data-urgency="">All In Progress</button>
+          <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
+          <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
+          <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
+        </div>
+        <div id="due-soon-list">
+          <!-- injected by dashboard.js -->
+        </div>
+      </details>
+
+      <section class="charts-section">
+        <div class="chart-panel chart-panel-wide">
+          <div class="panel-head">
+            <h2>Tickets by Territory <span class="panel-subtitle">(Top 10)</span></h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="territory-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>Status Breakdown</h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="status-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-panel" style="margin-bottom:28px;">
         <div class="panel-head">
-          <h2>Top Franchises <span id="tf-count" class="panel-subtitle"></span></h2>
-          <span class="rm-roster-hint">Franchises owned by this set of owners &middot; click a row for its ticket breakdown</span>
+          <h2>Project Tier by Territory</h2>
+          <span class="panel-subtitle">A/B/C by Price &middot; see which territories sell more of each tier</span>
         </div>
+        <div class="chart-wrap" style="height:280px;">
+          <canvas id="tier-chart"></canvas>
+        </div>
+      </section>
 
-        <div class="filter-bar" style="margin-bottom:14px;">
-          <div class="filter-group">
-            <label for="tf-owner-filter">Owner</label>
-            <select id="tf-owner-filter"><option value="">All</option></select>
-          </div>
-          <div class="filter-group">
-            <label for="tf-search">Search</label>
-            <input type="text" id="tf-search" class="rm-search" placeholder="Franchise ID, name, or territory&hellip;" />
-          </div>
+      <section class="breakdown-section">
+        <div class="panel-head">
+          <h2>Territory Detail</h2>
         </div>
+        <div id="territory-breakdown" class="territory-list">
+          <!-- rows injected by dashboard.js -->
+        </div>
+      </section>
 
-        <div id="tf-list">
-          <!-- injected by top-franchises.js -->
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>Tickets</h2>
         </div>
+        <div class="table-wrap">
+          <table id="projects-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Project ID</th>
+                <th>Project Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Territory</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody id="projects-body">
+              <!-- rows injected by dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="projects-empty-state" class="empty-state" hidden>No tickets match these filters.</p>
       </section>
 
     </main>
 
     <footer class="footer">
-      Franchise ownership data comes from franchises.json (maintained by hand, not synced from Jira).
+      Same live Jira data as the Dashboard, scoped to this set of franchise owners. Data syncs automatically; this page does not allow editing Jira data.
     </footer>
 
   </div>
 
   <script src="auth.js"></script>
   <script src="shared.js"></script>
+  <script src="dashboard.js"></script>
   <script src="top-franchises.js"></script>
 </body>
 </html>
