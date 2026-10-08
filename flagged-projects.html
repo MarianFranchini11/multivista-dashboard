@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flagged Projects · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <img src="logo.svg" alt="Hexagon Multivista" class="gate-logo" />
+      <h1 class="gate-title">Project Dashboard</h1>
+      <p class="gate-sub">Sign in to continue.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="text" id="gate-username" placeholder="Username" autocomplete="username" />
+        <input type="password" id="gate-password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Incorrect username or password.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
+        <span class="brand-sub">Project Dashboard</span>
+      </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="issues.html" class="nav-link">Tickets</a>
+        <a href="laser-support.html" class="nav-link">3D Laser Support</a>
+        <a href="resource-management.html" class="nav-link">Resource Management</a>
+        <a href="time-tracking.html" class="nav-link">Time Tracking</a>
+        <a href="franchise-tracking.html" class="nav-link">Franchise Tracking</a>
+        <a href="flagged-projects.html" class="nav-link active">Flagged Projects</a>
+      </nav>
+      <div class="sync-status" id="sync-status">
+        <button id="logout-btn" class="logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="rm-add-section">
+        <div class="panel-head">
+          <h2>Report a Flag</h2>
+          <span class="rm-roster-hint">Franchises: use this when a project needs close attention</span>
+        </div>
+
+        <div style="margin-bottom:10px;">
+          <input type="text" id="flag-project-search" class="rm-search" placeholder="Search project by key, Project ID, or name&hellip;" style="width:100%;max-width:420px;box-sizing:border-box;" />
+          <div id="flag-search-results"></div>
+          <div id="flag-selected-target" class="rm-roster-hint" style="margin-top:6px;"></div>
+        </div>
+
+        <form id="flag-form" class="rm-add-form">
+          <div class="rm-field">
+            <label for="flag-category">Category</label>
+            <select id="flag-category">
+              <option>Client complaint</option>
+              <option>Missed deadline</option>
+              <option>Quality issue</option>
+              <option>Needs close follow-up</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="rm-field" style="flex:3;">
+            <label for="flag-description">Description</label>
+            <input type="text" id="flag-description" required placeholder="What's going on with this project?" />
+          </div>
+          <button type="submit" class="rm-add-btn">Flag this project</button>
+        </form>
+        <p id="flag-form-error" class="gate-error" hidden></p>
+      </section>
+
+      <section class="rm-roster-section">
+        <div class="panel-head">
+          <h2>Flagged Projects <span id="flag-count" class="panel-subtitle"></span></h2>
+          <span class="rm-roster-hint">Click a row to see full project detail</span>
+        </div>
+
+        <div class="rm-chip-group" id="flag-status-chips" style="margin-bottom:14px;">
+          <button type="button" class="rm-chip active" data-status="open">Open</button>
+          <button type="button" class="rm-chip" data-status="resolved">Resolved</button>
+          <button type="button" class="rm-chip" data-status="">All</button>
+        </div>
+
+        <div class="filter-bar" style="margin-bottom:14px;">
+          <div class="filter-group">
+            <label for="flag-territory-filter">Territory</label>
+            <select id="flag-territory-filter"><option value="">All</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="flag-category-filter">Category</label>
+            <select id="flag-category-filter"><option value="">All</option></select>
+          </div>
+        </div>
+
+        <div id="flags-list">
+          <!-- injected by flagged-projects.js -->
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Flags are stored in Firebase and linked to the live Jira ticket.
+    </footer>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="shared.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="flagged-projects.js"></script>
+</body>
+</html>

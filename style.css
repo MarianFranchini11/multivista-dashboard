@@ -1514,6 +1514,20 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   .rm-deadlinedate, .rm-crew { display: none; }
 }
 
+.alert-banner {
+  background: #F6D9D0;
+  border: 1px solid #E8B4A3;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  color: #8A2A17;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ===== KPI cards ===== */
 .kpi-section { margin-bottom: 28px; }
 

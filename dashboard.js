@@ -25,6 +25,7 @@ let selectedYear = "2026";
 let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
 let selectedTerritories = new Set();
+let dueSoonUrgencyFilter = "";
 
 async function initDashboardPage() {
   let data;
@@ -43,6 +44,16 @@ async function initDashboardPage() {
   document.getElementById("year-select").value = selectedYear;
   updateDueDateSummary();
   renderAll();
+  renderDueSoonSection();
+
+  document.querySelectorAll("#due-soon-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#due-soon-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      dueSoonUrgencyFilter = chip.dataset.urgency;
+      renderDueSoonSection();
+    });
+  });
 
   document.getElementById("service-filter").addEventListener("change", renderAll);
   document.getElementById("status-filter").addEventListener("change", renderAll);
@@ -450,6 +461,85 @@ function renderProjectsTable(issues) {
     tr.addEventListener("click", () => openProjectModal(issue));
     body.appendChild(tr);
   }
+}
+
+// ===== In Progress: Due Soon & Overdue (proactive alert section) =====
+// Deliberately independent of the filter bar above -- always shows the
+// true current picture of every In Progress ticket's due date, so it
+// can't accidentally get hidden by someone else's filter choice.
+function dueSoonDaysLeft(dueDate) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const due = new Date(dueDate + "T00:00:00");
+  return Math.round((due - today) / 86400000);
+}
+function dueSoonUrgency(daysLeft) {
+  if (daysLeft < 0) return "overdue";
+  if (daysLeft <= 7) return "urgent";
+  if (daysLeft <= 21) return "soon";
+  return "ok";
+}
+function dueSoonLabel(daysLeft) {
+  if (daysLeft < 0) return `Overdue by ${Math.abs(daysLeft)}d`;
+  if (daysLeft === 0) return "Due today";
+  return `${daysLeft}d left`;
+}
+
+function renderDueSoonSection() {
+  const inProgress = allIssues.filter((i) => i.statusCategory === "In Progress" && i.dueDate);
+  const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(i.dueDate) }));
+  const overdueCount = withUrgency.filter((r) => r.daysLeft < 0).length;
+
+  const banner = document.getElementById("overdue-alert-banner");
+  if (overdueCount > 0) {
+    banner.style.display = "flex";
+    banner.innerHTML = `&#9888; ${overdueCount} In Progress project${overdueCount === 1 ? "" : "s"} ${overdueCount === 1 ? "is" : "are"} past its due date \u2014 action needed.`;
+  } else {
+    banner.style.display = "none";
+  }
+
+  let rows = withUrgency;
+  if (dueSoonUrgencyFilter) rows = rows.filter((r) => dueSoonUrgency(r.daysLeft) === dueSoonUrgencyFilter);
+  rows.sort((a, b) => a.daysLeft - b.daysLeft);
+
+  const countEl = document.getElementById("due-soon-count");
+  if (countEl) countEl.textContent = `(${rows.length} of ${inProgress.length})`;
+
+  const container = document.getElementById("due-soon-list");
+  if (rows.length === 0) {
+    container.innerHTML = `<p class="empty-state">No In Progress tickets match this filter.</p>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Due Date</th><th></th></tr>
+        </thead>
+        <tbody>
+          ${rows
+            .slice(0, 300)
+            .map(({ issue, daysLeft }) => {
+              const u = dueSoonUrgency(daysLeft);
+              return `<tr class="clickable-row" data-key="${issue.key}">
+                <td class="col-key">${issue.key}</td>
+                <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
+                <td>${escapeHtml(issue.projectName)}</td>
+                <td>${escapeHtml(issue.territory || "Unassigned")}</td>
+                <td class="col-updated">${formatDate(issue.dueDate)}</td>
+                <td><span class="daysbadge-${u}">${dueSoonLabel(daysLeft)}</span></td>
+              </tr>`;
+            })
+            .join("")}
+        </tbody>
+      </table>
+    </div>`;
+
+  container.querySelectorAll("tr[data-key]").forEach((row) => {
+    const issue = allIssues.find((i) => i.key === row.dataset.key);
+    if (issue) row.addEventListener("click", () => openProjectModal(issue));
+  });
 }
 
 initDashboardPage();

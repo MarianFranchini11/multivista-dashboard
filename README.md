@@ -85,6 +85,22 @@ Usa las mismas colecciones de Firestore que Resource Management
 (`resources`, `assignments`, `assignment_history`), así que todo queda
 sincronizado en ambos sentidos automáticamente.
 
+## Sobre "Flagged Projects"
+
+Pestaña nueva, sin PIN. Cualquiera (incluida una franquicia) puede
+buscar un proyecto real de Jira y "flaguearlo" con una categoría
+(reclamo de cliente, deadline incumplida, etc.) y una descripción. Se
+guarda en Firestore (colección `flags`) y aparece en una lista
+filtrable por estado/territorio/categoría — click en el proyecto abre
+el mismo recuadro de detalle completo que usan las demás pestañas.
+
+## Sobre la secci\u00f3n "In Progress: Due Soon & Overdue" (Dashboard)
+
+Nueva sección fija en el Dashboard, independiente de los filtros de
+arriba — siempre muestra el panorama real de todos los tickets "In
+Progress" según su fecha de entrega. Si hay alguno vencido, aparece un
+banner de alerta rojo arriba de todo.
+
 ## Sobre "Franchise Tracking"
 
 Pestaña nueva, sin PIN (acceso libre, igual que Time Tracking). Sirve para
