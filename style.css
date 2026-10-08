@@ -1589,6 +1589,23 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 
 .panel-head { margin-bottom: 14px; }
 
+.due-soon-summary {
+  cursor: pointer;
+  list-style: none;
+}
+.due-soon-summary::-webkit-details-marker { display: none; }
+.due-soon-summary h2::before {
+  content: "\25B8";
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--slate);
+  font-size: 0.8rem;
+  transition: transform 0.15s ease;
+}
+.due-soon-details[open] .due-soon-summary h2::before {
+  transform: rotate(90deg);
+}
+
 .panel-head h2 {
   font-size: 1rem;
   letter-spacing: -0.01em;

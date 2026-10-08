@@ -1,0 +1,860 @@
+[
+  {
+    "franchiseId": "BC01",
+    "legalName": "Multivista Construction Documentation ULC",
+    "territories": [
+      "BC01",
+      "BC03"
+    ],
+    "owners": [
+      "Luis Pascual"
+    ]
+  },
+  {
+    "franchiseId": "TX02",
+    "legalName": "Multivista Documentation Technologies LLC",
+    "territories": [
+      "TX02"
+    ],
+    "owners": [
+      "Luis Pascual"
+    ]
+  },
+  {
+    "franchiseId": "ON01",
+    "legalName": "1764129 Ontario Ltd",
+    "territories": [
+      "ON01"
+    ],
+    "owners": [
+      "Luis Pascual"
+    ]
+  },
+  {
+    "franchiseId": "KY01",
+    "legalName": "MVK Limited",
+    "territories": [
+      "KY01",
+      "KY02"
+    ],
+    "owners": [
+      "Mark Oldenquist"
+    ]
+  },
+  {
+    "franchiseId": "NY01",
+    "legalName": "Blue Water Management LLC",
+    "territories": [
+      "NY01"
+    ],
+    "owners": [
+      "Jonathan Zogby",
+      "Stephen McGlynn"
+    ]
+  },
+  {
+    "franchiseId": "NA36",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA36"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Maria Dalmaso"
+    ]
+  },
+  {
+    "franchiseId": "NA30",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA30"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Brent Pearce"
+    ]
+  },
+  {
+    "franchiseId": "NA28",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA28"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Paul Viverette"
+    ]
+  },
+  {
+    "franchiseId": "NA24",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA24"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Brent Pearce"
+    ]
+  },
+  {
+    "franchiseId": "NA23",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA23"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Adam LaCoste"
+    ]
+  },
+  {
+    "franchiseId": "NA19",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA19"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Brandon Colvin"
+    ]
+  },
+  {
+    "franchiseId": "NA18",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA18"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Brett Feemster"
+    ]
+  },
+  {
+    "franchiseId": "NA08",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA08"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Brett Feemster"
+    ]
+  },
+  {
+    "franchiseId": "NA05",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA05"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Paul Viverette"
+    ]
+  },
+  {
+    "franchiseId": "NA04",
+    "legalName": "MVS National Accounts",
+    "territories": [
+      "NA04"
+    ],
+    "owners": [
+      "Meghan McPherson",
+      "Paul Viverette"
+    ]
+  },
+  {
+    "franchiseId": "AB01",
+    "legalName": "WoodRose Photographic Documentation LTD",
+    "territories": [
+      "AB01"
+    ],
+    "owners": [
+      "Gaurav Bajaj"
+    ]
+  },
+  {
+    "franchiseId": "AB02",
+    "legalName": "WoodRose Photographic Documentation LTD",
+    "territories": [
+      "AB02"
+    ],
+    "owners": [
+      "Gaurav Bajaj"
+    ]
+  },
+  {
+    "franchiseId": "AL01",
+    "legalName": "BamaView, LLC",
+    "territories": [
+      "AL01"
+    ],
+    "owners": [
+      "Brandon Colvin",
+      "Brent Pearce",
+      "JD Lott"
+    ]
+  },
+  {
+    "franchiseId": "FL01",
+    "legalName": "Premium Documentation LLC",
+    "territories": [
+      "FL01"
+    ],
+    "owners": [
+      "Reef Tanagho"
+    ]
+  },
+  {
+    "franchiseId": "FL03",
+    "legalName": "TampaView LLC",
+    "territories": [
+      "FL03"
+    ],
+    "owners": [
+      "Brent Pearce",
+      "Reef Tanagho",
+      "Rob Tanagho"
+    ]
+  },
+  {
+    "franchiseId": "CO01",
+    "legalName": "Centennial Documentation LLC",
+    "territories": [
+      "CO01"
+    ],
+    "owners": [
+      "JD Lott",
+      "Andrew Duffell",
+      "Brent Pearce"
+    ]
+  },
+  {
+    "franchiseId": "GA01",
+    "legalName": "Integrated Documentation Services LLC",
+    "territories": [
+      "GA01"
+    ],
+    "owners": [
+      "Brent Pearce"
+    ]
+  },
+  {
+    "franchiseId": "IL02",
+    "legalName": "Gateway Documentation Services, LLC",
+    "territories": [
+      "IL02",
+      "MO03"
+    ],
+    "owners": [
+      "Brandon Colvin",
+      "Brent Pearce",
+      "JD Lott"
+    ]
+  },
+  {
+    "franchiseId": "LA01",
+    "legalName": "CrescentView, LLC",
+    "territories": [
+      "LA01",
+      "AL02"
+    ],
+    "owners": [
+      "Brandon Colvin",
+      "Brent Pearce",
+      "JD Lott"
+    ]
+  },
+  {
+    "franchiseId": "MN01",
+    "legalName": "D&B Enterprises LLC",
+    "territories": [
+      "MN01"
+    ],
+    "owners": [
+      "Don Cate",
+      "Richard Noble"
+    ]
+  },
+  {
+    "franchiseId": "PRI01",
+    "legalName": "Capture Caribe LLC, a Puerto Rico limited liability company",
+    "territories": [
+      "PRI01"
+    ],
+    "owners": [
+      "AJ Torres",
+      "Brent Pearce"
+    ]
+  },
+  {
+    "franchiseId": "NC01",
+    "legalName": "Constructview LLC",
+    "territories": [
+      "NC01"
+    ],
+    "owners": [
+      "Paul Viverette",
+      "Zack Sallinger"
+    ]
+  },
+  {
+    "franchiseId": "NC02",
+    "legalName": "Capture Carolina, LLC",
+    "territories": [
+      "NC02"
+    ],
+    "owners": [
+      "Brent Pearce",
+      "Brett Feemster",
+      "JD Lott",
+      "Paul Viverette",
+      "Zack Sallinger"
+    ]
+  },
+  {
+    "franchiseId": "SC01",
+    "legalName": "Upstate Documentation Services LLC",
+    "territories": [
+      "SC01"
+    ],
+    "owners": [
+      "Brent Pearce",
+      "Brett Feemster",
+      "Zack Alderson"
+    ]
+  },
+  {
+    "franchiseId": "SRB01",
+    "legalName": "Vekom Reality Capture doo Beograd, a Limited Liability Company",
+    "territories": [
+      "SRB01"
+    ],
+    "owners": [
+      "Elena Fustic",
+      "Veljko Fustic"
+    ]
+  },
+  {
+    "franchiseId": "AUS04",
+    "legalName": "Build Life-Cycle Solutions PTY Ltd.",
+    "territories": [
+      "AUS04"
+    ],
+    "owners": [
+      "Jeremy Meeks",
+      "Kristy Chivers",
+      "Luke Chivers"
+    ]
+  },
+  {
+    "franchiseId": "GBR07",
+    "legalName": "Reality Capture Midlands LTD",
+    "territories": [
+      "GBR07"
+    ],
+    "owners": [
+      "Charles Hill",
+      "Karl Pallas"
+    ]
+  },
+  {
+    "franchiseId": "GBR09",
+    "legalName": "Reality Capture East LTD",
+    "territories": [
+      "GBR09"
+    ],
+    "owners": [
+      "Charles Hill",
+      "Karl Pallas"
+    ]
+  },
+  {
+    "franchiseId": "GBR10",
+    "legalName": "Reality Capture SE LTD",
+    "territories": [
+      "GBR10"
+    ],
+    "owners": [
+      "Charles Hill",
+      "Karl Pallas"
+    ]
+  },
+  {
+    "franchiseId": "GBR11",
+    "legalName": "Reality Capture West LTD",
+    "territories": [
+      "GBR11"
+    ],
+    "owners": [
+      "Charles Hill",
+      "Karl Pallas"
+    ]
+  },
+  {
+    "franchiseId": "BC02",
+    "legalName": "Kelly Radawetz dba Multivista - Thompson Okanagan",
+    "territories": [
+      "BC02"
+    ],
+    "owners": [
+      "Kelly Radawetz"
+    ]
+  },
+  {
+    "franchiseId": "CA07",
+    "legalName": "Angelview LLC",
+    "territories": [
+      "CA07"
+    ],
+    "owners": [
+      "Brad Avrit",
+      "Louie Galvan",
+      "Michael Walmsley"
+    ]
+  },
+  {
+    "franchiseId": "CA01",
+    "legalName": "Pine Pacific Services LLC",
+    "territories": [
+      "CA01",
+      "CA03"
+    ],
+    "owners": [
+      "Andrew Duffell"
+    ]
+  },
+  {
+    "franchiseId": "CA02",
+    "legalName": "Pine Pacific Services LLC",
+    "territories": [
+      "CA02"
+    ],
+    "owners": [
+      "Andrew Duffell"
+    ]
+  },
+  {
+    "franchiseId": "OR01",
+    "legalName": "Multivista, LLC",
+    "territories": [
+      "OR01"
+    ],
+    "owners": [
+      "Michael Walmsley"
+    ]
+  },
+  {
+    "franchiseId": "AZ02",
+    "legalName": "Construction Reality Capture LLC",
+    "territories": [
+      "AZ02"
+    ],
+    "owners": [
+      "David Stadnik",
+      "Jason Stadnik"
+    ]
+  },
+  {
+    "franchiseId": "UT01",
+    "legalName": "Construction Reality Capture LLC",
+    "territories": [
+      "UT01"
+    ],
+    "owners": [
+      "David Stadnik",
+      "Jason Stadnik"
+    ]
+  },
+  {
+    "franchiseId": "NV01",
+    "legalName": "Construction Reality Capture LLC",
+    "territories": [
+      "NV01"
+    ],
+    "owners": [
+      "David Stadnik",
+      "Jason Stadnik"
+    ]
+  },
+  {
+    "franchiseId": "GBR06",
+    "legalName": "Reality Capture Yorkshire LTD",
+    "territories": [
+      "GBR06"
+    ],
+    "owners": [
+      "Alan Bryant",
+      "Markk Donnelly",
+      "Paul Mclaughlin"
+    ]
+  },
+  {
+    "franchiseId": "WI01",
+    "legalName": "JDR Construction Documentation LLC",
+    "territories": [
+      "WI01"
+    ],
+    "owners": [
+      "Don Cate",
+      "Richard Noble"
+    ]
+  },
+  {
+    "franchiseId": "WA01",
+    "legalName": "AW Documentation, LLC",
+    "territories": [
+      "WA01"
+    ],
+    "owners": [
+      "Aaron Weaver"
+    ]
+  },
+  {
+    "franchiseId": "VA01",
+    "legalName": "Dominion Documentation LLC",
+    "territories": [
+      "DC01",
+      "VA01"
+    ],
+    "owners": [
+      "Brent Pearce",
+      "JD Lott"
+    ]
+  },
+  {
+    "franchiseId": "TX03",
+    "legalName": "LoneStar Documentation, LLC",
+    "territories": [
+      "TX03"
+    ],
+    "owners": [
+      "Farah Armstrong",
+      "Patrick Armstrong"
+    ]
+  },
+  {
+    "franchiseId": "TX01",
+    "legalName": "Austin Construction Documentation, LLC",
+    "territories": [
+      "TX01"
+    ],
+    "owners": [
+      "Andrew Duffell"
+    ]
+  },
+  {
+    "franchiseId": "TX07",
+    "legalName": "Austin Construction Documentation, LLC",
+    "territories": [
+      "TX07"
+    ],
+    "owners": [
+      "Andrew Duffell"
+    ]
+  },
+  {
+    "franchiseId": "TN02",
+    "legalName": "Tennessee 2 Documentation Services LLC",
+    "territories": [
+      "AR01",
+      "MS01",
+      "TN02"
+    ],
+    "owners": [
+      "Brandon Colvin",
+      "Brent Pearce",
+      "JD Lott"
+    ]
+  },
+  {
+    "franchiseId": "TN01",
+    "legalName": "Tennessee Documentation Services LLC",
+    "territories": [
+      "TN01"
+    ],
+    "owners": [
+      "Brannon Vann",
+      "Daniel Ryan"
+    ]
+  },
+  {
+    "franchiseId": "PAN01",
+    "legalName": "Documentacion de Construccion, S.A.",
+    "territories": [
+      "PAN01"
+    ],
+    "owners": [
+      "Angel Davila"
+    ]
+  },
+  {
+    "franchiseId": "PA01",
+    "legalName": "JD Digital Documentation LLC",
+    "territories": [
+      "PA01",
+      "PA02",
+      "NJ01",
+      "PA03"
+    ],
+    "owners": [
+      "Jeff Davis",
+      "Justin Davis"
+    ]
+  },
+  {
+    "franchiseId": "ON03",
+    "legalName": "2409367 Ontario Inc.",
+    "territories": [
+      "ON03"
+    ],
+    "owners": [
+      "Huw Roberts"
+    ]
+  },
+  {
+    "franchiseId": "OH01",
+    "legalName": "MVC Limited",
+    "territories": [
+      "OH01",
+      "OH02",
+      "OH03"
+    ],
+    "owners": [
+      "Mark Oldenquist"
+    ]
+  },
+  {
+    "franchiseId": "NJ02",
+    "legalName": "TD-NJ LLC",
+    "territories": [
+      "NJ02"
+    ],
+    "owners": [
+      "Clayton Schuller"
+    ]
+  },
+  {
+    "franchiseId": "NY02",
+    "legalName": "NY DOC TECH LLC",
+    "territories": [
+      "NY02"
+    ],
+    "owners": [
+      "Clayton Schuller"
+    ]
+  },
+  {
+    "franchiseId": "NE01",
+    "legalName": "Bollig & Sons LLC",
+    "territories": [
+      "NE01"
+    ],
+    "owners": [
+      "Jon Weber",
+      "Russ Bollig"
+    ]
+  },
+  {
+    "franchiseId": "MO01",
+    "legalName": "TS Engineering Group, LLC",
+    "territories": [
+      "MO01"
+    ],
+    "owners": [
+      "Dan Jehlik",
+      "David Murrell"
+    ]
+  },
+  {
+    "franchiseId": "MD01",
+    "legalName": "BuildView LLC",
+    "territories": [
+      "MD01"
+    ],
+    "owners": [
+      "Jason Donahoe"
+    ]
+  },
+  {
+    "franchiseId": "WV01",
+    "legalName": "BuildView LLC",
+    "territories": [
+      "WV01"
+    ],
+    "owners": [
+      "Jason Donahoe"
+    ]
+  },
+  {
+    "franchiseId": "MA01",
+    "legalName": "MA Construction Tech LLC",
+    "territories": [
+      "MA01"
+    ],
+    "owners": [
+      "Clayton Schuller"
+    ]
+  },
+  {
+    "franchiseId": "IN01",
+    "legalName": "MVIN Limited",
+    "territories": [
+      "IN01"
+    ],
+    "owners": [
+      "Chris Winter",
+      "Mark Oldenquist"
+    ]
+  },
+  {
+    "franchiseId": "IL01",
+    "legalName": "Munsterman Services, LLC",
+    "territories": [
+      "IL01",
+      "IL03"
+    ],
+    "owners": [
+      "Paul Munsterman"
+    ]
+  },
+  {
+    "franchiseId": "IA01",
+    "legalName": "NBC Construction Documentation LLC",
+    "territories": [
+      "IA01"
+    ],
+    "owners": [
+      "Jon Weber"
+    ]
+  },
+  {
+    "franchiseId": "GBR04",
+    "legalName": "Construction Documentation North West Ltd",
+    "territories": [
+      "GBR04"
+    ],
+    "owners": [
+      "Alan Bryant",
+      "Markk Donnelly",
+      "Paul Mclaughlin"
+    ]
+  },
+  {
+    "franchiseId": "GBR02",
+    "legalName": "Built Environment Reality Capture",
+    "territories": [
+      "GBR02"
+    ],
+    "owners": [
+      "Charles Hill",
+      "Karl Pallas"
+    ]
+  },
+  {
+    "franchiseId": "GBR01",
+    "legalName": "Construction Photo Documentation Scotland Ltd",
+    "territories": [
+      "GBR01"
+    ],
+    "owners": [
+      "Alan Bryant",
+      "Markk Donnelly",
+      "Paul Mclaughlin"
+    ]
+  },
+  {
+    "franchiseId": "FL04",
+    "legalName": "Double A Documentation Services LLC",
+    "territories": [
+      "FL04",
+      "FL05"
+    ],
+    "owners": [
+      "Aaron Hapner",
+      "Adam LaCoste"
+    ]
+  },
+  {
+    "franchiseId": "FL02",
+    "legalName": "Miami View of South Florida LLC",
+    "territories": [
+      "FL02"
+    ],
+    "owners": [
+      "Kristi Vick"
+    ]
+  },
+  {
+    "franchiseId": "ESP01",
+    "legalName": "Voyansi EU SL",
+    "territories": [
+      "ESP01"
+    ],
+    "owners": []
+  },
+  {
+    "franchiseId": "DE01",
+    "legalName": "Donahoe and Donahoe Inc.",
+    "territories": [
+      "DE01"
+    ],
+    "owners": [
+      "Jason Donahoe"
+    ]
+  },
+  {
+    "franchiseId": "CT01",
+    "legalName": "TD-CT LLC",
+    "territories": [
+      "CT01"
+    ],
+    "owners": [
+      "Clayton Schuller"
+    ]
+  },
+  {
+    "franchiseId": "CA10",
+    "legalName": "Diegoview LLC",
+    "territories": [
+      "CA10"
+    ],
+    "owners": [
+      "Brad Avrit",
+      "Louie Galvan",
+      "Michael Walmsley"
+    ]
+  },
+  {
+    "franchiseId": "CA08",
+    "legalName": "OCview LLC",
+    "territories": [
+      "CA08"
+    ],
+    "owners": [
+      "Brad Avrit",
+      "Louie Galvan",
+      "Michael Walmsley"
+    ]
+  },
+  {
+    "franchiseId": "BHR01",
+    "legalName": "GULF VISTA VIEWING SOLUTIONS, A JOINT VENTURE, W.L.L",
+    "territories": [
+      "BHR01"
+    ],
+    "owners": [
+      "Mohamed AlYaquby",
+      "Mohamed Najibi"
+    ]
+  },
+  {
+    "franchiseId": "GA02",
+    "legalName": "Low Country Documentation Services LLC",
+    "territories": [
+      "GA02"
+    ],
+    "owners": [
+      "Brett Feemster"
+    ]
+  }
+]

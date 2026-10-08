@@ -41,6 +41,7 @@
         <a href="time-tracking.html" class="nav-link">Time Tracking</a>
         <a href="franchise-tracking.html" class="nav-link">Franchise Tracking</a>
         <a href="flagged-projects.html" class="nav-link">Flagged Projects</a>
+        <a href="top-franchises.html" class="nav-link">Top Franchises</a>
       </nav>
       <div class="sync-status" id="sync-status">
         <span class="pulse" id="pulse"></span>
@@ -122,12 +123,12 @@
 
       <div id="overdue-alert-banner" class="alert-banner" style="display:none;"></div>
 
-      <section class="rm-roster-section" style="margin-bottom:28px;">
-        <div class="panel-head">
+      <details class="rm-roster-section due-soon-details" style="margin-bottom:28px;">
+        <summary class="panel-head due-soon-summary">
           <h2>In Progress: Due Soon &amp; Overdue <span id="due-soon-count" class="panel-subtitle"></span></h2>
           <span class="rm-roster-hint">Calculated against Original Due Date only &middot; tickets without it set won't appear here &middot; respects the filters above &middot; click a row for full detail</span>
-        </div>
-        <div class="rm-chip-group" id="due-soon-chips" style="margin-bottom:14px;">
+        </summary>
+        <div class="rm-chip-group" id="due-soon-chips" style="margin-bottom:14px;margin-top:14px;">
           <button type="button" class="rm-chip active" data-urgency="">All In Progress</button>
           <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
           <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
@@ -136,7 +137,7 @@
         <div id="due-soon-list">
           <!-- injected by dashboard.js -->
         </div>
-      </section>
+      </details>
 
       <section class="charts-section">
         <div class="chart-panel chart-panel-wide">

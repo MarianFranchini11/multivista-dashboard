@@ -11,6 +11,89 @@ let ftPotentialProjects = [];
 let ftActiveMeetingId = null;
 let ftSelectedTarget = null; // { type: "jira"|"potential", key, label }
 let ftSubTab = "log";
+let ftEditingItemId = null;
+
+// Renders one meeting item, either as a static panel or (if it's the one
+// being edited) as an inline edit form. Shared by the active-meeting view
+// and Meeting History, so edit/delete works the same in both places.
+function renderMeetingItemHtml(it) {
+  if (it.id === ftEditingItemId) {
+    return `
+    <div class="rm-history-panel" style="margin-top:0;margin-bottom:8px;">
+      <div style="font-size:0.8rem;font-weight:600;margin-bottom:6px;">${escapeHtml(it.targetLabel)}</div>
+      <textarea data-edititemcomment style="width:100%;min-height:50px;padding:6px;border:1px solid var(--line);border-radius:3px;font-size:0.85rem;box-sizing:border-box;margin-bottom:6px;">${escapeHtml(it.comment)}</textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px;">
+        <label style="font-size:0.82rem;display:flex;align-items:center;gap:5px;"><input type="checkbox" data-edititemaction ${it.isAction ? "checked" : ""} /> Action item</label>
+        <input type="text" data-edititemowner placeholder="Owner" value="${ftEscapeAttr(it.actionOwner || "")}" style="padding:6px 8px;border:1px solid var(--line);border-radius:3px;font-size:0.8rem;width:130px;" />
+        <input type="date" data-edititemdue value="${escapeHtml(it.actionDueDate || "")}" style="padding:6px 8px;border:1px solid var(--line);border-radius:3px;font-size:0.8rem;" />
+      </div>
+      <button type="button" class="rm-add-btn" data-saveitem="${it.id}">Save</button>
+      <button type="button" class="clear-filters-btn" data-cancelitem="${it.id}">Cancel</button>
+    </div>`;
+  }
+  return `
+    <div class="rm-history-panel" style="margin-top:0;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <div>
+        <strong>${escapeHtml(it.targetLabel)}</strong> &mdash; ${escapeHtml(it.comment)}
+        ${it.isAction ? `<span class="rm-pacepill ${it.actionStatus === "done" ? "rm-pace-pace" : "rm-pace-under"}" style="margin-left:6px;">${it.actionStatus === "done" ? "DONE" : "ACTION"}: ${escapeHtml(it.actionOwner || "?")} by ${escapeHtml(it.actionDueDate || "?")}</span>` : ""}
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button type="button" class="clear-filters-btn" data-edititem="${it.id}">Edit</button>
+        <button type="button" class="clear-filters-btn" data-deleteitem="${it.id}" style="color:#8A2A17;border-color:#8A2A17;">Delete</button>
+      </div>
+    </div>`;
+}
+
+// Attaches edit/save/cancel/delete handlers for meeting-item rows inside
+// any container -- call this after setting innerHTML wherever
+// renderMeetingItemHtml was used.
+function wireMeetingItemHandlers(container, onDone) {
+  container.querySelectorAll("[data-edititem]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      ftEditingItemId = btn.dataset.edititem;
+      onDone();
+    });
+  });
+  container.querySelectorAll("[data-cancelitem]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      ftEditingItemId = null;
+      onDone();
+    });
+  });
+  container.querySelectorAll("[data-saveitem]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const id = btn.dataset.saveitem;
+      const panel = btn.closest(".rm-history-panel");
+      const comment = panel.querySelector("[data-edititemcomment]").value.trim();
+      const isAction = panel.querySelector("[data-edititemaction]").checked;
+      const owner = panel.querySelector("[data-edititemowner]").value.trim();
+      const due = panel.querySelector("[data-edititemdue]").value;
+      if (!comment) return;
+      try {
+        await db.collection("meeting_items").doc(id).update({
+          comment,
+          isAction,
+          actionOwner: isAction ? owner : "",
+          actionDueDate: isAction ? due : "",
+          actionStatus: isAction ? (ftItems.find((i) => i.id === id).actionStatus || "open") : "",
+        });
+        ftEditingItemId = null;
+      } catch (err) {
+        alert(`Could not save changes: ${err.message}`);
+      }
+    });
+  });
+  container.querySelectorAll("[data-deleteitem]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      if (!confirm("Delete this item? This can't be undone.")) return;
+      try {
+        await db.collection("meeting_items").doc(btn.dataset.deleteitem).delete();
+      } catch (err) {
+        alert(`Could not delete: ${err.message}`);
+      }
+    });
+  });
+}
 
 function ftEscapeAttr(str) {
   return escapeHtml(str).replace(/"/g, "&quot;");
@@ -297,15 +380,8 @@ function renderActiveMeetingItems() {
     return;
   }
 
-  container.innerHTML = items
-    .map(
-      (it) => `
-    <div class="rm-history-panel" style="margin-top:0;margin-bottom:8px;">
-      <strong>${escapeHtml(it.targetLabel)}</strong> &mdash; ${escapeHtml(it.comment)}
-      ${it.isAction ? `<span class="rm-pacepill rm-pace-under" style="margin-left:6px;">ACTION: ${escapeHtml(it.actionOwner || "?")} by ${escapeHtml(it.actionDueDate || "?")}</span>` : ""}
-    </div>`
-    )
-    .join("");
+  container.innerHTML = items.map(renderMeetingItemHtml).join("");
+  wireMeetingItemHandlers(container, renderActiveMeetingItems);
 }
 
 // ---- Open Action Items tab ----
@@ -328,7 +404,7 @@ function renderActionItems() {
   container.innerHTML = `
     <div class="table-wrap">
       <table>
-        <thead><tr><th></th><th>Project</th><th>Action</th><th>Owner</th><th>Due</th><th>Territory</th></tr></thead>
+        <thead><tr><th></th><th>Project</th><th>Action</th><th>Owner</th><th>Due</th><th>Territory</th><th></th></tr></thead>
         <tbody>
           ${actions
             .map(
@@ -340,6 +416,7 @@ function renderActionItems() {
               <td>${escapeHtml(it.actionOwner || "\u2014")}</td>
               <td class="col-updated">${escapeHtml(it.actionDueDate || "\u2014")}</td>
               <td>${escapeHtml(it.territory || "\u2014")}</td>
+              <td><button type="button" class="clear-filters-btn" data-deleteaction="${it.id}" style="color:#8A2A17;border-color:#8A2A17;">Delete</button></td>
             </tr>`
             )
             .join("")}
@@ -354,6 +431,16 @@ function renderActionItems() {
         await db.collection("meeting_items").doc(e.target.dataset.id).update({ actionStatus: "done" });
       } catch (err) {
         alert(`Could not update: ${err.message}`);
+      }
+    });
+  });
+  container.querySelectorAll("[data-deleteaction]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      if (!confirm("Delete this action item? This can't be undone.")) return;
+      try {
+        await db.collection("meeting_items").doc(btn.dataset.deleteaction).delete();
+      } catch (err) {
+        alert(`Could not delete: ${err.message}`);
       }
     });
   });
@@ -386,22 +473,31 @@ function renderHistory() {
       <details class="rm-group">
         <summary>${escapeHtml(m.date)} \u00b7 ${escapeHtml(m.territory)}${m.notes ? " \u00b7 " + escapeHtml(m.notes) : ""} <span class="rm-group-count">(${items.length} item${items.length === 1 ? "" : "s"})</span></summary>
         <div style="padding:10px 14px;">
-          ${
-            items.length === 0
-              ? `<p class="empty-state">No items logged.</p>`
-              : items
-                  .map(
-                    (it) => `<div style="padding:8px 0;border-bottom:1px solid var(--line);font-size:0.85rem;">
-                <strong>${escapeHtml(it.targetLabel)}</strong> &mdash; ${escapeHtml(it.comment)}
-                ${it.isAction ? `<span class="rm-pacepill ${it.actionStatus === "done" ? "rm-pace-pace" : "rm-pace-under"}" style="margin-left:6px;">${it.actionStatus === "done" ? "DONE" : "ACTION"}: ${escapeHtml(it.actionOwner || "?")} by ${escapeHtml(it.actionDueDate || "?")}</span>` : ""}
-              </div>`
-                  )
-                  .join("")
-          }
+          ${items.length === 0 ? `<p class="empty-state">No items logged.</p>` : items.map(renderMeetingItemHtml).join("")}
+          <button type="button" class="clear-filters-btn" data-deletemeeting="${m.id}" style="color:#8A2A17;border-color:#8A2A17;margin-top:8px;">Delete this meeting</button>
         </div>
       </details>`;
     })
     .join("");
+
+  wireMeetingItemHandlers(container, renderHistory);
+  container.querySelectorAll("[data-deletemeeting]").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!confirm("Delete this meeting and all its logged items? This can't be undone.")) return;
+      const meetingId = btn.dataset.deletemeeting;
+      try {
+        const batch = db.batch();
+        batch.delete(db.collection("meetings").doc(meetingId));
+        ftItems.filter((i) => i.meetingId === meetingId).forEach((i) => {
+          batch.delete(db.collection("meeting_items").doc(i.id));
+        });
+        await batch.commit();
+      } catch (err) {
+        alert(`Could not delete meeting: ${err.message}`);
+      }
+    });
+  });
 }
 
 initFranchiseTracking();

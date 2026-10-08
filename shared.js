@@ -7,6 +7,24 @@ async function loadDashboardData() {
   return res.json();
 }
 
+// Static reference data (franchise ownership) -- NOT synced from Jira,
+// lives in franchises.json at the project root, maintained by hand.
+let _franchiseDataCache = null;
+async function loadFranchiseData() {
+  if (_franchiseDataCache) return _franchiseDataCache;
+  const res = await fetch(`franchises.json?_=${Date.now()}`);
+  if (!res.ok) throw new Error(`Failed to load franchises.json (${res.status})`);
+  _franchiseDataCache = await res.json();
+  return _franchiseDataCache;
+}
+
+// Given the franchise list and a territory code (e.g. "GBR02"), returns
+// the matching franchise record, or null if none owns that territory.
+function findFranchiseForTerritory(franchises, territoryCode) {
+  if (!territoryCode) return null;
+  return franchises.find((f) => f.territories.includes(territoryCode)) || null;
+}
+
 function renderSyncStatus(data) {
   const pulse = document.getElementById("pulse");
   const text = document.getElementById("sync-text");
@@ -121,12 +139,24 @@ function closeProjectModal() {
   if (modal) modal.style.display = "none";
 }
 
-function openProjectModal(issue) {
+async function openProjectModal(issue) {
   ensureModalMounted();
+
+  let ownerText = "\u2014";
+  try {
+    const franchises = await loadFranchiseData();
+    const franchise = findFranchiseForTerritory(franchises, issue.territory);
+    if (franchise && franchise.owners.length > 0) {
+      ownerText = escapeHtml(franchise.owners.join(", "));
+    }
+  } catch (err) {
+    console.error("Could not load franchise owner data:", err);
+  }
 
   const fields = [
     ["Project ID", escapeHtml(issue.projectId || "\u2014")],
     ["Territory", escapeHtml(issue.territory || "Unassigned")],
+    ["Franchise Owner(s)", ownerText],
     ["Service Type", escapeHtml(issue.serviceType || "\u2014")],
     ["Project Type", escapeHtml(issue.projectType || "\u2014")],
     ["Components", issue.components && issue.components.length ? escapeHtml(issue.components.join(", ")) : "\u2014"],

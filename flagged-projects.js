@@ -6,6 +6,8 @@
 let fpTickets = [];
 let fpFlags = [];
 let fpStatusFilter = "open";
+let fpEditingId = null;
+const FLAG_CATEGORIES = ["Client complaint", "Missed deadline", "Quality issue", "Needs close follow-up", "Other"];
 
 function fpEscapeAttr(str) {
   return escapeHtml(str).replace(/"/g, "&quot;");
@@ -100,20 +102,7 @@ function renderFlagsList() {
           <tr><th>Project</th><th>Territory</th><th>Category</th><th>Description</th><th>Reported by</th><th>Status</th><th></th></tr>
         </thead>
         <tbody>
-          ${flags
-            .map(
-              (f) => `
-            <tr>
-              <td class="clickable-row" data-openkey="${fpEscapeAttr(f.ticketKey)}"><span class="col-key">${f.ticketKey}</span><br />${escapeHtml(f.projectName || "")}</td>
-              <td>${escapeHtml(f.territory || "\u2014")}</td>
-              <td>${escapeHtml(f.category || "\u2014")}</td>
-              <td>${escapeHtml(f.description)}</td>
-              <td>${escapeHtml(f.reporter || "\u2014")}</td>
-              <td><span class="rm-pacepill ${f.status === "open" ? "rm-pace-under" : "rm-pace-pace"}">${f.status === "open" ? "Open" : "Resolved"}</span></td>
-              <td><button type="button" class="clear-filters-btn" data-toggle="${f.id}" data-newstatus="${f.status === "open" ? "resolved" : "open"}">${f.status === "open" ? "Mark resolved" : "Reopen"}</button></td>
-            </tr>`
-            )
-            .join("")}
+          ${flags.map((f) => (f.id === fpEditingId ? renderFlagEditRow(f) : renderFlagRow(f))).join("")}
         </tbody>
       </table>
     </div>`;
@@ -135,6 +124,84 @@ function renderFlagsList() {
       }
     });
   });
+  container.querySelectorAll("[data-edit]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      fpEditingId = btn.dataset.edit;
+      renderFlagsList();
+    });
+  });
+  container.querySelectorAll("[data-canceledit]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      fpEditingId = null;
+      renderFlagsList();
+    });
+  });
+  container.querySelectorAll("[data-saveedit]").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.saveedit;
+      const row = btn.closest("tr");
+      const category = row.querySelector("[data-editcategory]").value;
+      const description = row.querySelector("[data-editdescription]").value.trim();
+      if (!description) return;
+      try {
+        await db.collection("flags").doc(id).update({ category, description });
+        fpEditingId = null;
+      } catch (err) {
+        alert(`Could not save changes: ${err.message}`);
+      }
+    });
+  });
+  container.querySelectorAll("[data-delete]").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      if (!confirm("Delete this flag? This can't be undone.")) return;
+      try {
+        await db.collection("flags").doc(btn.dataset.delete).delete();
+      } catch (err) {
+        alert(`Could not delete: ${err.message}`);
+      }
+    });
+  });
+}
+
+function renderFlagRow(f) {
+  return `
+    <tr>
+      <td class="clickable-row" data-openkey="${fpEscapeAttr(f.ticketKey)}"><span class="col-key">${f.ticketKey}</span><br />${escapeHtml(f.projectName || "")}</td>
+      <td>${escapeHtml(f.territory || "\u2014")}</td>
+      <td>${escapeHtml(f.category || "\u2014")}</td>
+      <td>${escapeHtml(f.description)}</td>
+      <td>${escapeHtml(f.reporter || "\u2014")}</td>
+      <td><span class="rm-pacepill ${f.status === "open" ? "rm-pace-under" : "rm-pace-pace"}">${f.status === "open" ? "Open" : "Resolved"}</span></td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button type="button" class="clear-filters-btn" data-toggle="${f.id}" data-newstatus="${f.status === "open" ? "resolved" : "open"}">${f.status === "open" ? "Mark resolved" : "Reopen"}</button>
+        <button type="button" class="clear-filters-btn" data-edit="${f.id}">Edit</button>
+        <button type="button" class="clear-filters-btn" data-delete="${f.id}" style="color:#8A2A17;border-color:#8A2A17;">Delete</button>
+      </td>
+    </tr>`;
+}
+
+function renderFlagEditRow(f) {
+  return `
+    <tr>
+      <td class="clickable-row" data-openkey="${fpEscapeAttr(f.ticketKey)}"><span class="col-key">${f.ticketKey}</span><br />${escapeHtml(f.projectName || "")}</td>
+      <td>${escapeHtml(f.territory || "\u2014")}</td>
+      <td>
+        <select data-editcategory style="padding:5px;border:1px solid var(--line);border-radius:3px;font-size:0.82rem;">
+          ${FLAG_CATEGORIES.map((c) => `<option ${c === f.category ? "selected" : ""}>${c}</option>`).join("")}
+        </select>
+      </td>
+      <td><textarea data-editdescription style="width:100%;min-height:50px;padding:6px;border:1px solid var(--line);border-radius:3px;font-size:0.82rem;box-sizing:border-box;">${escapeHtml(f.description)}</textarea></td>
+      <td>${escapeHtml(f.reporter || "\u2014")}</td>
+      <td><span class="rm-pacepill ${f.status === "open" ? "rm-pace-under" : "rm-pace-pace"}">${f.status === "open" ? "Open" : "Resolved"}</span></td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button type="button" class="rm-add-btn" data-saveedit="${f.id}">Save</button>
+        <button type="button" class="clear-filters-btn" data-canceledit="${f.id}">Cancel</button>
+      </td>
+    </tr>`;
 }
 
 initFlaggedProjects();

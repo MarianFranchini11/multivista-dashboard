@@ -18,6 +18,15 @@ async function initListPage() {
   renderProjectFilter();
   renderTerritoryFilter();
   renderServiceFilter();
+
+  const urlTerritory = new URLSearchParams(window.location.search).get("territory");
+  if (urlTerritory) {
+    selectedTerritoriesTickets = new Set([urlTerritory]);
+    const cb = document.querySelector(`#territory-checkboxes input[value="${CSS.escape(urlTerritory)}"]`);
+    if (cb) cb.checked = true;
+    updateTicketsTerritorySummary();
+  }
+
   renderTable();
 
   document.getElementById("project-filter").addEventListener("change", () => {

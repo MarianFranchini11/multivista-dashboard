@@ -129,6 +129,25 @@ las reuniones de seguimiento con franquicias:
 Usa 3 colecciones nuevas de Firestore: `meetings`, `meeting_items`,
 `potential_projects`. Se crean solas, no hace falta tocar nada en Firebase.
 
+## Sobre "Top Franchises" y los datos de franquicias
+
+`franchises.json` (en la raíz del proyecto, **no** dentro de `data/`)
+tiene la info de franquicias y sus owners, armada a mano a partir de la
+planilla que me pasaste. No se sincroniza con Jira — si cambian los
+owners o territorios de una franquicia, hay que actualizar ese archivo
+a mano y volver a subirlo.
+
+- **Pestaña "Top Franchises"**: lista las franquicias cuyo owner está en
+  esta lista (editable en `top-franchises.js`, constante
+  `TOP_FRANCHISE_OWNERS`): Luis Pascual, Paul Mclaughlin, JD Lott, Justin
+  Davis, Markk Donnelly, Huw Roberts, David Stadnik, Brent Pearce,
+  Charles Hill, Karl Pallas, Andrew Duffell, Clayton Schuller. Muestra
+  territorios y cantidad de tickets abiertos/totales en vivo, y un click
+  en la fila lleva a Tickets filtrado por esa franquicia.
+- **Recuadro de detalle de cualquier ticket** (en todas las pestañas):
+  ahora muestra **"Franchise Owner(s)"**, buscando el territorio del
+  ticket en `franchises.json`.
+
 ## Sobre el login
 
 El dashboard pide usuario y contraseña antes de mostrar nada. Las
