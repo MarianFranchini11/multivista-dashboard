@@ -171,8 +171,16 @@ function populateFilters(issues) {
     if (issue.serviceType) services.add(issue.serviceType);
   }
 
+  // Belt-and-suspenders: on a scoped page (e.g. Top Franchises), make sure
+  // the Territory filter itself can never offer anything outside scope,
+  // even if some scoped territory happens to have zero issues right now.
+  let territoryOptions = Array.from(territories);
+  if (DASHBOARD_SCOPE_TERRITORIES) {
+    territoryOptions = territoryOptions.filter((t) => DASHBOARD_SCOPE_TERRITORIES.includes(t));
+  }
+
   const territoryContainer = document.getElementById("territory-checkboxes");
-  territoryContainer.innerHTML = Array.from(territories)
+  territoryContainer.innerHTML = territoryOptions
     .sort()
     .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
     .join("");

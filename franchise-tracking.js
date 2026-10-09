@@ -242,7 +242,12 @@ function renderTargetSearchResults(query) {
   }
   const q = query.toLowerCase();
   const ticketMatches = ftTickets
-    .filter((t) => t.key.toLowerCase().includes(q) || (t.projectName || "").toLowerCase().includes(q))
+    .filter(
+      (t) =>
+        t.key.toLowerCase().includes(q) ||
+        (t.projectId || "").toLowerCase().includes(q) ||
+        (t.projectName || "").toLowerCase().includes(q)
+    )
     .slice(0, 8);
   const potentialMatches = ftPotentialProjects
     .filter((p) => p.name.toLowerCase().includes(q))
@@ -260,14 +265,14 @@ function renderTargetSearchResults(query) {
           ${ticketMatches
             .map(
               (t) => `<tr class="clickable-row" data-type="jira" data-key="${ftEscapeAttr(t.key)}" data-label="${ftEscapeAttr(t.key + " \u2014 " + t.projectName)}">
-              <td class="col-key">${t.key}</td><td>${escapeHtml(t.projectName)}</td><td>${escapeHtml(t.territory || "\u2014")}</td>
+              <td class="col-key">${t.key}</td><td class="col-updated">${escapeHtml(t.projectId || "\u2014")}</td><td>${escapeHtml(t.projectName)}</td><td>${escapeHtml(t.territory || "\u2014")}</td>
             </tr>`
             )
             .join("")}
           ${potentialMatches
             .map(
               (p) => `<tr class="clickable-row" data-type="potential" data-key="${ftEscapeAttr(p.id)}" data-label="${ftEscapeAttr(p.name + " (potential)")}">
-              <td colspan="2">${escapeHtml(p.name)} <span class="teambadge">potential</span></td><td>${escapeHtml(p.territory || "\u2014")}</td>
+              <td colspan="3">${escapeHtml(p.name)} <span class="teambadge">potential</span></td><td>${escapeHtml(p.territory || "\u2014")}</td>
             </tr>`
             )
             .join("")}
