@@ -1235,6 +1235,13 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-deadlinename { font-size: 0.85rem; font-weight: 600; }
 .rm-crew { font-size: 0.78rem; color: var(--slate); }
 
+.due-soon-components-col {
+  max-width: 110px;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 0.8rem;
+}
+
 .daysbadge-ok, .daysbadge-soon, .daysbadge-urgent, .daysbadge-overdue, .daysbadge-ontime {
   font-size: 0.7rem;
   font-weight: 700;

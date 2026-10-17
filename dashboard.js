@@ -486,6 +486,14 @@ function renderProjectsTable(issues) {
 // Deliberately independent of the filter bar above -- always shows the
 // true current picture of every In Progress ticket's due date, so it
 // can't accidentally get hidden by someone else's filter choice.
+// Compact MM/DD/YYYY, just for this table (the rest of the app keeps the
+// longer "Jun 30, 2026" format via the shared formatDate).
+function formatDateCompact(iso) {
+  if (!iso) return "\u2014";
+  const [y, m, d] = iso.slice(0, 10).split("-");
+  return `${m}/${d}/${y}`;
+}
+
 function dueSoonDaysLeft(dueDate) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -561,7 +569,7 @@ function renderDueSoonSection(filteredIssues) {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Due Date</th><th>Original Due Date</th><th></th></tr>
+          <tr><th>Key</th><th>Status</th><th>Project Name</th><th class="due-soon-components-col">Components</th><th>Additional Info</th><th>A. Due Date</th><th>O. Due Date</th><th>Territory</th></tr>
         </thead>
         <tbody>
           ${rows
@@ -580,14 +588,13 @@ function renderDueSoonSection(filteredIssues) {
                 : "\u2014";
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
-                <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
-                <td>${escapeHtml(issue.projectName)}</td>
-                <td>${escapeHtml(issue.territory || "Unassigned")}</td>
-                <td>${escapeHtml(components)}</td>
-                <td class="due-soon-info-cell" data-infokey="${issue.key}" style="max-width:${isExpanded ? "340px" : "200px"};font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
-                <td class="col-updated">${formatDate(issue.dueDate)}</td>
-                <td class="col-updated">${formatDate(dueSoonEffectiveDate(issue))}</td>
                 <td><span class="daysbadge-${status}">${dueSoonLabel(status)}</span></td>
+                <td>${escapeHtml(issue.projectName)}</td>
+                <td class="due-soon-components-col">${escapeHtml(components)}</td>
+                <td class="due-soon-info-cell" data-infokey="${issue.key}" style="max-width:${isExpanded ? "340px" : "200px"};font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
+                <td class="col-updated">${formatDateCompact(issue.dueDate)}</td>
+                <td class="col-updated">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
+                <td>${escapeHtml(issue.territory || "Unassigned")}</td>
               </tr>`;
             })
             .join("")}
