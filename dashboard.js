@@ -512,6 +512,16 @@ function dueSoonUrgency(daysLeft) {
 // the client -- that's not a real delay, so it shows green/"On Time"
 // instead of whatever the raw date math would otherwise say.
 function dueSoonRowStatus(issue, daysLeft) {
+  // Hard rule, takes priority over everything else: if the *current*
+  // (A.) Due Date has already passed, it's overdue, full stop -- even an
+  // agreed revision extension eventually runs out.
+  if (issue.dueDate) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const aDue = new Date(issue.dueDate + "T00:00:00");
+    if (aDue < today) return "overdue";
+  }
+
   const hasRevisionComponent = issue.components && issue.components.includes("Revisions - Free Fix");
   if (hasRevisionComponent && issue.dueDate && issue.originalDueDate && issue.dueDate > issue.originalDueDate) {
     return "ontime";
@@ -593,7 +603,7 @@ function renderDueSoonSection(filteredIssues) {
                 <td class="due-soon-balanced-col">${escapeHtml(components)}</td>
                 <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
                 <td class="col-updated">${formatDateCompact(issue.dueDate)}</td>
-                <td class="col-updated">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
+                <td class="col-updated ${issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate ? "due-soon-changed-date" : ""}" title="${issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate ? "Due date was pushed later than originally planned" : ""}">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
               </tr>`;
             })

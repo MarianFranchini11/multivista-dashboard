@@ -1235,6 +1235,11 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-deadlinename { font-size: 0.85rem; font-weight: 600; }
 .rm-crew { font-size: 0.78rem; color: var(--slate); }
 
+.due-soon-changed-date {
+  color: var(--amber) !important;
+  font-weight: 700;
+}
+
 .due-soon-balanced-col {
   width: 17%;
   max-width: 220px;
