@@ -1261,7 +1261,22 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .daysbadge-ontime { background: #E4F4EC; color: var(--moss); font-weight: 700; }
 .daysbadge-soon { background: #FBEDD8; color: var(--amber); }
 .daysbadge-urgent { background: #FBE1D6; color: var(--rm-over); }
-.daysbadge-overdue { background: #F6D9D0; color: #8A2A17; }
+.daysbadge-overdue {
+  background: #8A2A17;
+  color: #fff;
+  border: 1px solid #6B1F10;
+  box-shadow: 0 0 0 1px rgba(138, 42, 23, 0.25);
+}
+
+.due-soon-changed-date-advanced {
+  color: var(--moss) !important;
+  font-weight: 700;
+}
+
+.due-soon-overdue-name {
+  color: #8A2A17;
+  font-weight: 700;
+}
 
 .rm-pacewrap { margin-top: 6px; }
 .rm-pacebar {

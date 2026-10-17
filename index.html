@@ -98,6 +98,10 @@
                 <label>Months</label>
                 <div id="month-checkboxes" class="month-checkbox-grid"></div>
               </div>
+              <div class="due-date-panel-row">
+                <label for="specific-date-input">Or a specific date</label>
+                <input type="date" id="specific-date-input" />
+              </div>
               <div class="due-date-panel-actions">
                 <button type="button" id="due-date-clear">Clear</button>
                 <button type="button" id="due-date-apply">Apply</button>
@@ -139,6 +143,38 @@
         </div>
       </details>
 
+      <details class="rm-roster-section due-soon-details" style="margin-bottom:28px;">
+        <summary class="panel-head due-soon-summary">
+          <h2>To Do: Due Soon &amp; Overdue <span id="todo-due-count" class="panel-subtitle"></span></h2>
+          <span class="rm-roster-hint"><strong>O. Due Date</strong> = Original Due Date, <strong>A. Due Date</strong> = Due Date (current)</span>
+        </summary>
+        <div class="rm-chip-group" id="todo-due-chips" style="margin-bottom:14px;margin-top:14px;">
+          <button type="button" class="rm-chip active" data-urgency="">All To Do</button>
+          <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
+          <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
+          <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
+        </div>
+        <div id="todo-due-list">
+          <!-- injected by dashboard.js -->
+        </div>
+      </details>
+
+      <details class="rm-roster-section due-soon-details" style="margin-bottom:28px;">
+        <summary class="panel-head due-soon-summary">
+          <h2>Done: Due Soon &amp; Overdue <span id="done-due-count" class="panel-subtitle"></span></h2>
+          <span class="rm-roster-hint"><strong>O. Due Date</strong> = Original Due Date, <strong>A. Due Date</strong> = Due Date (current)</span>
+        </summary>
+        <div class="rm-chip-group" id="done-due-chips" style="margin-bottom:14px;margin-top:14px;">
+          <button type="button" class="rm-chip active" data-urgency="">All Done</button>
+          <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
+          <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
+          <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
+        </div>
+        <div id="done-due-list">
+          <!-- injected by dashboard.js -->
+        </div>
+      </details>
+
       <section class="charts-section">
         <div class="chart-panel chart-panel-wide">
           <div class="panel-head">
@@ -165,15 +201,6 @@
         </div>
         <div class="chart-wrap" style="height:280px;">
           <canvas id="tier-chart"></canvas>
-        </div>
-      </section>
-
-      <section class="breakdown-section">
-        <div class="panel-head">
-          <h2>Territory Detail</h2>
-        </div>
-        <div id="territory-breakdown" class="territory-list">
-          <!-- rows injected by dashboard.js -->
         </div>
       </section>
 

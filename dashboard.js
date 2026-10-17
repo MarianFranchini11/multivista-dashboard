@@ -31,9 +31,10 @@ let selectedYear = "2026";
 let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
 let selectedTerritories = new Set();
-let dueSoonUrgencyFilter = "";
-let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded
-let dueSoonLastFilteredIssues = [];
+let categoryUrgencyFilter = { "due-soon": "", "todo-due": "", "done-due": "" };
+let categoryLastFilteredIssues = { "due-soon": [], "todo-due": [], "done-due": [] };
+let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded, shared across sections
+let selectedSpecificDate = "";
 
 async function initDashboardPage() {
   let data;
@@ -56,12 +57,20 @@ async function initDashboardPage() {
   updateDueDateSummary();
   renderAll();
 
-  document.querySelectorAll("#due-soon-chips .rm-chip").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      document.querySelectorAll("#due-soon-chips .rm-chip").forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      dueSoonUrgencyFilter = chip.dataset.urgency;
-      renderAll();
+  [
+    ["due-soon-chips", "due-soon"],
+    ["todo-due-chips", "todo-due"],
+    ["done-due-chips", "done-due"],
+  ].forEach(([chipsId, idPrefix]) => {
+    const chipsContainer = document.getElementById(chipsId);
+    if (!chipsContainer) return;
+    chipsContainer.querySelectorAll(".rm-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chipsContainer.querySelectorAll(".rm-chip").forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        categoryUrgencyFilter[idPrefix] = chip.dataset.urgency;
+        renderAll();
+      });
     });
   });
 
@@ -75,6 +84,7 @@ async function initDashboardPage() {
         (el) => el.value
       )
     );
+    selectedSpecificDate = document.getElementById("specific-date-input").value;
     updateDueDateSummary();
     document.getElementById("due-date-details").open = false;
     renderAll();
@@ -83,8 +93,10 @@ async function initDashboardPage() {
   document.getElementById("due-date-clear").addEventListener("click", () => {
     document.getElementById("year-select").value = "";
     document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
+    document.getElementById("specific-date-input").value = "";
     selectedYear = "";
     selectedMonths = new Set();
+    selectedSpecificDate = "";
     updateDueDateSummary();
     document.getElementById("due-date-details").open = false;
     renderAll();
@@ -124,8 +136,10 @@ async function initDashboardPage() {
     document.getElementById("status-filter").value = "";
     document.getElementById("year-select").value = "";
     document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
+    document.getElementById("specific-date-input").value = "";
     selectedYear = "";
     selectedMonths = new Set();
+    selectedSpecificDate = "";
     selectedTier = "";
     document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
     document.querySelector('#tier-chips .rm-chip[data-tier=""]').classList.add("active");
@@ -143,6 +157,10 @@ async function initDashboardPage() {
 
 function updateDueDateSummary() {
   const summary = document.getElementById("due-date-summary");
+  if (selectedSpecificDate) {
+    summary.textContent = formatDateCompact(selectedSpecificDate);
+    return;
+  }
   const parts = [];
   if (selectedYear) parts.push(selectedYear);
   if (selectedMonths.size > 0) {
@@ -223,7 +241,9 @@ function getFilteredIssues() {
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
     if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
-    if (selectedYear || selectedMonths.size > 0) {
+    if (selectedSpecificDate) {
+      if (!issue.dueDate || issue.dueDate.slice(0, 10) !== selectedSpecificDate) return false;
+    } else if (selectedYear || selectedMonths.size > 0) {
       if (!issue.dueDate) return false;
       const y = issue.dueDate.slice(0, 4);
       const m = issue.dueDate.slice(5, 7);
@@ -240,9 +260,10 @@ function renderAll() {
   renderTerritoryChart(issues);
   renderStatusChart(issues);
   renderTierChart(issues);
-  renderTerritoryBreakdown(issues);
   renderProjectsTable(issues);
-  renderDueSoonSection(issues);
+  renderCategorySection(issues, "In Progress", "due-soon");
+  renderCategorySection(issues, "To Do", "todo-due");
+  renderCategorySection(issues, "Done", "done-due");
 }
 
 function groupByTerritory(issues) {
@@ -416,45 +437,6 @@ function renderTierChart(issues) {
   });
 }
 
-function renderTerritoryBreakdown(issues) {
-  const groups = groupByTerritory(issues);
-  const entries = Object.entries(groups).sort((a, b) => b[1].length - a[1].length);
-
-  const container = document.getElementById("territory-breakdown");
-  if (entries.length === 0) {
-    container.innerHTML = `<p class="empty-state">No issues match these filters.</p>`;
-    return;
-  }
-
-  container.innerHTML = entries
-    .map(([territory, list]) => {
-      const total = Math.max(list.length, 1);
-      const todo = list.filter((i) => i.statusCategory === "To Do").length;
-      const inProgress = list.filter((i) => i.statusCategory === "In Progress").length;
-      const done = list.filter((i) => i.statusCategory === "Done").length;
-      const revenue = list.reduce((sum, i) => sum + (i.price || 0), 0);
-
-      return `
-        <div class="territory-row">
-          <div class="territory-row-head">
-            <span class="territory-name">${escapeHtml(territory)}</span>
-            <span class="territory-total">${list.length} ticket${list.length === 1 ? "" : "s"} \u00b7 ${formatCurrency(revenue)}</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-seg-todo" style="width:${(todo / total) * 100}%"></div>
-            <div class="progress-seg-progress" style="width:${(inProgress / total) * 100}%"></div>
-            <div class="progress-seg-done" style="width:${(done / total) * 100}%"></div>
-          </div>
-          <div class="progress-legend">
-            <span class="legend-todo">${todo} To Do</span>
-            <span class="legend-progress">${inProgress} In Progress</span>
-            <span class="legend-done">${done} Done</span>
-          </div>
-        </div>`;
-    })
-    .join("");
-}
-
 function renderProjectsTable(issues) {
   const body = document.getElementById("projects-body");
   const emptyState = document.getElementById("projects-empty-state");
@@ -546,32 +528,37 @@ function dueSoonEffectiveDate(issue) {
   return issue.originalDueDate;
 }
 
-function renderDueSoonSection(filteredIssues) {
-  const inProgress = filteredIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
-  const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
-  const overdueCount = withUrgency.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
+// Shared by all 3 category sections (In Progress / To Do / Done) --
+// idPrefix is "due-soon", "todo-due", or "done-due", matching the element
+// IDs in the HTML for that section's count/list/chips.
+function renderCategorySection(filteredIssues, statusCategory, idPrefix) {
+  const categoryIssues = filteredIssues.filter((i) => i.statusCategory === statusCategory && dueSoonEffectiveDate(i));
+  const withUrgency = categoryIssues.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
 
-  const banner = document.getElementById("overdue-alert-banner");
-  if (overdueCount > 0) {
-    banner.style.display = "flex";
-    banner.innerHTML = `&#9888; ${overdueCount} In Progress project${overdueCount === 1 ? "" : "s"} ${overdueCount === 1 ? "is" : "are"} past its due date \u2014 action needed.`;
-  } else {
-    banner.style.display = "none";
+  if (idPrefix === "due-soon") {
+    const overdueCount = withUrgency.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
+    const banner = document.getElementById("overdue-alert-banner");
+    if (overdueCount > 0) {
+      banner.style.display = "flex";
+      banner.innerHTML = `&#9888; ${overdueCount} In Progress project${overdueCount === 1 ? "" : "s"} ${overdueCount === 1 ? "is" : "are"} past its due date \u2014 action needed.`;
+    } else {
+      banner.style.display = "none";
+    }
   }
 
   let rows = withUrgency;
-  if (dueSoonUrgencyFilter) {
-    rows = rows.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === dueSoonUrgencyFilter);
-  }
+  const urgencyFilter = categoryUrgencyFilter[idPrefix];
+  if (urgencyFilter) rows = rows.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === urgencyFilter);
   rows.sort((a, b) => a.daysLeft - b.daysLeft);
-  dueSoonLastFilteredIssues = filteredIssues;
+  categoryLastFilteredIssues[idPrefix] = filteredIssues;
 
-  const countEl = document.getElementById("due-soon-count");
-  if (countEl) countEl.textContent = `(${rows.length} of ${inProgress.length})`;
+  const countEl = document.getElementById(`${idPrefix}-count`);
+  if (countEl) countEl.textContent = `(${rows.length} of ${categoryIssues.length})`;
 
-  const container = document.getElementById("due-soon-list");
+  const container = document.getElementById(`${idPrefix}-list`);
+  if (!container) return;
   if (rows.length === 0) {
-    container.innerHTML = `<p class="empty-state">No In Progress tickets match this filter.</p>`;
+    container.innerHTML = `<p class="empty-state">No ${statusCategory} tickets match this filter.</p>`;
     return;
   }
 
@@ -596,14 +583,16 @@ function renderDueSoonSection(filteredIssues) {
                   ? additionalInfoFull
                   : additionalInfoShort
                 : "\u2014";
+              const wasPushed = issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate;
+              const wasAdvanced = issue.originalDueDate && issue.dueDate && issue.dueDate < issue.originalDueDate;
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
                 <td><span class="daysbadge-${status}">${dueSoonLabel(status)}</span></td>
-                <td class="due-soon-balanced-col">${escapeHtml(issue.projectName)}</td>
+                <td class="due-soon-balanced-col ${status === "overdue" ? "due-soon-overdue-name" : ""}">${escapeHtml(issue.projectName)}</td>
                 <td class="due-soon-balanced-col">${escapeHtml(components)}</td>
-                <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
-                <td class="col-updated">${formatDateCompact(issue.dueDate)}</td>
-                <td class="col-updated ${issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate ? "due-soon-changed-date" : ""}" title="${issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate ? "Due date was pushed later than originally planned" : ""}">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
+                <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" data-idprefix="${idPrefix}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
+                <td class="col-updated ${wasAdvanced ? "due-soon-changed-date-advanced" : ""}" title="${wasAdvanced ? "Delivery date was moved earlier than originally planned" : ""}">${formatDateCompact(issue.dueDate)}</td>
+                <td class="col-updated ${wasPushed ? "due-soon-changed-date" : ""}" title="${wasPushed ? "Due date was pushed later than originally planned" : ""}">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
               </tr>`;
             })
@@ -619,7 +608,7 @@ function renderDueSoonSection(filteredIssues) {
       const key = cell.dataset.infokey;
       if (dueSoonExpandedInfo.has(key)) dueSoonExpandedInfo.delete(key);
       else dueSoonExpandedInfo.add(key);
-      renderDueSoonSection(dueSoonLastFilteredIssues);
+      renderCategorySection(categoryLastFilteredIssues[idPrefix], statusCategory, idPrefix);
     });
   });
 
