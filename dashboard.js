@@ -32,6 +32,8 @@ let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
 let selectedTerritories = new Set();
 let dueSoonUrgencyFilter = "";
+let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded
+let dueSoonLastFilteredIssues = [];
 
 async function initDashboardPage() {
   let data;
@@ -496,10 +498,27 @@ function dueSoonUrgency(daysLeft) {
   if (daysLeft <= 21) return "soon";
   return "ok";
 }
-function dueSoonLabel(daysLeft) {
-  if (daysLeft < 0) return `Overdue by ${Math.abs(daysLeft)}d`;
-  if (daysLeft === 0) return "Due today";
-  return `${daysLeft}d left`;
+
+// A "Revisions - Free Fix" ticket whose (native) Due Date has been pushed
+// later than the Original Due Date represents an extension agreed with
+// the client -- that's not a real delay, so it shows green/"On Time"
+// instead of whatever the raw date math would otherwise say.
+function dueSoonRowStatus(issue, daysLeft) {
+  const hasRevisionComponent = issue.components && issue.components.includes("Revisions - Free Fix");
+  if (hasRevisionComponent && issue.dueDate && issue.originalDueDate && issue.dueDate > issue.originalDueDate) {
+    return "ontime";
+  }
+  return dueSoonUrgency(daysLeft);
+}
+
+function dueSoonLabel(status) {
+  return {
+    overdue: "Overdue",
+    urgent: "Due Soon",
+    soon: "Upcoming",
+    ok: "On Track",
+    ontime: "On Time",
+  }[status];
 }
 
 // Original Due Date is the only field this section calculates against
@@ -512,7 +531,7 @@ function dueSoonEffectiveDate(issue) {
 function renderDueSoonSection(filteredIssues) {
   const inProgress = filteredIssues.filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i));
   const withUrgency = inProgress.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
-  const overdueCount = withUrgency.filter((r) => r.daysLeft < 0).length;
+  const overdueCount = withUrgency.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
 
   const banner = document.getElementById("overdue-alert-banner");
   if (overdueCount > 0) {
@@ -523,8 +542,11 @@ function renderDueSoonSection(filteredIssues) {
   }
 
   let rows = withUrgency;
-  if (dueSoonUrgencyFilter) rows = rows.filter((r) => dueSoonUrgency(r.daysLeft) === dueSoonUrgencyFilter);
+  if (dueSoonUrgencyFilter) {
+    rows = rows.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === dueSoonUrgencyFilter);
+  }
   rows.sort((a, b) => a.daysLeft - b.daysLeft);
+  dueSoonLastFilteredIssues = filteredIssues;
 
   const countEl = document.getElementById("due-soon-count");
   if (countEl) countEl.textContent = `(${rows.length} of ${inProgress.length})`;
@@ -539,32 +561,50 @@ function renderDueSoonSection(filteredIssues) {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Original Due Date</th><th></th></tr>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Components</th><th>Additional Info</th><th>Due Date</th><th>Original Due Date</th><th></th></tr>
         </thead>
         <tbody>
           ${rows
             .slice(0, 300)
             .map(({ issue, daysLeft }) => {
-              const u = dueSoonUrgency(daysLeft);
+              const status = dueSoonRowStatus(issue, daysLeft);
               const components = issue.components && issue.components.length ? issue.components.join(", ") : "\u2014";
               const additionalInfoFull = issue.additionalInfo || "";
+              const isExpanded = dueSoonExpandedInfo.has(issue.key);
               const additionalInfoShort =
                 additionalInfoFull.length > 70 ? additionalInfoFull.slice(0, 70).trim() + "\u2026" : additionalInfoFull || "\u2014";
+              const additionalInfoDisplay = additionalInfoFull
+                ? isExpanded
+                  ? additionalInfoFull
+                  : additionalInfoShort
+                : "\u2014";
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
                 <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
                 <td>${escapeHtml(issue.projectName)}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
                 <td>${escapeHtml(components)}</td>
-                <td style="max-width:200px;font-size:0.8rem;color:var(--slate);" title="${escapeHtml(additionalInfoFull)}">${escapeHtml(additionalInfoShort)}</td>
+                <td class="due-soon-info-cell" data-infokey="${issue.key}" style="max-width:${isExpanded ? "340px" : "200px"};font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
+                <td class="col-updated">${formatDate(issue.dueDate)}</td>
                 <td class="col-updated">${formatDate(dueSoonEffectiveDate(issue))}</td>
-                <td><span class="daysbadge-${u}">${dueSoonLabel(daysLeft)}</span></td>
+                <td><span class="daysbadge-${status}">${dueSoonLabel(status)}</span></td>
               </tr>`;
             })
             .join("")}
         </tbody>
       </table>
     </div>`;
+
+  container.querySelectorAll(".due-soon-info-cell").forEach((cell) => {
+    cell.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!cell.title) return; // nothing to expand
+      const key = cell.dataset.infokey;
+      if (dueSoonExpandedInfo.has(key)) dueSoonExpandedInfo.delete(key);
+      else dueSoonExpandedInfo.add(key);
+      renderDueSoonSection(dueSoonLastFilteredIssues);
+    });
+  });
 
   container.querySelectorAll("tr[data-key]").forEach((row) => {
     const issue = allIssues.find((i) => i.key === row.dataset.key);

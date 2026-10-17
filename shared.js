@@ -163,6 +163,8 @@ async function openProjectModal(issue) {
     ["Price", issue.price != null ? issue.price.toLocaleString("en-US", { style: "currency", currency: "USD" }) : "\u2014"],
     ["Square Footage", issue.squareFootage != null ? issue.squareFootage.toLocaleString("en-US") : "\u2014"],
     ["Due Date", formatDate(issue.dueDate)],
+    ["Original Due Date", formatDate(issue.originalDueDate)],
+    ["Additional Info", issue.additionalInfo ? escapeHtml(issue.additionalInfo) : "\u2014"],
     ["Assignee", escapeHtml(issue.assignee || "Unassigned")],
     ["FTP Folder Path", issue.ftpFolderPath ? `<code>${escapeHtml(issue.ftpFolderPath)}</code>` : "\u2014"],
     ["Map Link", linkOrDash(issue.mapLink, "Open map")],

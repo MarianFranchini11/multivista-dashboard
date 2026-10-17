@@ -1235,7 +1235,7 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-deadlinename { font-size: 0.85rem; font-weight: 600; }
 .rm-crew { font-size: 0.78rem; color: var(--slate); }
 
-.daysbadge-ok, .daysbadge-soon, .daysbadge-urgent, .daysbadge-overdue {
+.daysbadge-ok, .daysbadge-soon, .daysbadge-urgent, .daysbadge-overdue, .daysbadge-ontime {
   font-size: 0.7rem;
   font-weight: 700;
   border-radius: 12px;
@@ -1245,6 +1245,7 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   align-self: start;
 }
 .daysbadge-ok { background: #E4F4EC; color: var(--moss); }
+.daysbadge-ontime { background: #E4F4EC; color: var(--moss); font-weight: 700; }
 .daysbadge-soon { background: #FBEDD8; color: var(--amber); }
 .daysbadge-urgent { background: #FBE1D6; color: var(--rm-over); }
 .daysbadge-overdue { background: #F6D9D0; color: #8A2A17; }
