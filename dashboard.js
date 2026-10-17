@@ -34,7 +34,7 @@ let selectedTerritories = new Set();
 let categoryUrgencyFilter = { "due-soon": "", "todo-due": "", "done-due": "" };
 let categoryLastFilteredIssues = { "due-soon": [], "todo-due": [], "done-due": [] };
 let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded, shared across sections
-let selectedSpecificDate = "";
+let categorySpecificDate = { "due-soon": "", "todo-due": "", "done-due": "" };
 
 async function initDashboardPage() {
   let data;
@@ -72,6 +72,22 @@ async function initDashboardPage() {
         renderAll();
       });
     });
+
+    const dateInput = document.getElementById(`${idPrefix}-date`);
+    const dateClear = document.getElementById(`${idPrefix}-date-clear`);
+    if (dateInput) {
+      dateInput.addEventListener("change", () => {
+        categorySpecificDate[idPrefix] = dateInput.value;
+        renderAll();
+      });
+    }
+    if (dateClear) {
+      dateClear.addEventListener("click", () => {
+        dateInput.value = "";
+        categorySpecificDate[idPrefix] = "";
+        renderAll();
+      });
+    }
   });
 
   document.getElementById("service-filter").addEventListener("change", renderAll);
@@ -84,7 +100,6 @@ async function initDashboardPage() {
         (el) => el.value
       )
     );
-    selectedSpecificDate = document.getElementById("specific-date-input").value;
     updateDueDateSummary();
     document.getElementById("due-date-details").open = false;
     renderAll();
@@ -93,10 +108,8 @@ async function initDashboardPage() {
   document.getElementById("due-date-clear").addEventListener("click", () => {
     document.getElementById("year-select").value = "";
     document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
-    document.getElementById("specific-date-input").value = "";
     selectedYear = "";
     selectedMonths = new Set();
-    selectedSpecificDate = "";
     updateDueDateSummary();
     document.getElementById("due-date-details").open = false;
     renderAll();
@@ -136,10 +149,8 @@ async function initDashboardPage() {
     document.getElementById("status-filter").value = "";
     document.getElementById("year-select").value = "";
     document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
-    document.getElementById("specific-date-input").value = "";
     selectedYear = "";
     selectedMonths = new Set();
-    selectedSpecificDate = "";
     selectedTier = "";
     document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
     document.querySelector('#tier-chips .rm-chip[data-tier=""]').classList.add("active");
@@ -157,10 +168,6 @@ async function initDashboardPage() {
 
 function updateDueDateSummary() {
   const summary = document.getElementById("due-date-summary");
-  if (selectedSpecificDate) {
-    summary.textContent = formatDateCompact(selectedSpecificDate);
-    return;
-  }
   const parts = [];
   if (selectedYear) parts.push(selectedYear);
   if (selectedMonths.size > 0) {
@@ -241,9 +248,7 @@ function getFilteredIssues() {
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
     if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
-    if (selectedSpecificDate) {
-      if (!issue.dueDate || issue.dueDate.slice(0, 10) !== selectedSpecificDate) return false;
-    } else if (selectedYear || selectedMonths.size > 0) {
+    if (selectedYear || selectedMonths.size > 0) {
       if (!issue.dueDate) return false;
       const y = issue.dueDate.slice(0, 4);
       const m = issue.dueDate.slice(5, 7);
@@ -493,7 +498,19 @@ function dueSoonUrgency(daysLeft) {
 // later than the Original Due Date represents an extension agreed with
 // the client -- that's not a real delay, so it shows green/"On Time"
 // instead of whatever the raw date math would otherwise say.
+// For a *finished* ticket, "today vs due date" is meaningless -- it would
+// always say Overdue once the due date is in the past, even if it was
+// delivered right on time. What actually matters is when it was resolved
+// vs. its (A.) Due Date.
+function dueSoonDoneStatus(issue) {
+  if (!issue.resolutionDate || !issue.dueDate) return "ok"; // nothing to judge it against
+  const resolved = issue.resolutionDate.slice(0, 10);
+  return resolved > issue.dueDate ? "overdue" : "ontime";
+}
+
 function dueSoonRowStatus(issue, daysLeft) {
+  if (issue.statusCategory === "Done") return dueSoonDoneStatus(issue);
+
   // Hard rule, takes priority over everything else: if the *current*
   // (A.) Due Date has already passed, it's overdue, full stop -- even an
   // agreed revision extension eventually runs out.
@@ -549,7 +566,13 @@ function renderCategorySection(filteredIssues, statusCategory, idPrefix) {
   let rows = withUrgency;
   const urgencyFilter = categoryUrgencyFilter[idPrefix];
   if (urgencyFilter) rows = rows.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === urgencyFilter);
-  rows.sort((a, b) => a.daysLeft - b.daysLeft);
+  const specificDate = categorySpecificDate[idPrefix];
+  if (specificDate) rows = rows.filter((r) => dueSoonEffectiveDate(r.issue) === specificDate);
+  if (idPrefix === "done-due") {
+    rows.sort((a, b) => (b.issue.resolutionDate || "").localeCompare(a.issue.resolutionDate || ""));
+  } else {
+    rows.sort((a, b) => a.daysLeft - b.daysLeft);
+  }
   categoryLastFilteredIssues[idPrefix] = filteredIssues;
 
   const countEl = document.getElementById(`${idPrefix}-count`);
@@ -562,11 +585,12 @@ function renderCategorySection(filteredIssues, statusCategory, idPrefix) {
     return;
   }
 
+  const isDone = idPrefix === "done-due";
   container.innerHTML = `
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Status</th><th class="due-soon-balanced-col">Project Name</th><th class="due-soon-balanced-col">Components</th><th class="due-soon-balanced-col">Additional Info</th><th>A. Due Date</th><th>O. Due Date</th><th>Territory</th></tr>
+          <tr><th>Key</th><th>Status</th><th class="due-soon-balanced-col">Project Name</th><th class="due-soon-balanced-col">Components</th><th class="due-soon-balanced-col">Additional Info</th><th>A. Due Date</th><th>O. Due Date</th>${isDone ? "<th>Resolved</th>" : ""}<th>Territory</th></tr>
         </thead>
         <tbody>
           ${rows
@@ -593,6 +617,7 @@ function renderCategorySection(filteredIssues, statusCategory, idPrefix) {
                 <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" data-idprefix="${idPrefix}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
                 <td class="col-updated ${wasAdvanced ? "due-soon-changed-date-advanced" : ""}" title="${wasAdvanced ? "Delivery date was moved earlier than originally planned" : ""}">${formatDateCompact(issue.dueDate)}</td>
                 <td class="col-updated ${wasPushed ? "due-soon-changed-date" : ""}" title="${wasPushed ? "Due date was pushed later than originally planned" : ""}">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
+                ${isDone ? `<td class="col-updated">${formatDateCompact(issue.resolutionDate)}</td>` : ""}
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
               </tr>`;
             })

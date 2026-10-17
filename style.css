@@ -1268,6 +1268,23 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   box-shadow: 0 0 0 1px rgba(138, 42, 23, 0.25);
 }
 
+.rm-specific-date-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+  color: var(--slate);
+}
+
+.rm-specific-date-row input[type="date"] {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+}
+
 .due-soon-changed-date-advanced {
   color: var(--moss) !important;
   font-weight: 700;

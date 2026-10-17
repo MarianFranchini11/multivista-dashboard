@@ -102,10 +102,6 @@
                 <label>Months</label>
                 <div id="month-checkboxes" class="month-checkbox-grid"></div>
               </div>
-              <div class="due-date-panel-row">
-                <label for="specific-date-input">Or a specific date</label>
-                <input type="date" id="specific-date-input" />
-              </div>
               <div class="due-date-panel-actions">
                 <button type="button" id="due-date-clear">Clear</button>
                 <button type="button" id="due-date-apply">Apply</button>
@@ -142,6 +138,11 @@
           <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
           <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
         </div>
+        <div class="rm-specific-date-row">
+          <label for="due-soon-date">On a specific date:</label>
+          <input type="date" id="due-soon-date" />
+          <button type="button" class="clear-filters-btn" id="due-soon-date-clear">Clear date</button>
+        </div>
         <div id="due-soon-list">
           <!-- injected by dashboard.js -->
         </div>
@@ -158,6 +159,11 @@
           <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
           <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
         </div>
+        <div class="rm-specific-date-row">
+          <label for="todo-due-date">On a specific date:</label>
+          <input type="date" id="todo-due-date" />
+          <button type="button" class="clear-filters-btn" id="todo-due-date-clear">Clear date</button>
+        </div>
         <div id="todo-due-list">
           <!-- injected by dashboard.js -->
         </div>
@@ -165,14 +171,18 @@
 
       <details class="rm-roster-section due-soon-details" style="margin-bottom:28px;">
         <summary class="panel-head due-soon-summary">
-          <h2>Done: Due Soon &amp; Overdue <span id="done-due-count" class="panel-subtitle"></span></h2>
-          <span class="rm-roster-hint"><strong>O. Due Date</strong> = Original Due Date, <strong>A. Due Date</strong> = Due Date (current)</span>
+          <h2>Done: Delivered On Time or Late <span id="done-due-count" class="panel-subtitle"></span></h2>
+          <span class="rm-roster-hint">Compares when it was resolved to its (A.) Due Date, not today &middot; <strong>O. Due Date</strong> = Original Due Date, <strong>A. Due Date</strong> = Due Date (current)</span>
         </summary>
         <div class="rm-chip-group" id="done-due-chips" style="margin-bottom:14px;margin-top:14px;">
           <button type="button" class="rm-chip active" data-urgency="">All Done</button>
-          <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
-          <button type="button" class="rm-chip" data-urgency="urgent">Due &le;7 days</button>
-          <button type="button" class="rm-chip" data-urgency="soon">Due &le;21 days</button>
+          <button type="button" class="rm-chip" data-urgency="overdue">Delivered Late</button>
+          <button type="button" class="rm-chip" data-urgency="ontime">Delivered On Time</button>
+        </div>
+        <div class="rm-specific-date-row">
+          <label for="done-due-date">On a specific date:</label>
+          <input type="date" id="done-due-date" />
+          <button type="button" class="clear-filters-btn" id="done-due-date-clear">Clear date</button>
         </div>
         <div id="done-due-list">
           <!-- injected by dashboard.js -->
