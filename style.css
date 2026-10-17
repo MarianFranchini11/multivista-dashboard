@@ -1235,8 +1235,9 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-deadlinename { font-size: 0.85rem; font-weight: 600; }
 .rm-crew { font-size: 0.78rem; color: var(--slate); }
 
-.due-soon-components-col {
-  max-width: 110px;
+.due-soon-balanced-col {
+  width: 17%;
+  max-width: 220px;
   white-space: normal;
   word-break: break-word;
   font-size: 0.8rem;

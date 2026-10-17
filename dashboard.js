@@ -569,7 +569,7 @@ function renderDueSoonSection(filteredIssues) {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Status</th><th>Project Name</th><th class="due-soon-components-col">Components</th><th>Additional Info</th><th>A. Due Date</th><th>O. Due Date</th><th>Territory</th></tr>
+          <tr><th>Key</th><th>Status</th><th class="due-soon-balanced-col">Project Name</th><th class="due-soon-balanced-col">Components</th><th class="due-soon-balanced-col">Additional Info</th><th>A. Due Date</th><th>O. Due Date</th><th>Territory</th></tr>
         </thead>
         <tbody>
           ${rows
@@ -589,9 +589,9 @@ function renderDueSoonSection(filteredIssues) {
               return `<tr class="clickable-row" data-key="${issue.key}">
                 <td class="col-key">${issue.key}</td>
                 <td><span class="daysbadge-${status}">${dueSoonLabel(status)}</span></td>
-                <td>${escapeHtml(issue.projectName)}</td>
-                <td class="due-soon-components-col">${escapeHtml(components)}</td>
-                <td class="due-soon-info-cell" data-infokey="${issue.key}" style="max-width:${isExpanded ? "340px" : "200px"};font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
+                <td class="due-soon-balanced-col">${escapeHtml(issue.projectName)}</td>
+                <td class="due-soon-balanced-col">${escapeHtml(components)}</td>
+                <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
                 <td class="col-updated">${formatDateCompact(issue.dueDate)}</td>
                 <td class="col-updated">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
                 <td>${escapeHtml(issue.territory || "Unassigned")}</td>
