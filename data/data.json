@@ -1,17 +1,263 @@
 {
-  "generatedAt": "2026-10-17T11:53:45.952Z",
+  "generatedAt": "2026-10-18T12:20:15.798Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 3240,
+      "totalIssues": 3241,
       "statusSummary": {
-        "To Do": 26,
-        "In Progress": 50,
+        "To Do": 23,
+        "In Progress": 54,
         "Done": 3164
       },
       "issues": [
+        {
+          "key": "SCAN-6461",
+          "summary": "Scan to Services - AUS04 - 300151 - Vail Resorts - Blue Cow",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-17T14:26:02.414-0700",
+          "dueDate": null,
+          "created": "2026-10-17T14:25:59.843-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "AUS04",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000z1kwvYAA/view",
+          "quotedTurnaround": null,
+          "projectId": "300151",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-10-17T14:26:02.288-0700",
+              "body": "(244 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6458",
+          "summary": "Scan to Services - GA01 - 90320 - UDS Development Services - Cherokee Town Club",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-17T11:05:44.643-0700",
+          "dueDate": null,
+          "created": "2026-10-15T10:04:51.503-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 10823.4,
+          "squareFootage": 32000,
+          "projectName": "Cherokee Town Club",
+          "projectType": "Recreation",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga01/90320/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/BMkrhTebeGJphqRf8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000tuTfaYAE/view",
+          "quotedTurnaround": 18,
+          "projectId": "90320",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [
+            "Registration Error",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-10-15",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Kevin Ervin",
+              "created": "2026-10-17T11:05:42.519-0700",
+              "body": "See clip. This is odd architecturally, but aligned. There appears to be a chase between attic and exterior wall which accounts for gap. If you still disagree, provide more angles and better screenshots because one provided doesn't show reason for concern. \n \n \nKevin Ervin  Virtual Capture Systems Manager - SE Region  Mobile (404) 218-2324\nmultivista.com\n \n<http://www.multivista.com/> \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors  -- \n (6.90 MB)"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-16T07:01:20.200-0700",
+              "body": "Hi Kevin,\nI understand, but as you can see the roof structure (green) is not aligned with the exterior facade (yellow). Could you please double check it?\nGoogle maps screenshot.\nPlease let us know when the point clouds are ready.\nThank you,\nMartin"
+            },
+            {
+              "author": "Kevin Ervin",
+              "created": "2026-10-16T05:57:36.375-0700",
+              "body": "The attic is at the END of the upper floor, not above it...strange but true.  \nAs for orientation, I placed a zero datum and oriented north as best I could figure... \n \n \nKevin Ervin  Virtual Capture Systems Manager - SE Region  Mobile (404) 218-2324\nmultivista.com\n \n<http://www.multivista.com/> \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors  --"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-16T05:51:13.348-0700",
+              "body": "Hi team,\nCould you also confirm this option?\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-16T05:49:57.648-0700",
+              "body": "Hi team,\nCould you please review the point cloud data?\nAll the attic is merged with the upper floor, totally overlapped. Please review the registration.\nPlease let us know when the point clouds are corrrected.\nThank you."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-15T10:04:53.711-0700",
+              "body": "(228 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6457",
+          "summary": "Scan to Services - GBR02 - 503795 - Storey - 47 Charles Street - S2B",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-17T07:39:36.185-0700",
+          "dueDate": "2026-11-03",
+          "created": "2026-10-15T06:56:35.794-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1,
+          "squareFootage": 13000,
+          "projectName": "47 Charles Street",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503795/3D Point clouds",
+          "mapLink": "https://maps.app.goo.gl/A1tq7WWCooWzTHs49",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000ztxsMYAQ/view",
+          "quotedTurnaround": 13,
+          "projectId": "503795",
+          "originalDueDate": "2026-11-03",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-10-15",
+          "dataValidatedDate": "2026-10-15",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-15T07:07:32.792-0700",
+              "body": "Team,Once we have the plans ready, we need to send them to the Architectural team.\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-15T06:56:40.091-0700",
+              "body": "(216 kB)\n (225 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6432",
+          "summary": "Scan to Services - NV01 - 89933 - The Orleans Hotel & Casino - The Orleans Hotel and Casino Pool Remodel",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-17T07:22:59.425-0700",
+          "dueDate": "2026-11-12",
+          "created": "2026-10-08T13:21:59.052-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NV01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 23270.63,
+          "squareFootage": 75000,
+          "projectName": "The Orleans Hotel and Casino Pool Remodel",
+          "projectType": "Entertainment",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/89933/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/VpR1qwdmjtbkehBk6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000waBDFYA2/view",
+          "quotedTurnaround": 30,
+          "projectId": "89933",
+          "originalDueDate": "2026-11-20",
+          "additionalInfo": null,
+          "components": [
+            "Checklist Missing",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-10-09",
+          "dataValidatedDate": "2026-10-09",
+          "comments": [
+            {
+              "author": "Teagan Pahl",
+              "created": "2026-10-09T08:23:55.470-0700",
+              "body": "To clarify,\nMultivista REVIT template (default)\nYes, surrounding facades are outside of the scope."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-10-09T07:18:56.323-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-09T07:18:52.373-0700",
+              "body": "Hi team,\nCould you please confirm this option?\nAdditionally, can we confirm that the surrounding façades of the building are out of the scope?\nThanks,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-09T07:14:55.996-0700",
+              "body": "Multivista REVIT template (default)\nYes, surrounding facades are outside of the scope."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-08T13:22:01.070-0700",
+              "body": "(212 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6446",
+          "summary": "Scan to Services - AZ02 - 85865 - HonorHealth - Shea Medical Center Piper Surgery Center - Floor 2 Renovation",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-17T06:27:26.075-0700",
+          "dueDate": "2026-10-28",
+          "created": "2026-10-13T15:21:49.755-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "AZ02",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 2810.45,
+          "squareFootage": 38374,
+          "projectName": "HonorHealth - Piper Surgery Center",
+          "projectType": "Healthcare",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/az02/85865/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/8T5svnjwwxdDPXh78",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006Ht00000xYo8JIAS/viewhttps://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000005xmfp0AA/view",
+          "quotedTurnaround": 10,
+          "projectId": "85865",
+          "originalDueDate": "2026-10-28",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-10-14",
+          "dataValidatedDate": "2026-10-14",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-14T12:21:20.237-0700",
+              "body": "2 levels"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-13T15:21:52.183-0700",
+              "body": "(227 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6427",
           "summary": "Scan to Services - GBR07 - 503825 - Galliford Try - Loughborough Crown House",
@@ -126,48 +372,6 @@
               "author": "Multivista",
               "created": "2026-10-07T15:37:06.292-0700",
               "body": "(203 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6446",
-          "summary": "Scan to Services - AZ02 - 85865 - HonorHealth - Shea Medical Center Piper Surgery Center - Floor 2 Renovation",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-10-17T04:13:12.067-0700",
-          "dueDate": "2026-10-28",
-          "created": "2026-10-13T15:21:49.755-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AZ02",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 2810.45,
-          "squareFootage": 38374,
-          "projectName": "HonorHealth - Piper Surgery Center",
-          "projectType": "Healthcare",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/az02/85865/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/8T5svnjwwxdDPXh78",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006Ht00000xYo8JIAS/viewhttps://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000005xmfp0AA/view",
-          "quotedTurnaround": 10,
-          "projectId": "85865",
-          "originalDueDate": "2026-10-28",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-10-14",
-          "dataValidatedDate": "2026-10-14",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-14T12:21:20.237-0700",
-              "body": "2 levels"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-13T15:21:52.183-0700",
-              "body": "(227 kB)"
             }
           ]
         },
@@ -306,48 +510,6 @@
               "author": "Multivista",
               "created": "2026-10-15T04:13:36.455-0700",
               "body": "(1.67 MB)\n (1 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6457",
-          "summary": "Scan to Services - GBR02 - 503795 - Storey - 47 Charles Street - S2B",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-10-17T04:10:37.832-0700",
-          "dueDate": "2026-11-03",
-          "created": "2026-10-15T06:56:35.794-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1,
-          "squareFootage": 13000,
-          "projectName": "47 Charles Street",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503795/3D Point clouds",
-          "mapLink": "https://maps.app.goo.gl/A1tq7WWCooWzTHs49",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000ztxsMYAQ/view",
-          "quotedTurnaround": 13,
-          "projectId": "503795",
-          "originalDueDate": "2026-11-03",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-10-15",
-          "dataValidatedDate": "2026-10-15",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-15T07:07:32.792-0700",
-              "body": "Team,Once we have the plans ready, we need to send them to the Architectural team.\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-15T06:56:40.091-0700",
-              "body": "(216 kB)\n (225 kB)"
             }
           ]
         },
@@ -2076,66 +2238,6 @@
               "author": "Multivista",
               "created": "2026-10-08T07:20:18.233-0700",
               "body": "(843 kB)\n  (233 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6458",
-          "summary": "Scan to Services - GA01 - 90320 - UDS Development Services - Cherokee Town Club",
-          "status": "Waiting for Scan Data",
-          "statusCategory": "To Do",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-10-16T07:01:27.323-0700",
-          "dueDate": null,
-          "created": "2026-10-15T10:04:51.503-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GA01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 10823.4,
-          "squareFootage": 32000,
-          "projectName": "Cherokee Town Club",
-          "projectType": "Recreation",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga01/90320/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/BMkrhTebeGJphqRf8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000tuTfaYAE/view",
-          "quotedTurnaround": 18,
-          "projectId": "90320",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [
-            "Registration Error",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-10-15",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-16T07:01:20.200-0700",
-              "body": "Hi Kevin,\nI understand, but as you can see the roof structure (green) is not aligned with the exterior facade (yellow). Could you please double check it?\nGoogle maps screenshot.\nPlease let us know when the point clouds are ready.\nThank you,\nMartin"
-            },
-            {
-              "author": "Kevin Ervin",
-              "created": "2026-10-16T05:57:36.375-0700",
-              "body": "The attic is at the END of the upper floor, not above it...strange but true.  \nAs for orientation, I placed a zero datum and oriented north as best I could figure... \n \n \nKevin Ervin  Virtual Capture Systems Manager - SE Region  Mobile (404) 218-2324\nmultivista.com\n \n<http://www.multivista.com/> \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors  --"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-16T05:51:13.348-0700",
-              "body": "Hi team,\nCould you also confirm this option?\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-16T05:49:57.648-0700",
-              "body": "Hi team,\nCould you please review the point cloud data?\nAll the attic is merged with the upper floor, totally overlapped. Please review the registration.\nPlease let us know when the point clouds are corrrected.\nThank you."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-15T10:04:53.711-0700",
-              "body": "(228 kB)"
             }
           ]
         },
@@ -4886,66 +4988,6 @@
               "author": "Multivista",
               "created": "2026-09-16T05:51:16.442-0700",
               "body": "(278 kB)\n (1.23 MB)\n (164 kB)\n (325 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6432",
-          "summary": "Scan to Services - NV01 - 89933 - The Orleans Hotel & Casino - The Orleans Hotel and Casino Pool Remodel",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-10-12T19:24:07.816-0700",
-          "dueDate": "2026-11-12",
-          "created": "2026-10-08T13:21:59.052-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NV01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 23270.63,
-          "squareFootage": 75000,
-          "projectName": "The Orleans Hotel and Casino Pool Remodel",
-          "projectType": "Entertainment",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/89933/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/VpR1qwdmjtbkehBk6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000waBDFYA2/view",
-          "quotedTurnaround": 30,
-          "projectId": "89933",
-          "originalDueDate": "2026-11-20",
-          "additionalInfo": null,
-          "components": [
-            "Checklist Missing",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-10-09",
-          "dataValidatedDate": "2026-10-09",
-          "comments": [
-            {
-              "author": "Teagan Pahl",
-              "created": "2026-10-09T08:23:55.470-0700",
-              "body": "To clarify,\nMultivista REVIT template (default)\nYes, surrounding facades are outside of the scope."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-10-09T07:18:56.323-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-09T07:18:52.373-0700",
-              "body": "Hi team,\nCould you please confirm this option?\nAdditionally, can we confirm that the surrounding façades of the building are out of the scope?\nThanks,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-09T07:14:55.996-0700",
-              "body": "Multivista REVIT template (default)\nYes, surrounding facades are outside of the scope."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-08T13:22:01.070-0700",
-              "body": "(212 kB)"
             }
           ]
         },
