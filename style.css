@@ -1583,6 +1583,20 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   gap: 14px;
 }
 
+.kpi-subgrid-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 18px 0 10px;
+}
+
+.kpi-subgrid {
+  max-width: 420px;
+}
+
 .kpi-card {
   background: var(--paper);
   border: 1px solid var(--line);

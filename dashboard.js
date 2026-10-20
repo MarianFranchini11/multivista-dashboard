@@ -303,6 +303,19 @@ function renderKpis(issues) {
   const onTimePct = deliveryTotal > 0 ? Math.round((onTime / deliveryTotal) * 100) : null;
   const latePct = deliveryTotal > 0 ? Math.round((late / deliveryTotal) * 100) : null;
 
+  // On Time / Late, but only among In Progress tickets (and only ones
+  // with an Original Due Date to judge against) -- same status logic as
+  // the "In Progress: Due Soon & Overdue" section below, so the two
+  // always agree with each other.
+  const inProgressJudged = issues
+    .filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i))
+    .map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
+  const inProgressTotal = inProgressJudged.length;
+  const inProgressLate = inProgressJudged.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
+  const inProgressOnTime = inProgressTotal - inProgressLate;
+  const inProgressOnTimePct = inProgressTotal > 0 ? Math.round((inProgressOnTime / inProgressTotal) * 100) : null;
+  const inProgressLatePct = inProgressTotal > 0 ? Math.round((inProgressLate / inProgressTotal) * 100) : null;
+
   const kpis = [
     { label: "Total Tickets", value: total.toLocaleString("en-US") },
     { label: "Territories", value: territories.toLocaleString("en-US") },
@@ -320,6 +333,32 @@ function renderKpis(issues) {
       sub: deliveryTotal > 0 ? `${late} of ${deliveryTotal}` : null,
     },
   ];
+
+  const inProgressKpiGrid = document.getElementById("inprogress-ontime-grid");
+  if (inProgressKpiGrid) {
+    const inProgressKpis = [
+      {
+        label: "In Progress \u2013 On Time",
+        value: inProgressOnTimePct !== null ? `${inProgressOnTimePct}%` : "\u2014",
+        sub: inProgressTotal > 0 ? `${inProgressOnTime} of ${inProgressTotal}` : null,
+      },
+      {
+        label: "In Progress \u2013 Late",
+        value: inProgressLatePct !== null ? `${inProgressLatePct}%` : "\u2014",
+        sub: inProgressTotal > 0 ? `${inProgressLate} of ${inProgressTotal}` : null,
+      },
+    ];
+    inProgressKpiGrid.innerHTML = inProgressKpis
+      .map(
+        (k) => `
+      <div class="kpi-card">
+        <div class="kpi-value">${k.value}</div>
+        <div class="kpi-label">${k.label}</div>
+        ${k.sub ? `<div class="kpi-sub">${k.sub}</div>` : ""}
+      </div>`
+      )
+      .join("");
+  }
 
   const grid = document.getElementById("kpi-grid");
   grid.innerHTML = kpis
