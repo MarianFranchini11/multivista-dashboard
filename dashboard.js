@@ -332,33 +332,17 @@ function renderKpis(issues) {
       value: latePct !== null ? `${latePct}%` : "\u2014",
       sub: deliveryTotal > 0 ? `${late} of ${deliveryTotal}` : null,
     },
+    {
+      label: "In Progress \u2013 On Time",
+      value: inProgressOnTimePct !== null ? `${inProgressOnTimePct}%` : "\u2014",
+      sub: inProgressTotal > 0 ? `${inProgressOnTime} of ${inProgressTotal}` : null,
+    },
+    {
+      label: "In Progress \u2013 Late",
+      value: inProgressLatePct !== null ? `${inProgressLatePct}%` : "\u2014",
+      sub: inProgressTotal > 0 ? `${inProgressLate} of ${inProgressTotal}` : null,
+    },
   ];
-
-  const inProgressKpiGrid = document.getElementById("inprogress-ontime-grid");
-  if (inProgressKpiGrid) {
-    const inProgressKpis = [
-      {
-        label: "In Progress \u2013 On Time",
-        value: inProgressOnTimePct !== null ? `${inProgressOnTimePct}%` : "\u2014",
-        sub: inProgressTotal > 0 ? `${inProgressOnTime} of ${inProgressTotal}` : null,
-      },
-      {
-        label: "In Progress \u2013 Late",
-        value: inProgressLatePct !== null ? `${inProgressLatePct}%` : "\u2014",
-        sub: inProgressTotal > 0 ? `${inProgressLate} of ${inProgressTotal}` : null,
-      },
-    ];
-    inProgressKpiGrid.innerHTML = inProgressKpis
-      .map(
-        (k) => `
-      <div class="kpi-card">
-        <div class="kpi-value">${k.value}</div>
-        <div class="kpi-label">${k.label}</div>
-        ${k.sub ? `<div class="kpi-sub">${k.sub}</div>` : ""}
-      </div>`
-      )
-      .join("");
-  }
 
   const grid = document.getElementById("kpi-grid");
   grid.innerHTML = kpis
