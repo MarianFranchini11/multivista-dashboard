@@ -112,6 +112,25 @@ arriba — siempre muestra el panorama real de todos los tickets "In
 Progress" según su fecha de entrega. Si hay alguno vencido, aparece un
 banner de alerta rojo arriba de todo.
 
+## Updates a "Franchise Tracking"
+
+- **Email de notas de reunión**: en Meeting History, cada reunión tiene un
+  campo de email + botón "Email notes" — arma un `mailto:` con el resumen
+  de la reunión y abre tu propio cliente de mail para revisarlo y
+  enviarlo (el sitio no manda el mail solo, no tiene servidor de correo).
+- **S2S Comment obligatorio para resolver un action item**: ya no hay
+  checkbox simple — hay que escribir un comentario antes de poder marcar
+  "Mark Resolved".
+- **Pestaña "Action Items"** (antes "Open Action Items") ahora tiene
+  chips **Open / Completed / All**, y los completados muestran su S2S
+  Comment.
+- **Búsqueda en Meeting History** ahora también busca dentro de los
+  comentarios, nombres de proyecto y responsables de cada ítem logueado,
+  no solo en el título/notas de la reunión.
+- **Franquicia genérica "GBR"**: aparece como opción sugerida al elegir
+  territorio, además de los códigos específicos (editable en
+  `franchise-tracking.js`, constante `FT_GENERIC_TERRITORIES`).
+
 ## Sobre "Franchise Tracking"
 
 Pestaña nueva, sin PIN (acceso libre, igual que Time Tracking). Sirve para

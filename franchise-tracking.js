@@ -12,6 +12,7 @@ let ftActiveMeetingId = null;
 let ftSelectedTarget = null; // { type: "jira"|"potential", key, label }
 let ftSubTab = "log";
 let ftEditingItemId = null;
+let ftActionStatusFilter = "open";
 
 // Renders one meeting item, either as a static panel or (if it's the one
 // being edited) as an inline edit form. Shared by the active-meeting view
@@ -36,6 +37,7 @@ function renderMeetingItemHtml(it) {
       <div>
         <strong>${escapeHtml(it.targetLabel)}</strong> &mdash; ${escapeHtml(it.comment)}
         ${it.isAction ? `<span class="rm-pacepill ${it.actionStatus === "done" ? "rm-pace-pace" : "rm-pace-under"}" style="margin-left:6px;">${it.actionStatus === "done" ? "DONE" : "ACTION"}: ${escapeHtml(it.actionOwner || "?")} by ${escapeHtml(it.actionDueDate || "?")}</span>` : ""}
+        ${it.actionStatus === "done" && it.resolutionComment ? `<div style="font-size:0.78rem;color:var(--slate);margin-top:4px;">S2S Comment: ${escapeHtml(it.resolutionComment)}</div>` : ""}
       </div>
       <div style="display:flex;gap:6px;flex-shrink:0;">
         <button type="button" class="clear-filters-btn" data-edititem="${it.id}">Edit</button>
@@ -173,13 +175,26 @@ function initFranchiseTracking() {
   });
   document.getElementById("ft-add-item-btn").addEventListener("click", handleAddItem);
 
+  document.querySelectorAll("#ft-action-status-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#ft-action-status-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      ftActionStatusFilter = chip.dataset.actionstatus;
+      renderActionItems();
+    });
+  });
   document.getElementById("ft-actions-territory").addEventListener("change", renderActionItems);
   document.getElementById("ft-history-territory").addEventListener("change", renderHistory);
   document.getElementById("ft-history-search").addEventListener("input", renderHistory);
 }
 
+// Generic, non-numbered franchise entries -- for logging a meeting about
+// a region broadly, without tying it to one specific numbered territory.
+const FT_GENERIC_TERRITORIES = ["GBR"];
+
 function populateTerritorySuggestions() {
   const territories = new Set(ftTickets.map((t) => t.territory).filter(Boolean));
+  FT_GENERIC_TERRITORIES.forEach((t) => territories.add(t));
   document.getElementById("ft-territory-suggestions").innerHTML = Array.from(territories)
     .sort()
     .map((t) => `<option value="${ftEscapeAttr(t)}"></option>`)
@@ -389,51 +404,72 @@ function renderActiveMeetingItems() {
   wireMeetingItemHandlers(container, renderActiveMeetingItems);
 }
 
-// ---- Open Action Items tab ----
+// ---- Action Items tab (Open / Completed / All) ----
 function renderActionItems() {
   const container = document.getElementById("ft-actions-list");
   const countEl = document.getElementById("ft-actions-count");
   const territoryFilter = document.getElementById("ft-actions-territory").value;
 
-  let actions = ftItems.filter((i) => i.isAction && i.actionStatus === "open");
+  let actions = ftItems.filter((i) => i.isAction);
+  if (ftActionStatusFilter) actions = actions.filter((i) => i.actionStatus === ftActionStatusFilter);
   if (territoryFilter) actions = actions.filter((i) => i.territory === territoryFilter);
   actions.sort((a, b) => (a.actionDueDate || "9999") < (b.actionDueDate || "9999") ? -1 : 1);
 
   if (countEl) countEl.textContent = `(${actions.length})`;
 
   if (actions.length === 0) {
-    container.innerHTML = `<p class="empty-state">No open action items. Nice work!</p>`;
+    container.innerHTML = `<p class="empty-state">No action items match this filter.</p>`;
     return;
   }
 
   container.innerHTML = `
     <div class="table-wrap">
       <table>
-        <thead><tr><th></th><th>Project</th><th>Action</th><th>Owner</th><th>Due</th><th>Territory</th><th></th></tr></thead>
+        <thead><tr><th>Project</th><th>Action</th><th>Owner</th><th>Due</th><th>Territory</th><th>Resolution</th><th></th></tr></thead>
         <tbody>
           ${actions
-            .map(
-              (it) => `
+            .map((it) => {
+              const resolutionCell =
+                it.actionStatus === "done"
+                  ? `<div style="font-size:0.8rem;">
+                      <span class="rm-pacepill rm-pace-pace">DONE</span>
+                      <div style="margin-top:4px;color:var(--slate);">${escapeHtml(it.resolutionComment || "\u2014")}</div>
+                    </div>`
+                  : `<div style="display:flex;flex-direction:column;gap:6px;min-width:180px;">
+                      <input type="text" class="rm-search" data-s2scomment="${it.id}" placeholder="S2S Comment (required to resolve)" style="font-size:0.78rem;padding:6px 8px;" />
+                      <button type="button" class="clear-filters-btn" data-resolveaction="${it.id}">Mark Resolved</button>
+                    </div>`;
+              return `
             <tr>
-              <td><input type="checkbox" class="ft-mark-done" data-id="${it.id}" /></td>
               <td>${escapeHtml(it.targetLabel)}</td>
               <td>${escapeHtml(it.comment)}</td>
               <td>${escapeHtml(it.actionOwner || "\u2014")}</td>
               <td class="col-updated">${escapeHtml(it.actionDueDate || "\u2014")}</td>
               <td>${escapeHtml(it.territory || "\u2014")}</td>
+              <td>${resolutionCell}</td>
               <td><button type="button" class="clear-filters-btn" data-deleteaction="${it.id}" style="color:#8A2A17;border-color:#8A2A17;">Delete</button></td>
-            </tr>`
-            )
+            </tr>`;
+            })
             .join("")}
         </tbody>
       </table>
     </div>`;
 
-  container.querySelectorAll(".ft-mark-done").forEach((cb) => {
-    cb.addEventListener("change", async (e) => {
-      if (!e.target.checked) return;
+  container.querySelectorAll("[data-resolveaction]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const id = btn.dataset.resolveaction;
+      const row = btn.closest("tr");
+      const comment = row.querySelector(`[data-s2scomment="${id}"]`).value.trim();
+      if (!comment) {
+        alert("Add an S2S Comment before marking this resolved.");
+        return;
+      }
       try {
-        await db.collection("meeting_items").doc(e.target.dataset.id).update({ actionStatus: "done" });
+        await db.collection("meeting_items").doc(id).update({
+          actionStatus: "done",
+          resolutionComment: comment,
+          resolvedAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
       } catch (err) {
         alert(`Could not update: ${err.message}`);
       }
@@ -460,9 +496,22 @@ function renderHistory() {
   let meetings = [...ftMeetings];
   if (territoryFilter) meetings = meetings.filter((m) => m.territory === territoryFilter);
   if (search) {
-    meetings = meetings.filter(
-      (m) => (m.notes || "").toLowerCase().includes(search) || (m.territory || "").toLowerCase().includes(search)
-    );
+    meetings = meetings.filter((m) => {
+      if ((m.notes || "").toLowerCase().includes(search)) return true;
+      if ((m.territory || "").toLowerCase().includes(search)) return true;
+      // Also search inside everything logged for this meeting -- comments,
+      // project names, owners -- so a word/phrase search digs deeper than
+      // just the meeting title.
+      return ftItems
+        .filter((i) => i.meetingId === m.id)
+        .some(
+          (i) =>
+            (i.comment || "").toLowerCase().includes(search) ||
+            (i.targetLabel || "").toLowerCase().includes(search) ||
+            (i.actionOwner || "").toLowerCase().includes(search) ||
+            (i.resolutionComment || "").toLowerCase().includes(search)
+        );
+    });
   }
   meetings.sort((a, b) => (a.date < b.date ? 1 : -1));
 
@@ -479,6 +528,10 @@ function renderHistory() {
         <summary>${escapeHtml(m.date)} \u00b7 ${escapeHtml(m.territory)}${m.notes ? " \u00b7 " + escapeHtml(m.notes) : ""} <span class="rm-group-count">(${items.length} item${items.length === 1 ? "" : "s"})</span></summary>
         <div style="padding:10px 14px;">
           ${items.length === 0 ? `<p class="empty-state">No items logged.</p>` : items.map(renderMeetingItemHtml).join("")}
+          <div class="rm-newperson-row" style="margin-top:10px;">
+            <input type="email" class="rm-search" data-notifyemail="${m.id}" placeholder="Send these notes to (email)" />
+            <button type="button" class="rm-add-btn" data-sendnotes="${m.id}">Email notes</button>
+          </div>
           <button type="button" class="clear-filters-btn" data-deletemeeting="${m.id}" style="color:#8A2A17;border-color:#8A2A17;margin-top:8px;">Delete this meeting</button>
         </div>
       </details>`;
@@ -503,6 +556,47 @@ function renderHistory() {
       }
     });
   });
+  container.querySelectorAll("[data-sendnotes]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const meetingId = btn.dataset.sendnotes;
+      const emailInput = container.querySelector(`[data-notifyemail="${meetingId}"]`);
+      const email = emailInput.value.trim();
+      if (!email) {
+        alert("Enter an email address first.");
+        return;
+      }
+      const meeting = ftMeetings.find((m) => m.id === meetingId);
+      const items = ftItems.filter((i) => i.meetingId === meetingId);
+      window.location.href = buildMeetingNotesMailto(meeting, items, email);
+    });
+  });
+}
+
+// Builds a mailto: link with the meeting summary pre-filled -- opens the
+// person's own mail client to review and send, since a static site has no
+// mail server of its own to send through.
+function buildMeetingNotesMailto(meeting, items, toEmail) {
+  const subject = `Meeting notes \u2013 ${meeting.territory} \u2013 ${meeting.date}`;
+  const lines = [];
+  lines.push(`Meeting notes: ${meeting.territory}, ${meeting.date}`);
+  if (meeting.notes) lines.push(meeting.notes);
+  lines.push("");
+  if (items.length === 0) {
+    lines.push("(No items were logged for this meeting.)");
+  } else {
+    items.forEach((it) => {
+      lines.push(`\u2022 ${it.targetLabel}: ${it.comment}`);
+      if (it.isAction) {
+        const status = it.actionStatus === "done" ? "DONE" : "ACTION";
+        lines.push(`  [${status}] Owner: ${it.actionOwner || "?"} | Due: ${it.actionDueDate || "?"}`);
+        if (it.actionStatus === "done" && it.resolutionComment) {
+          lines.push(`  S2S Comment: ${it.resolutionComment}`);
+        }
+      }
+    });
+  }
+  const body = lines.join("\n");
+  return `mailto:${encodeURIComponent(toEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 initFranchiseTracking();

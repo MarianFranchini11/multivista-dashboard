@@ -53,7 +53,7 @@
 
       <nav class="rm-subnav">
         <a href="#" class="rm-subnav-link active" data-fttab="log">Log a Meeting</a>
-        <a href="#" class="rm-subnav-link" data-fttab="actions">Open Action Items</a>
+        <a href="#" class="rm-subnav-link" data-fttab="actions">Action Items</a>
         <a href="#" class="rm-subnav-link" data-fttab="history">Meeting History</a>
       </nav>
 
@@ -114,12 +114,17 @@
 
       </div>
 
-      <!-- TAB 2: Open Action Items -->
+      <!-- TAB 2: Action Items -->
       <div id="ft-tab-actions" class="rm-tab-panel" style="display:none;">
         <section class="rm-roster-section">
           <div class="panel-head">
-            <h2>Open Action Items <span id="ft-actions-count" class="panel-subtitle"></span></h2>
-            <span class="rm-roster-hint">Across all meetings &middot; sorted by due date &middot; check off when done</span>
+            <h2>Action Items <span id="ft-actions-count" class="panel-subtitle"></span></h2>
+            <span class="rm-roster-hint">Across all meetings &middot; sorted by due date &middot; resolving one requires an S2S Comment</span>
+          </div>
+          <div class="rm-chip-group" id="ft-action-status-chips" style="margin-bottom:14px;">
+            <button type="button" class="rm-chip active" data-actionstatus="open">Open</button>
+            <button type="button" class="rm-chip" data-actionstatus="done">Completed</button>
+            <button type="button" class="rm-chip" data-actionstatus="">All</button>
           </div>
           <div class="filter-bar" style="margin-bottom:14px;">
             <div class="filter-group">
@@ -144,7 +149,7 @@
             </div>
             <div class="filter-group">
               <label for="ft-history-search">Search</label>
-              <input type="text" id="ft-history-search" class="rm-search" placeholder="Search meetings&hellip;" />
+              <input type="text" id="ft-history-search" class="rm-search" placeholder="Search meetings, comments, projects&hellip;" />
             </div>
           </div>
           <div id="ft-history-list"></div>
