@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T12:22:22.362Z",
+  "generatedAt": "2026-10-25T12:52:34.140Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -12,6 +12,65 @@
         "Done": 3191
       },
       "issues": [
+        {
+          "key": "SCAN-6447",
+          "summary": "Scan to Services - AUS04 - 300156 - Mars Snacking - Mars Asquith",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-10-24T07:53:40.742-0700",
+          "dueDate": "2026-10-26",
+          "created": "2026-10-14T00:23:15.972-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "AUS04",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 762.05,
+          "squareFootage": 5000,
+          "projectName": "Mars Asquith",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-au/aus04/300156/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/awJpDKU6o9fM1SJZ7",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010MF9bYAG/view",
+          "quotedTurnaround": 7,
+          "projectId": "300156",
+          "originalDueDate": "2026-10-23",
+          "additionalInfo": null,
+          "components": [
+            "Corporate Delay"
+          ],
+          "inProgressDate": "2026-10-14",
+          "dataValidatedDate": "2026-10-14",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-20T04:43:10.412-0700",
+              "body": "Hi Rojes,\nPlease make sure you include this\nThanks"
+            },
+            {
+              "author": "Luke Chivers",
+              "created": "2026-10-14T13:05:35.094-0700",
+              "body": "Hi Martin, no problem at all, I thought you might've just wanted the one ticket for the project. I'll raise one this morning. \nRegards Luke Chivers 0477744063 www.multivista.com Sent from my iPhone"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-14T12:44:39.807-0700",
+              "body": "Hi Luke,\nI just sent this project into production, but we will need a FFR ticket to do the other part of the job.Could you please submit FFR ticket? \nThank you."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-14T12:41:17.402-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-14T00:23:19.785-0700",
+              "body": "(244 kB)\n (54 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6404",
           "summary": "Scan to Services - GA02 - 86282 - Gulfstream Aerospace - Main Plant Buildings B",
@@ -3138,65 +3197,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6447",
-          "summary": "Scan to Services - AUS04 - 300156 - Mars Snacking - Mars Asquith",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-10-22T05:30:23.956-0700",
-          "dueDate": "2026-10-26",
-          "created": "2026-10-14T00:23:15.972-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AUS04",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 762.05,
-          "squareFootage": 5000,
-          "projectName": "Mars Asquith",
-          "projectType": "Manufacturing & Warehouse",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-au/aus04/300156/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/awJpDKU6o9fM1SJZ7",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010MF9bYAG/view",
-          "quotedTurnaround": 7,
-          "projectId": "300156",
-          "originalDueDate": "2026-10-23",
-          "additionalInfo": null,
-          "components": [
-            "Corporate Delay"
-          ],
-          "inProgressDate": "2026-10-14",
-          "dataValidatedDate": "2026-10-14",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-20T04:43:10.412-0700",
-              "body": "Hi Rojes,\nPlease make sure you include this\nThanks"
-            },
-            {
-              "author": "Luke Chivers",
-              "created": "2026-10-14T13:05:35.094-0700",
-              "body": "Hi Martin, no problem at all, I thought you might've just wanted the one ticket for the project. I'll raise one this morning. \nRegards Luke Chivers 0477744063 www.multivista.com Sent from my iPhone"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-14T12:44:39.807-0700",
-              "body": "Hi Luke,\nI just sent this project into production, but we will need a FFR ticket to do the other part of the job.Could you please submit FFR ticket? \nThank you."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-14T12:41:17.402-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-14T00:23:19.785-0700",
-              "body": "(244 kB)\n (54 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6467",
