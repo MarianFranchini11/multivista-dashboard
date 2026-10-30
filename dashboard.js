@@ -534,20 +534,30 @@ function dueSoonDoneStatus(issue) {
 function dueSoonRowStatus(issue, daysLeft) {
   if (issue.statusCategory === "Done") return dueSoonDoneStatus(issue);
 
-  // Hard rule, takes priority over everything else: if the *current*
-  // (A.) Due Date has already passed, it's overdue, full stop -- even an
-  // agreed revision extension eventually runs out.
   if (issue.dueDate) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const aDue = new Date(issue.dueDate + "T00:00:00");
+
+    // Hard rule, takes priority over everything else: if the *current*
+    // (A.) Due Date has already passed, it's overdue, full stop -- even an
+    // agreed revision extension eventually runs out. "Today" does NOT
+    // count as passed -- a ticket only turns overdue starting tomorrow.
     if (aDue < today) return "overdue";
+
+    // From here on, the current A. Due Date is today or still ahead, so
+    // this ticket must never read as Overdue -- if the date moved, it's
+    // because it was agreed with the client (regardless of component tag).
+    if (issue.originalDueDate && issue.dueDate > issue.originalDueDate) {
+      return "ontime";
+    }
+
+    // No date move to flag -- show normal urgency, but based on the
+    // *current* due date, never the (possibly stale) Original Due Date,
+    // so it can't fall back into "overdue" while the real due date holds.
+    return dueSoonUrgency(dueSoonDaysLeft(issue.dueDate));
   }
 
-  const hasRevisionComponent = issue.components && issue.components.includes("Revisions - Free Fix");
-  if (hasRevisionComponent && issue.dueDate && issue.originalDueDate && issue.dueDate > issue.originalDueDate) {
-    return "ontime";
-  }
   return dueSoonUrgency(daysLeft);
 }
 
