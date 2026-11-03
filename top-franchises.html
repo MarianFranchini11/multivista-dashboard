@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -122,6 +123,10 @@
       <section class="kpi-section">
         <div class="kpi-grid" id="kpi-grid">
           <!-- KPI cards injected by dashboard.js -->
+        </div>
+        <div class="export-income-row">
+          <select id="export-income-year"></select>
+          <button type="button" id="export-income-btn" class="clear-filters-btn">Download Income by Franchise (Excel)</button>
         </div>
       </section>
 

@@ -55,7 +55,13 @@ async function initDashboardPage() {
   populateFilters(allIssues);
   document.getElementById("year-select").value = selectedYear;
   updateDueDateSummary();
+  populateExportIncomeYearSelect();
   renderAll();
+
+  const exportIncomeBtn = document.getElementById("export-income-btn");
+  if (exportIncomeBtn) {
+    exportIncomeBtn.addEventListener("click", exportIncomeByFranchiseExcel);
+  }
 
   [
     ["due-soon-chips", "due-soon"],
@@ -287,6 +293,79 @@ function formatCurrency(amount) {
     currency: "USD",
     maximumFractionDigits: 0,
   });
+}
+
+// "Download Income by Franchise (Excel)" -- populates the year dropdown
+// next to the button with every year present in allIssues' Created date
+// (income is counted by when the ticket was created, regardless of its
+// current status), defaulting to 2026 if available, otherwise the most
+// recent year.
+function populateExportIncomeYearSelect() {
+  const select = document.getElementById("export-income-year");
+  if (!select) return;
+  const years = new Set();
+  for (const issue of allIssues) {
+    if (issue.created) years.add(issue.created.slice(0, 4));
+  }
+  const sorted = Array.from(years).sort();
+  select.innerHTML = sorted.map((y) => `<option value="${y}">${y}</option>`).join("");
+  if (sorted.includes("2026")) {
+    select.value = "2026";
+  } else if (sorted.length > 0) {
+    select.value = sorted[sorted.length - 1];
+  }
+}
+
+// Builds and downloads an .xlsx with one row per franchise (territory):
+// ticket count, total income (sum of Price) and average ticket value, for
+// every ticket created in the selected year regardless of its current
+// status -- plus a TOTAL row at the bottom. Respects DASHBOARD_SCOPE_TERRITORIES,
+// so on the Top Franchises page it's automatically scoped to those franchises.
+function exportIncomeByFranchiseExcel() {
+  if (typeof XLSX === "undefined") {
+    alert("Could not load the Excel export library. Check your connection and try again.");
+    return;
+  }
+
+  const yearSelect = document.getElementById("export-income-year");
+  const year = yearSelect && yearSelect.value ? yearSelect.value : "2026";
+  const issuesInYear = allIssues.filter((i) => i.created && i.created.slice(0, 4) === year);
+
+  const byFranchise = {};
+  for (const issue of issuesInYear) {
+    const key = issue.territory || "Unassigned";
+    if (!byFranchise[key]) byFranchise[key] = { tickets: 0, income: 0 };
+    byFranchise[key].tickets += 1;
+    byFranchise[key].income += issue.price || 0;
+  }
+
+  const round2 = (n) => Math.round(n * 100) / 100;
+
+  const rows = Object.entries(byFranchise)
+    .map(([franchise, v]) => ({
+      Franchise: franchise,
+      Tickets: v.tickets,
+      "Income (USD)": round2(v.income),
+      "Avg Ticket (USD)": v.tickets > 0 ? round2(v.income / v.tickets) : 0,
+    }))
+    .sort((a, b) => b["Income (USD)"] - a["Income (USD)"]);
+
+  const totalTickets = rows.reduce((s, r) => s + r.Tickets, 0);
+  const totalIncome = rows.reduce((s, r) => s + r["Income (USD)"], 0);
+
+  rows.push({
+    Franchise: "TOTAL",
+    Tickets: totalTickets,
+    "Income (USD)": round2(totalIncome),
+    "Avg Ticket (USD)": totalTickets > 0 ? round2(totalIncome / totalTickets) : 0,
+  });
+
+  const ws = XLSX.utils.json_to_sheet(rows);
+  ws["!cols"] = [{ wch: 26 }, { wch: 10 }, { wch: 16 }, { wch: 16 }];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, `Income ${year}`);
+  XLSX.writeFile(wb, `Income_by_Franchise_${year}.xlsx`);
 }
 
 function renderKpis(issues) {
