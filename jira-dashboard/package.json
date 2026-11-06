@@ -1,0 +1,12 @@
+{
+  "name": "jira-dashboard-multivista",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static dashboard showing a daily-synced snapshot of Multivista's Jira projects.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "fetch-data": "node scripts/fetch-jira-data.js"
+  }
+}

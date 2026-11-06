@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tickets · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <img src="logo.svg" alt="Hexagon Multivista" class="gate-logo" />
+      <h1 class="gate-title">Project Dashboard</h1>
+      <p class="gate-sub">Sign in to continue.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="text" id="gate-username" placeholder="Username" autocomplete="username" />
+        <input type="password" id="gate-password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Incorrect username or password.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
+        <span class="brand-sub">Project Dashboard</span>
+      </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="issues.html" class="nav-link active">Tickets</a>
+        <a href="laser-support.html" class="nav-link">3D Laser Support</a>
+        <a href="resource-management.html" class="nav-link">Resource Management</a>
+        <a href="time-tracking.html" class="nav-link">Time Tracking</a>
+        <a href="franchise-tracking.html" class="nav-link">Franchise Tracking</a>
+        <a href="flagged-projects.html" class="nav-link">Flagged Projects</a>
+        <a href="top-franchises.html" class="nav-link">Top Franchises</a>
+      </nav>
+      <div class="sync-status" id="sync-status">
+        <span class="pulse" id="pulse"></span>
+        <span id="sync-text">Loading sync status&hellip;</span>
+        <button id="logout-btn" class="logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>All Tickets</h2>
+          <div class="filters">
+            <div class="filter-group">
+              <label for="project-filter">Project</label>
+              <select id="project-filter">
+                <option value="">All</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="status-filter">Status</label>
+              <select id="status-filter">
+                <option value="">All</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="territory-details">Territory</label>
+              <details id="territory-details" class="due-date-filter">
+                <summary id="territory-summary">All</summary>
+                <div class="due-date-panel">
+                  <div class="due-date-panel-row">
+                    <div id="territory-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+                  </div>
+                  <div class="due-date-panel-actions">
+                    <button type="button" id="territory-clear">Clear</button>
+                    <button type="button" id="territory-apply">Apply</button>
+                  </div>
+                </div>
+              </details>
+            </div>
+            <div class="filter-group">
+              <label for="service-filter">Service type</label>
+              <select id="service-filter">
+                <option value="">All</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="search-filter">Search</label>
+              <input type="text" id="search-filter" placeholder="Text or key&hellip;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="issues-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Project ID</th>
+                <th>Summary</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Assignee</th>
+                <th>Territory</th>
+                <th>Service Type</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody id="issues-body">
+              <!-- rows injected by list.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>No tickets match these filters.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Data syncs automatically from Jira. This dashboard does not allow editing Jira data.
+    </footer>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="shared.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

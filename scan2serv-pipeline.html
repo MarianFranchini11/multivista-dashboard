@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scan2Serv Pipeline · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <img src="logo.svg" alt="Hexagon Multivista" class="gate-logo" />
+      <h1 class="gate-title">Project Dashboard</h1>
+      <p class="gate-sub">Sign in to continue.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="text" id="gate-username" placeholder="Username" autocomplete="username" />
+        <input type="password" id="gate-password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Incorrect username or password.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="topbar-logo-wrap"><img src="logo.svg" alt="Hexagon Multivista" class="topbar-logo" /></span>
+        <span class="brand-sub">Scan2Serv Pipeline</span>
+      </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="issues.html" class="nav-link">Tickets</a>
+        <a href="laser-support.html" class="nav-link">3D Laser Support</a>
+        <a href="resource-management.html" class="nav-link">Resource Management</a>
+        <a href="time-tracking.html" class="nav-link">Time Tracking</a>
+        <a href="franchise-tracking.html" class="nav-link">Franchise Tracking</a>
+        <a href="flagged-projects.html" class="nav-link">Flagged Projects</a>
+        <a href="top-franchises.html" class="nav-link">Top Franchises</a>
+        <a href="scan2serv-pipeline.html" class="nav-link active">Scan2Serv Pipeline</a>
+      </nav>
+      <div class="sync-status" id="sync-status">
+        <span class="pulse" id="pulse"></span>
+        <span id="sync-text">Loading sync status&hellip;</span>
+        <button id="logout-btn" class="logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div id="s2s-scope-banner" class="rm-history-panel" style="margin-bottom:20px;">
+        Scan2Serv quote pipeline from Salesforce &middot; what is coming and what it is worth.
+      </div>
+
+      <section class="filter-bar">
+        <div class="filter-group" style="flex:1 1 220px;">
+          <label for="s2s-search">Search</label>
+          <input type="text" id="s2s-search" placeholder="Project, account, owner&hellip;" style="font-family:var(--font-body);font-size:0.85rem;padding:8px 10px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink-text);width:100%;" />
+        </div>
+        <div class="filter-group">
+          <label for="s2s-franchise-details">Franchise</label>
+          <details id="s2s-franchise-details" class="due-date-filter">
+            <summary id="s2s-franchise-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="s2s-franchise-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="s2s-franchise-clear">Clear</button>
+                <button type="button" id="s2s-franchise-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="filter-group">
+          <label for="s2s-owner-details">Owner</label>
+          <details id="s2s-owner-details" class="due-date-filter">
+            <summary id="s2s-owner-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="s2s-owner-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="s2s-owner-clear">Clear</button>
+                <button type="button" id="s2s-owner-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="filter-group">
+          <label for="s2s-status-details">Quote status</label>
+          <details id="s2s-status-details" class="due-date-filter">
+            <summary id="s2s-status-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="s2s-status-checkboxes" class="month-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="s2s-status-clear">Clear</button>
+                <button type="button" id="s2s-status-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="filter-group">
+          <label for="s2s-close-from">Close date from</label>
+          <input type="date" id="s2s-close-from" />
+        </div>
+        <div class="filter-group">
+          <label for="s2s-close-to">Close date to</label>
+          <input type="date" id="s2s-close-to" />
+        </div>
+        <div class="filter-group">
+          <label for="s2s-min-value">Min value (USD)</label>
+          <input type="number" id="s2s-min-value" placeholder="0" style="width:110px;font-family:var(--font-body);font-size:0.85rem;padding:8px 10px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink-text);" />
+        </div>
+        <div class="filter-group">
+          <label for="s2s-max-value">Max value (USD)</label>
+          <input type="number" id="s2s-max-value" placeholder="&infin;" style="width:110px;font-family:var(--font-body);font-size:0.85rem;padding:8px 10px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink-text);" />
+        </div>
+        <button id="s2s-clear-filters" class="clear-filters-btn">Clear filters</button>
+      </section>
+
+      <section class="rm-chip-group" style="margin-bottom:20px;" id="s2s-stage-chips">
+        <button type="button" class="rm-chip active" data-stage="">All Stages</button>
+        <button type="button" class="rm-chip" data-stage="Closed Won">Closed Won</button>
+        <button type="button" class="rm-chip" data-stage="Negotiation">Negotiation</button>
+        <button type="button" class="rm-chip" data-stage="Quoting">Quoting</button>
+        <button type="button" class="rm-chip" data-stage="Demo">Demo</button>
+        <button type="button" class="rm-chip" data-stage="Qualification">Qualification</button>
+        <button type="button" class="rm-chip" data-stage="Prospect">Prospect</button>
+      </section>
+
+      <section class="rm-chip-group" style="margin-bottom:20px;">
+        <label style="display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.8rem;color:var(--slate);">
+          <input type="checkbox" id="s2s-hide-overdue" style="accent-color:var(--steel);" />
+          Hide overdue open opportunities
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.8rem;color:var(--slate);margin-left:18px;">
+          <input type="checkbox" id="s2s-weight-prob" style="accent-color:var(--steel);" />
+          Weight values by probability
+        </label>
+      </section>
+
+      <section class="kpi-section">
+        <div class="kpi-grid" id="s2s-kpi-grid">
+          <!-- KPI cards injected by scan2serv-pipeline.js -->
+        </div>
+      </section>
+
+      <section class="charts-section">
+        <div class="chart-panel chart-panel-wide">
+          <div class="panel-head">
+            <h2>Pipeline by Close Month <span class="panel-subtitle">(Overdue vs. upcoming)</span></h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="s2s-month-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>By Quote Status</h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="s2s-status-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="charts-section">
+        <div class="chart-panel chart-panel-wide">
+          <div class="panel-head">
+            <h2>By Franchise <span class="panel-subtitle">(Top 14)</span></h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="s2s-franchise-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>Top 10 Projects</h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="s2s-top-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>Projects <span id="s2s-count" class="panel-subtitle"></span></h2>
+        </div>
+        <div class="table-wrap">
+          <table id="s2s-table">
+            <thead>
+              <tr>
+                <th data-sort="opp">Project</th>
+                <th data-sort="account">Account</th>
+                <th data-sort="owner">Owner</th>
+                <th data-sort="franchise">Franchise</th>
+                <th data-sort="stage">Stage</th>
+                <th data-sort="close_date">Close Date</th>
+                <th>Quote Status</th>
+                <th data-sort="usd">Value (USD)</th>
+                <th data-sort="prob">Prob.</th>
+                <th data-sort="wusd">Weighted (USD)</th>
+                <th data-sort="local">Local Value</th>
+              </tr>
+            </thead>
+            <tbody id="s2s-body">
+              <!-- rows injected by scan2serv-pipeline.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="s2s-empty-state" class="empty-state" hidden>No projects match these filters.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Seeded from a one-time Salesforce pull on <span id="s2s-seed-date"></span>. Daily automated sync is pending Salesforce API credentials from IT.
+    </footer>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="shared.js"></script>
+  <script src="scan2serv-pipeline.js"></script>
+</body>
+</html>

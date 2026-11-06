@@ -1,0 +1,757 @@
+// dashboard.js
+// Renders the Dashboard page: KPIs + charts + a projects table, all driven
+// by the filter bar (Territory / Service Type / Status).
+
+const TERRITORY_COLORS = [
+  "#005198", "#D98E3D", "#4B7A52", "#8B5FBF", "#C0555A",
+  "#4A9BA8", "#B08642", "#6B7A99", "#7A9B4E", "#A8617D",
+];
+
+function territoryColor(index) {
+  return TERRITORY_COLORS[index % TERRITORY_COLORS.length];
+}
+
+let allIssues = [];
+let territoryChartInstance = null;
+let statusChartInstance = null;
+let tierChartInstance = null;
+
+// If set (by another page reusing this same script, e.g. Top Franchises)
+// before calling initDashboardPage(), only issues whose territory is in
+// this list are considered at all -- everything else (KPIs, charts, the
+// Due Soon section, the table) is scoped to it automatically.
+let DASHBOARD_SCOPE_TERRITORIES = null;
+
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+let selectedYear = "2026";
+let selectedMonths = new Set(); // "01".."12"
+let selectedTier = "";
+let selectedTerritories = new Set();
+let categoryUrgencyFilter = { "due-soon": "", "todo-due": "", "done-due": "" };
+let categoryLastFilteredIssues = { "due-soon": [], "todo-due": [], "done-due": [] };
+let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded, shared across sections
+let categorySpecificDate = { "due-soon": "", "todo-due": "", "done-due": "" };
+
+async function initDashboardPage() {
+  let data;
+  try {
+    data = await loadDashboardData();
+  } catch (err) {
+    document.getElementById("sync-text").textContent = "Could not load data.";
+    console.error(err);
+    return;
+  }
+
+  renderSyncStatus(data);
+  allIssues = flattenIssues(data);
+  if (DASHBOARD_SCOPE_TERRITORIES) {
+    allIssues = allIssues.filter((i) => DASHBOARD_SCOPE_TERRITORIES.includes(i.territory));
+  }
+
+  populateFilters(allIssues);
+  document.getElementById("year-select").value = selectedYear;
+  updateDueDateSummary();
+  populateExportIncomeYearSelect();
+  renderAll();
+
+  const exportIncomeBtn = document.getElementById("export-income-btn");
+  if (exportIncomeBtn) {
+    exportIncomeBtn.addEventListener("click", exportIncomeByFranchiseExcel);
+  }
+
+  [
+    ["due-soon-chips", "due-soon"],
+    ["todo-due-chips", "todo-due"],
+    ["done-due-chips", "done-due"],
+  ].forEach(([chipsId, idPrefix]) => {
+    const chipsContainer = document.getElementById(chipsId);
+    if (!chipsContainer) return;
+    chipsContainer.querySelectorAll(".rm-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chipsContainer.querySelectorAll(".rm-chip").forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        categoryUrgencyFilter[idPrefix] = chip.dataset.urgency;
+        renderAll();
+      });
+    });
+
+    const dateInput = document.getElementById(`${idPrefix}-date`);
+    const dateClear = document.getElementById(`${idPrefix}-date-clear`);
+    if (dateInput) {
+      dateInput.addEventListener("change", () => {
+        categorySpecificDate[idPrefix] = dateInput.value;
+        renderAll();
+      });
+    }
+    if (dateClear) {
+      dateClear.addEventListener("click", () => {
+        dateInput.value = "";
+        categorySpecificDate[idPrefix] = "";
+        renderAll();
+      });
+    }
+  });
+
+  document.getElementById("service-filter").addEventListener("change", renderAll);
+  document.getElementById("status-filter").addEventListener("change", renderAll);
+
+  document.getElementById("due-date-apply").addEventListener("click", () => {
+    selectedYear = document.getElementById("year-select").value;
+    selectedMonths = new Set(
+      Array.from(document.querySelectorAll("#month-checkboxes input:checked")).map(
+        (el) => el.value
+      )
+    );
+    updateDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("due-date-clear").addEventListener("click", () => {
+    document.getElementById("year-select").value = "";
+    document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
+    selectedYear = "";
+    selectedMonths = new Set();
+    updateDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("territory-apply").addEventListener("click", () => {
+    selectedTerritories = new Set(
+      Array.from(document.querySelectorAll("#territory-checkboxes input:checked")).map((el) => el.value)
+    );
+    updateTerritorySummary();
+    document.getElementById("territory-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("territory-clear").addEventListener("click", () => {
+    document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
+    selectedTerritories = new Set();
+    updateTerritorySummary();
+    document.getElementById("territory-details").open = false;
+    renderAll();
+  });
+
+  document.querySelectorAll("#tier-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      selectedTier = chip.dataset.tier;
+      document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderAll();
+    });
+  });
+
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
+    selectedTerritories = new Set();
+    updateTerritorySummary();
+    document.getElementById("service-filter").value = "";
+    document.getElementById("status-filter").value = "";
+    document.getElementById("year-select").value = "";
+    document.querySelectorAll("#month-checkboxes input").forEach((el) => (el.checked = false));
+    selectedYear = "";
+    selectedMonths = new Set();
+    selectedTier = "";
+    document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+    document.querySelector('#tier-chips .rm-chip[data-tier=""]').classList.add("active");
+    updateDueDateSummary();
+    renderAll();
+  });
+
+  document.addEventListener("click", (e) => {
+    ["due-date-details", "territory-details"].forEach((id) => {
+      const details = document.getElementById(id);
+      if (details.open && !details.contains(e.target)) details.open = false;
+    });
+  });
+}
+
+function updateDueDateSummary() {
+  const summary = document.getElementById("due-date-summary");
+  const parts = [];
+  if (selectedYear) parts.push(selectedYear);
+  if (selectedMonths.size > 0) {
+    const names = Array.from(selectedMonths)
+      .sort()
+      .map((m) => MONTH_NAMES[parseInt(m, 10) - 1].slice(0, 3));
+    parts.push(names.join(", "));
+  }
+  summary.textContent = parts.length > 0 ? parts.join(" \u00b7 ") : "All";
+}
+
+function updateTerritorySummary() {
+  const summary = document.getElementById("territory-summary");
+  if (selectedTerritories.size === 0) {
+    summary.textContent = "All";
+  } else if (selectedTerritories.size <= 2) {
+    summary.textContent = Array.from(selectedTerritories).sort().join(", ");
+  } else {
+    summary.textContent = `${selectedTerritories.size} selected`;
+  }
+}
+
+function populateFilters(issues) {
+  const territories = new Set();
+  const services = new Set();
+  for (const issue of issues) {
+    territories.add(issue.territory || "Unassigned");
+    if (issue.serviceType) services.add(issue.serviceType);
+  }
+
+  // Belt-and-suspenders: on a scoped page (e.g. Top Franchises), make sure
+  // the Territory filter itself can never offer anything outside scope,
+  // even if some scoped territory happens to have zero issues right now.
+  let territoryOptions = Array.from(territories);
+  if (DASHBOARD_SCOPE_TERRITORIES) {
+    territoryOptions = territoryOptions.filter((t) => DASHBOARD_SCOPE_TERRITORIES.includes(t));
+  }
+
+  const territoryContainer = document.getElementById("territory-checkboxes");
+  territoryContainer.innerHTML = territoryOptions
+    .sort()
+    .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
+    .join("");
+
+  const serviceSelect = document.getElementById("service-filter");
+  for (const s of Array.from(services).sort()) {
+    const opt = document.createElement("option");
+    opt.value = s;
+    opt.textContent = s;
+    serviceSelect.appendChild(opt);
+  }
+
+  const years = new Set();
+  for (const issue of issues) {
+    if (issue.dueDate) years.add(issue.dueDate.slice(0, 4));
+  }
+  const yearSelect = document.getElementById("year-select");
+  for (const y of Array.from(years).sort()) {
+    const opt = document.createElement("option");
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  }
+
+  const monthContainer = document.getElementById("month-checkboxes");
+  monthContainer.innerHTML = MONTH_NAMES.map((name, i) => {
+    const value = String(i + 1).padStart(2, "0");
+    return `<label><input type="checkbox" value="${value}" />${name.slice(0, 3)}</label>`;
+  }).join("");
+}
+
+function getFilteredIssues() {
+  const service = document.getElementById("service-filter").value;
+  const status = document.getElementById("status-filter").value;
+
+  return allIssues.filter((issue) => {
+    if (selectedTerritories.size > 0 && !selectedTerritories.has(issue.territory || "Unassigned")) return false;
+    if (service && issue.serviceType !== service) return false;
+    if (status && issue.statusCategory !== status) return false;
+    if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
+    if (selectedYear || selectedMonths.size > 0) {
+      if (!issue.dueDate) return false;
+      const y = issue.dueDate.slice(0, 4);
+      const m = issue.dueDate.slice(5, 7);
+      if (selectedYear && y !== selectedYear) return false;
+      if (selectedMonths.size > 0 && !selectedMonths.has(m)) return false;
+    }
+    return true;
+  });
+}
+
+function renderAll() {
+  const issues = getFilteredIssues();
+  renderKpis(issues);
+  renderTerritoryChart(issues);
+  renderStatusChart(issues);
+  renderTierChart(issues);
+  renderProjectsTable(issues);
+  renderCategorySection(issues, "In Progress", "due-soon");
+  renderCategorySection(issues, "To Do", "todo-due");
+  renderCategorySection(issues, "Done", "done-due");
+}
+
+function groupByTerritory(issues) {
+  const groups = {};
+  for (const issue of issues) {
+    const key = issue.territory || "Unassigned";
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(issue);
+  }
+  return groups;
+}
+
+function formatCurrency(amount) {
+  return amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+}
+
+// "Download Income by Franchise (Excel)" -- populates the year dropdown
+// next to the button with every year present in allIssues' Created date
+// (income is counted by when the ticket was created, regardless of its
+// current status), defaulting to 2026 if available, otherwise the most
+// recent year.
+function populateExportIncomeYearSelect() {
+  const select = document.getElementById("export-income-year");
+  if (!select) return;
+  const years = new Set();
+  for (const issue of allIssues) {
+    if (issue.created) years.add(issue.created.slice(0, 4));
+  }
+  const sorted = Array.from(years).sort();
+  select.innerHTML = sorted.map((y) => `<option value="${y}">${y}</option>`).join("");
+  if (sorted.includes("2026")) {
+    select.value = "2026";
+  } else if (sorted.length > 0) {
+    select.value = sorted[sorted.length - 1];
+  }
+}
+
+// Builds and downloads an .xlsx with one row per franchise (territory):
+// ticket count, total income (sum of Price) and average ticket value, for
+// every ticket created in the selected year regardless of its current
+// status -- plus a TOTAL row at the bottom. Respects DASHBOARD_SCOPE_TERRITORIES,
+// so on the Top Franchises page it's automatically scoped to those franchises.
+function exportIncomeByFranchiseExcel() {
+  if (typeof XLSX === "undefined") {
+    alert("Could not load the Excel export library. Check your connection and try again.");
+    return;
+  }
+
+  const yearSelect = document.getElementById("export-income-year");
+  const year = yearSelect && yearSelect.value ? yearSelect.value : "2026";
+  const issuesInYear = allIssues.filter((i) => i.created && i.created.slice(0, 4) === year);
+
+  const byFranchise = {};
+  for (const issue of issuesInYear) {
+    const key = issue.territory || "Unassigned";
+    if (!byFranchise[key]) byFranchise[key] = { tickets: 0, income: 0 };
+    byFranchise[key].tickets += 1;
+    byFranchise[key].income += issue.price || 0;
+  }
+
+  const round2 = (n) => Math.round(n * 100) / 100;
+
+  const rows = Object.entries(byFranchise)
+    .map(([franchise, v]) => ({
+      Franchise: franchise,
+      Tickets: v.tickets,
+      "Income (USD)": round2(v.income),
+      "Avg Ticket (USD)": v.tickets > 0 ? round2(v.income / v.tickets) : 0,
+    }))
+    .sort((a, b) => b["Income (USD)"] - a["Income (USD)"]);
+
+  const totalTickets = rows.reduce((s, r) => s + r.Tickets, 0);
+  const totalIncome = rows.reduce((s, r) => s + r["Income (USD)"], 0);
+
+  rows.push({
+    Franchise: "TOTAL",
+    Tickets: totalTickets,
+    "Income (USD)": round2(totalIncome),
+    "Avg Ticket (USD)": totalTickets > 0 ? round2(totalIncome / totalTickets) : 0,
+  });
+
+  const ws = XLSX.utils.json_to_sheet(rows);
+  ws["!cols"] = [{ wch: 26 }, { wch: 10 }, { wch: 16 }, { wch: 16 }];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, `Income ${year}`);
+  XLSX.writeFile(wb, `Income_by_Franchise_${year}.xlsx`);
+}
+
+function renderKpis(issues) {
+  const total = issues.length;
+  const inProgress = issues.filter((i) => i.statusCategory === "In Progress").length;
+  const territories = new Set(issues.map((i) => i.territory || "Unassigned")).size;
+  const revenue = issues.reduce((sum, i) => sum + (i.price || 0), 0);
+  const totalSqft = Math.round(issues.reduce((sum, i) => sum + (i.squareFootage || 0), 0));
+
+  const withDeliveryStatus = issues.filter((i) => i.deliveryStatus);
+  const onTime = withDeliveryStatus.filter((i) => i.deliveryStatus === "On time").length;
+  const late = withDeliveryStatus.filter((i) => i.deliveryStatus === "Late").length;
+  const deliveryTotal = withDeliveryStatus.length;
+  const onTimePct = deliveryTotal > 0 ? Math.round((onTime / deliveryTotal) * 100) : null;
+  const latePct = deliveryTotal > 0 ? Math.round((late / deliveryTotal) * 100) : null;
+
+  // On Time / Late, but only among In Progress tickets (and only ones
+  // with an Original Due Date to judge against) -- same status logic as
+  // the "In Progress: Due Soon & Overdue" section below, so the two
+  // always agree with each other.
+  const inProgressJudged = issues
+    .filter((i) => i.statusCategory === "In Progress" && dueSoonEffectiveDate(i))
+    .map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
+  const inProgressTotal = inProgressJudged.length;
+  const inProgressLate = inProgressJudged.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
+  const inProgressOnTime = inProgressTotal - inProgressLate;
+  const inProgressOnTimePct = inProgressTotal > 0 ? Math.round((inProgressOnTime / inProgressTotal) * 100) : null;
+  const inProgressLatePct = inProgressTotal > 0 ? Math.round((inProgressLate / inProgressTotal) * 100) : null;
+
+  const kpis = [
+    { label: "Total Tickets", value: total.toLocaleString("en-US") },
+    { label: "Territories", value: territories.toLocaleString("en-US") },
+    { label: "In Progress", value: inProgress.toLocaleString("en-US") },
+    { label: "Total Revenue", value: formatCurrency(revenue) },
+    { label: "Total Square Footage", value: totalSqft.toLocaleString("en-US") },
+    {
+      label: "% Delivered On Time",
+      value: onTimePct !== null ? `${onTimePct}%` : "\u2014",
+      sub: deliveryTotal > 0 ? `${onTime} of ${deliveryTotal}` : null,
+    },
+    {
+      label: "% Late",
+      value: latePct !== null ? `${latePct}%` : "\u2014",
+      sub: deliveryTotal > 0 ? `${late} of ${deliveryTotal}` : null,
+    },
+    {
+      label: "In Progress \u2013 On Time",
+      value: inProgressOnTimePct !== null ? `${inProgressOnTimePct}%` : "\u2014",
+      sub: inProgressTotal > 0 ? `${inProgressOnTime} of ${inProgressTotal}` : null,
+    },
+    {
+      label: "In Progress \u2013 Late",
+      value: inProgressLatePct !== null ? `${inProgressLatePct}%` : "\u2014",
+      sub: inProgressTotal > 0 ? `${inProgressLate} of ${inProgressTotal}` : null,
+    },
+  ];
+
+  const grid = document.getElementById("kpi-grid");
+  grid.innerHTML = kpis
+    .map(
+      (k) => `
+      <div class="kpi-card">
+        <div class="kpi-value">${k.value}</div>
+        <div class="kpi-label">${k.label}</div>
+        ${k.sub ? `<div class="kpi-sub">${k.sub}</div>` : ""}
+      </div>`
+    )
+    .join("");
+}
+
+function renderTerritoryChart(issues) {
+  const groups = groupByTerritory(issues);
+  const entries = Object.entries(groups)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, 10);
+
+  if (territoryChartInstance) territoryChartInstance.destroy();
+  const ctx = document.getElementById("territory-chart");
+  territoryChartInstance = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: entries.map(([territory]) => territory),
+      datasets: [
+        {
+          label: "Tickets",
+          data: entries.map(([, list]) => list.length),
+          backgroundColor: entries.map((_, i) => territoryColor(i)),
+          borderRadius: 4,
+          maxBarThickness: 48,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `Tickets: ${ctx.parsed.y}`,
+          },
+        },
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#DBDBDD" } },
+        x: { grid: { display: false } },
+      },
+    },
+  });
+}
+
+function renderStatusChart(issues) {
+  const counts = { "To Do": 0, "In Progress": 0, Done: 0 };
+  for (const issue of issues) {
+    if (counts[issue.statusCategory] !== undefined) counts[issue.statusCategory] += 1;
+  }
+
+  if (statusChartInstance) statusChartInstance.destroy();
+  const ctx = document.getElementById("status-chart");
+  statusChartInstance = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["To Do", "In Progress", "Done"],
+      datasets: [
+        {
+          data: [counts["To Do"], counts["In Progress"], counts["Done"]],
+          backgroundColor: ["#51565C", "#D98E3D", "#4B7A52"],
+          borderWidth: 0,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: "62%",
+      plugins: {
+        legend: { position: "bottom", labels: { boxWidth: 10, font: { family: "Inter" } } },
+      },
+    },
+  });
+}
+
+function renderTierChart(issues) {
+  const byTerritory = {};
+  for (const issue of issues) {
+    const territory = issue.territory || "Unassigned";
+    const tier = priceTier(issue.price);
+    if (!byTerritory[territory]) byTerritory[territory] = { A: 0, B: 0, C: 0 };
+    if (tier) byTerritory[territory][tier] += 1;
+  }
+  const entries = Object.entries(byTerritory)
+    .sort((a, b) => b[1].A + b[1].B + b[1].C - (a[1].A + a[1].B + a[1].C))
+    .slice(0, 12);
+
+  if (tierChartInstance) tierChartInstance.destroy();
+  const ctx = document.getElementById("tier-chart");
+  tierChartInstance = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: entries.map(([t]) => t),
+      datasets: [
+        { label: "Tier A", data: entries.map(([, v]) => v.A), backgroundColor: "#4B7A52", stack: "s" },
+        { label: "Tier B", data: entries.map(([, v]) => v.B), backgroundColor: "#D98E3D", stack: "s" },
+        { label: "Tier C", data: entries.map(([, v]) => v.C), backgroundColor: "#005198", stack: "s" },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: { family: "Inter" } } } },
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#DBDBDD" } },
+      },
+    },
+  });
+}
+
+function renderProjectsTable(issues) {
+  const body = document.getElementById("projects-body");
+  const emptyState = document.getElementById("projects-empty-state");
+
+  const sorted = [...issues].sort((a, b) => new Date(b.updated || 0) - new Date(a.updated || 0));
+
+  body.innerHTML = "";
+  emptyState.hidden = sorted.length > 0;
+
+  for (const issue of sorted.slice(0, 200)) {
+    const tr = document.createElement("tr");
+    tr.className = "clickable-row";
+    tr.innerHTML = `
+      <td class="col-key">${issue.key}</td>
+      <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
+      <td>${escapeHtml(issue.projectName)}</td>
+      <td>${escapeHtml(issue.serviceType || issue.type || "\u2014")}</td>
+      <td>${issue.price != null ? formatCurrency(issue.price) : "\u2014"}</td>
+      <td><span class="status-pill ${statusPillClass(issue.statusCategory)}">${issue.statusCategory}</span></td>
+      <td>${escapeHtml(issue.territory || "Unassigned")}</td>
+      <td class="col-updated">${formatDate(issue.dueDate)}</td>
+    `;
+    tr.addEventListener("click", () => openProjectModal(issue));
+    body.appendChild(tr);
+  }
+}
+
+// ===== In Progress: Due Soon & Overdue (proactive alert section) =====
+// Deliberately independent of the filter bar above -- always shows the
+// true current picture of every In Progress ticket's due date, so it
+// can't accidentally get hidden by someone else's filter choice.
+// Compact MM/DD/YYYY, just for this table (the rest of the app keeps the
+// longer "Jun 30, 2026" format via the shared formatDate).
+function formatDateCompact(iso) {
+  if (!iso) return "\u2014";
+  const [y, m, d] = iso.slice(0, 10).split("-");
+  return `${m}/${d}/${y}`;
+}
+
+function dueSoonDaysLeft(dueDate) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const due = new Date(dueDate + "T00:00:00");
+  return Math.round((due - today) / 86400000);
+}
+function dueSoonUrgency(daysLeft) {
+  if (daysLeft < 0) return "overdue";
+  if (daysLeft <= 7) return "urgent";
+  if (daysLeft <= 21) return "soon";
+  return "ok";
+}
+
+// A "Revisions - Free Fix" ticket whose (native) Due Date has been pushed
+// later than the Original Due Date represents an extension agreed with
+// the client -- that's not a real delay, so it shows green/"On Time"
+// instead of whatever the raw date math would otherwise say.
+// For a *finished* ticket, "today vs due date" is meaningless -- it would
+// always say Overdue once the due date is in the past, even if it was
+// delivered right on time. What actually matters is when it was resolved
+// vs. its (A.) Due Date.
+function dueSoonDoneStatus(issue) {
+  if (!issue.resolutionDate || !issue.dueDate) return "ok"; // nothing to judge it against
+  const resolved = issue.resolutionDate.slice(0, 10);
+  return resolved > issue.dueDate ? "overdue" : "ontime";
+}
+
+function dueSoonRowStatus(issue, daysLeft) {
+  if (issue.statusCategory === "Done") return dueSoonDoneStatus(issue);
+
+  if (issue.dueDate) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const aDue = new Date(issue.dueDate + "T00:00:00");
+
+    // Hard rule, takes priority over everything else: if the *current*
+    // (A.) Due Date has already passed, it's overdue, full stop -- even an
+    // agreed revision extension eventually runs out. "Today" does NOT
+    // count as passed -- a ticket only turns overdue starting tomorrow.
+    if (aDue < today) return "overdue";
+
+    // From here on, the current A. Due Date is today or still ahead, so
+    // this ticket must never read as Overdue -- if the date moved, it's
+    // because it was agreed with the client (regardless of component tag).
+    if (issue.originalDueDate && issue.dueDate > issue.originalDueDate) {
+      return "ontime";
+    }
+
+    // No date move to flag -- show normal urgency, but based on the
+    // *current* due date, never the (possibly stale) Original Due Date,
+    // so it can't fall back into "overdue" while the real due date holds.
+    return dueSoonUrgency(dueSoonDaysLeft(issue.dueDate));
+  }
+
+  return dueSoonUrgency(daysLeft);
+}
+
+function dueSoonLabel(status) {
+  return {
+    overdue: "Overdue",
+    urgent: "Due Soon",
+    soon: "Upcoming",
+    ok: "On Track",
+    ontime: "On Time",
+  }[status];
+}
+
+// Original Due Date is the only field this section calculates against
+// (no fallback) -- tickets where it hasn't been set simply don't appear
+// here, since there's nothing to judge urgency against.
+function dueSoonEffectiveDate(issue) {
+  return issue.originalDueDate;
+}
+
+// Shared by all 3 category sections (In Progress / To Do / Done) --
+// idPrefix is "due-soon", "todo-due", or "done-due", matching the element
+// IDs in the HTML for that section's count/list/chips.
+function renderCategorySection(filteredIssues, statusCategory, idPrefix) {
+  const categoryIssues = filteredIssues.filter((i) => i.statusCategory === statusCategory && dueSoonEffectiveDate(i));
+  const withUrgency = categoryIssues.map((i) => ({ issue: i, daysLeft: dueSoonDaysLeft(dueSoonEffectiveDate(i)) }));
+
+  if (idPrefix === "due-soon") {
+    const overdueCount = withUrgency.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === "overdue").length;
+    const banner = document.getElementById("overdue-alert-banner");
+    if (overdueCount > 0) {
+      banner.style.display = "flex";
+      banner.innerHTML = `&#9888; ${overdueCount} In Progress project${overdueCount === 1 ? "" : "s"} ${overdueCount === 1 ? "is" : "are"} past its due date \u2014 action needed.`;
+    } else {
+      banner.style.display = "none";
+    }
+  }
+
+  let rows = withUrgency;
+  const urgencyFilter = categoryUrgencyFilter[idPrefix];
+  if (urgencyFilter) rows = rows.filter((r) => dueSoonRowStatus(r.issue, r.daysLeft) === urgencyFilter);
+  const specificDate = categorySpecificDate[idPrefix];
+  if (specificDate) rows = rows.filter((r) => dueSoonEffectiveDate(r.issue) === specificDate);
+  if (idPrefix === "done-due") {
+    rows.sort((a, b) => (b.issue.resolutionDate || "").localeCompare(a.issue.resolutionDate || ""));
+  } else {
+    rows.sort((a, b) => a.daysLeft - b.daysLeft);
+  }
+  categoryLastFilteredIssues[idPrefix] = filteredIssues;
+
+  const countEl = document.getElementById(`${idPrefix}-count`);
+  if (countEl) countEl.textContent = `(${rows.length} of ${categoryIssues.length})`;
+
+  const container = document.getElementById(`${idPrefix}-list`);
+  if (!container) return;
+  if (rows.length === 0) {
+    container.innerHTML = `<p class="empty-state">No ${statusCategory} tickets match this filter.</p>`;
+    return;
+  }
+
+  const isDone = idPrefix === "done-due";
+  container.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Key</th><th>Status</th><th class="due-soon-balanced-col">Project Name</th><th class="due-soon-balanced-col">Components</th><th class="due-soon-balanced-col">Additional Info</th><th>A. Due Date</th><th>O. Due Date</th>${isDone ? "<th>Resolved</th>" : ""}<th>Territory</th></tr>
+        </thead>
+        <tbody>
+          ${rows
+            .slice(0, 300)
+            .map(({ issue, daysLeft }) => {
+              const status = dueSoonRowStatus(issue, daysLeft);
+              const components = issue.components && issue.components.length ? issue.components.join(", ") : "\u2014";
+              const additionalInfoFull = issue.additionalInfo || "";
+              const isExpanded = dueSoonExpandedInfo.has(issue.key);
+              const additionalInfoShort =
+                additionalInfoFull.length > 70 ? additionalInfoFull.slice(0, 70).trim() + "\u2026" : additionalInfoFull || "\u2014";
+              const additionalInfoDisplay = additionalInfoFull
+                ? isExpanded
+                  ? additionalInfoFull
+                  : additionalInfoShort
+                : "\u2014";
+              const wasPushed = issue.originalDueDate && issue.dueDate && issue.originalDueDate < issue.dueDate;
+              const wasAdvanced = issue.originalDueDate && issue.dueDate && issue.dueDate < issue.originalDueDate;
+              return `<tr class="clickable-row" data-key="${issue.key}">
+                <td class="col-key">${issue.key}</td>
+                <td><span class="daysbadge-${status}">${dueSoonLabel(status)}</span></td>
+                <td class="due-soon-balanced-col ${status === "overdue" ? "due-soon-overdue-name" : ""}">${escapeHtml(issue.projectName)}</td>
+                <td class="due-soon-balanced-col">${escapeHtml(components)}</td>
+                <td class="due-soon-balanced-col due-soon-info-cell" data-infokey="${issue.key}" data-idprefix="${idPrefix}" style="${isExpanded ? "max-width:340px;" : ""}font-size:0.8rem;color:var(--slate);${additionalInfoFull ? "cursor:pointer;" : ""}" title="${additionalInfoFull ? (isExpanded ? "Click to collapse" : "Click to expand") : ""}">${escapeHtml(additionalInfoDisplay)}</td>
+                <td class="col-updated ${wasAdvanced ? "due-soon-changed-date-advanced" : ""}" title="${wasAdvanced ? "Delivery date was moved earlier than originally planned" : ""}">${formatDateCompact(issue.dueDate)}</td>
+                <td class="col-updated ${wasPushed ? "due-soon-changed-date" : ""}" title="${wasPushed ? "Due date was pushed later than originally planned" : ""}">${formatDateCompact(dueSoonEffectiveDate(issue))}</td>
+                ${isDone ? `<td class="col-updated">${formatDateCompact(issue.resolutionDate)}</td>` : ""}
+                <td>${escapeHtml(issue.territory || "Unassigned")}</td>
+              </tr>`;
+            })
+            .join("")}
+        </tbody>
+      </table>
+    </div>`;
+
+  container.querySelectorAll(".due-soon-info-cell").forEach((cell) => {
+    cell.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!cell.title) return; // nothing to expand
+      const key = cell.dataset.infokey;
+      if (dueSoonExpandedInfo.has(key)) dueSoonExpandedInfo.delete(key);
+      else dueSoonExpandedInfo.add(key);
+      renderCategorySection(categoryLastFilteredIssues[idPrefix], statusCategory, idPrefix);
+    });
+  });
+
+  container.querySelectorAll("tr[data-key]").forEach((row) => {
+    const issue = allIssues.find((i) => i.key === row.dataset.key);
+    if (issue) row.addEventListener("click", () => openProjectModal(issue));
+  });
+}
+

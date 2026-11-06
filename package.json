@@ -7,6 +7,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "fetch-data": "node scripts/fetch-jira-data.js"
+    "fetch-data": "node scripts/fetch-jira-data.js",
+    "fetch-salesforce-data": "node scripts/fetch-salesforce-data.js"
   }
 }

@@ -270,6 +270,67 @@ con el link puede editar los recursos. Si en algún momento se necesita
 restringir esto, hay que sumar autenticación real de Firebase (es otro
 paso, avisen si lo necesitan).
 
+## Sobre "Scan2Serv Pipeline" (Salesforce)
+
+Pestaña nueva, sin PIN (acceso libre, igual que Top Franchises). Es la
+versión "estática" de un dashboard vivo que alguien del equipo armó
+conectando Claude directamente a Salesforce (un artifact de claude.ai) —
+ese dashboard original hace una consulta en vivo a Salesforce cada vez que
+alguien lo abre, algo que un sitio estático en GitHub Pages no puede
+replicar (no hay backend ni login individual por usuario). En su lugar,
+esta página reproduce **exactamente la misma lógica** (las 5 consultas
+SOQL, el algoritmo de "mejor cotización" por oportunidad, la ponderación
+por probabilidad según etapa, y la conversión de moneda local) pero
+corriendo en un script que se sincroniza una vez por día, igual que Jira.
+
+- **KPIs**: valor total en vista, Closed Won (30 días), Negociación,
+  Cotizando, y etapa temprana (Demo/Qualification/Prospect) — cada uno con
+  su conteo de proyectos y, para Negociación/Cotizando, cuántos ya tienen
+  la cotización aprobada.
+- **Filtros**: búsqueda libre, Franquicia, Owner, Estado de cotización,
+  rango de fecha de cierre, valor mínimo/máximo (USD), ocultar vencidos
+  abiertos, y ponderar por probabilidad (aplica el % de probabilidad de
+  cada etapa a los valores de KPIs/gráficos).
+- **Gráficos** (Chart.js): pipeline por mes de cierre (vencido vs. a
+  tiempo), por estado de cotización, por franquicia (top 14 + Otros), y
+  top 10 proyectos por valor.
+- **Tabla de proyectos**: ordenable por columna, una fila por oportunidad
+  (ya deduplicada — si una oportunidad tiene varias cotizaciones, se
+  muestra solo la "mejor": la que está sincronizando con la oportunidad,
+  o si no, la de mayor estado (Approved > Submitted for Approval > Draft),
+  o si hay empate, la de mayor monto).
+
+### Estado actual: sembrado manual, sync automático pendiente
+
+**`data/salesforce-data.json` fue generado hoy con una consulta manual a
+Salesforce** (usando la conexión de Salesforce que Mariano ya tiene en su
+cuenta de Claude), no por el workflow automático. El workflow diario
+(`.github/workflows/update-salesforce-data.yml` + `scripts/fetch-salesforce-data.js`)
+ya está escrito y listo, pero necesita que IT/el administrador de
+Salesforce provea:
+
+- Una Connected App (Consumer Key + Consumer Secret)
+- Un usuario de servicio (username + password + security token) con
+  permisos de lectura sobre `Quote`, `QuoteLineItem`, `Opportunity`,
+  `Account` y `CurrencyType`
+
+Una vez que los tengas, cargalos como secrets del repo (mismo mecanismo
+que los de Jira — ver "Paso 3" más arriba), agregá estos 6:
+
+| Name | Value |
+|---|---|
+| `SALESFORCE_LOGIN_URL` | `https://login.salesforce.com` (o la URL de tu org) |
+| `SALESFORCE_CLIENT_ID` | Consumer Key de la Connected App |
+| `SALESFORCE_CLIENT_SECRET` | Consumer Secret de la Connected App |
+| `SALESFORCE_USERNAME` | usuario de servicio |
+| `SALESFORCE_PASSWORD` | contraseña del usuario de servicio |
+| `SALESFORCE_SECURITY_TOKEN` | token de seguridad (puede ir vacío si la org permite las IPs de GitHub Actions) |
+
+y descomentá el `schedule:` (cron diario) en
+`.github/workflows/update-salesforce-data.yml`. Hasta entonces, para
+refrescar los datos hay que volver a pedirle a Claude que haga la
+consulta manual.
+
 ## Ajustar la frecuencia de sincronización
 
 En `.github/workflows/update-data.yml`, la línea:
@@ -304,12 +365,17 @@ jira-dashboard/
 ├── dashboard.js                   # Dashboard page logic (Chart.js)
 ├── list.js                        # Issues List page logic
 ├── style.css                      # estilos
+├── scan2serv-pipeline.html        # Scan2Serv Pipeline page (Salesforce quote pipeline)
+├── scan2serv-pipeline.js          # Scan2Serv Pipeline page logic (Chart.js)
 ├── data/
-│   └── data.json                  # snapshot de datos (se sobrescribe solo)
+│   ├── data.json                  # snapshot de datos de Jira (se sobrescribe solo)
+│   └── salesforce-data.json       # snapshot de datos de Salesforce (se sobrescribe solo)
 ├── scripts/
-│   └── fetch-jira-data.js         # script que llama a la API de Jira
+│   ├── fetch-jira-data.js         # script que llama a la API de Jira
+│   └── fetch-salesforce-data.js   # script que llama a la API de Salesforce (pendiente credenciales IT)
 ├── .github/workflows/
-│   └── update-data.yml            # corre el script todos los días
+│   ├── update-data.yml            # corre fetch-jira-data.js todos los días
+│   └── update-salesforce-data.yml # corre fetch-salesforce-data.js (schedule comentado hasta tener secrets)
 └── package.json
 ```
 

@@ -7,6 +7,15 @@ async function loadDashboardData() {
   return res.json();
 }
 
+// Salesforce Scan2Serv pipeline data. Same shape of fetch as Jira's
+// data.json -- see data/salesforce-data.json and
+// scripts/fetch-salesforce-data.js.
+async function loadSalesforceData() {
+  const res = await fetch(`data/salesforce-data.json?_=${Date.now()}`);
+  if (!res.ok) throw new Error(`Failed to load salesforce-data.json (${res.status})`);
+  return res.json();
+}
+
 // Static reference data (franchise ownership) -- NOT synced from Jira,
 // lives in franchises.json at the project root, maintained by hand.
 let _franchiseDataCache = null;
