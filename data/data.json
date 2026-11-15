@@ -1,17 +1,221 @@
 {
-  "generatedAt": "2026-11-14T14:40:31.700Z",
+  "generatedAt": "2026-11-15T15:09:25.872Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 3340,
+      "totalIssues": 3341,
       "statusSummary": {
-        "To Do": 40,
-        "In Progress": 51,
+        "To Do": 39,
+        "In Progress": 53,
         "Done": 3249
       },
       "issues": [
+        {
+          "key": "SCAN-6548",
+          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - Baggage Handling Upgrades - Priority 1 - Terminal 1_NT19 & 11",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-14T22:23:17.147-0800",
+          "dueDate": "2026-12-07",
+          "created": "2026-11-03T13:29:54.714-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "ON01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1,
+          "squareFootage": 29697,
+          "projectName": "Pearson Airport - Terminal 1_NT19 & 11",
+          "projectType": "Infrastructure",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000108r0EYAQ/view",
+          "quotedTurnaround": 22,
+          "projectId": "87803",
+          "originalDueDate": "2026-12-07",
+          "additionalInfo": null,
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-11-04",
+          "dataValidatedDate": "2026-11-05",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-05T06:55:37.692-0800",
+              "body": "Hi  I reviewed the point clouds with an overall analysis, but could you please check if they are falling on the correct spot? or if you see any issues?\nThanks,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-05T06:46:58.466-0800",
+              "body": "This ticket is for these 4 areas. One is missing, it should be ready by tomorrow."
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-11-05T05:40:04.911-0800",
+              "body": "Hi Martin, The remaining area is ‘domestic originating mainlines’. The other three areas were uploaded this morning \nRobert CalvertDocumentation SpecialistHexagon Multivista 1+ (647) 471-6336 robert.calvert@multivistasystems.com \n \nmultivista.com\n 42 Industrial Street, Suite 130. Toronto, Ontario M4G 1Y9"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-05T05:22:13.010-0800",
+              "body": "Hi Robert,\nThanks for the update. Could you help me to understand which one you already sent me?\nI understand that NT11 has been delivered, but which of the other three were included?\nRegards,"
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-11-05T05:11:28.904-0800",
+              "body": "Hi Martin. I have transferred over 3 of the 4 areas to be modelled for this ticket. The file name is: ON01 - 87803 - Matheson Constructors - T1 - NT11 - NT19 2 - NT 19 3. I experienced some registration issues which prevented me from completing the final area last night. That PC should be uploaded tonight. I will update you when it is available too."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-11-05T04:01:03.410-0800",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T10:39:34.067-0800",
+              "body": "Thanks, please keep me posted.\nRegards"
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-11-04T10:34:25.699-0800",
+              "body": "Hi Martin, I am completing the registration for these areas now. I should be able to upload the point cloud data either tonight or tomorrow morning, depending on processing times. I will be sure to update here in the ticket when point cloud data has been uploaded."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T09:53:23.056-0800",
+              "body": "Hi  \nJust a short note to ask you when you will be uploading the point clouds for this sector:Priority 1 Terminal 1, NT 19 and 11.Thank you,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T09:51:44.822-0800",
+              "body": ""
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6547",
+          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - Baggage Handling Upgrades - Priority 1 Terminal 3_NT 19",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-14T22:23:13.644-0800",
+          "dueDate": "2026-11-27",
+          "created": "2026-11-03T13:29:49.524-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "ON01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1,
+          "squareFootage": 9588,
+          "projectName": "  Pearson Airport - Terminal 3_NT19",
+          "projectType": "Infrastructure",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000107n3WYAQ/view",
+          "quotedTurnaround": 17,
+          "projectId": "87803",
+          "originalDueDate": "2026-11-27",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-04",
+          "dataValidatedDate": "2026-11-04",
+          "comments": [
+            {
+              "author": "Robert Calvert",
+              "created": "2026-11-11T12:31:00.665-0800",
+              "body": "Hi Martin, I have corrected the NT19 Dom INT OM pointcloud and had Mark King confirm the alignment. The PC is now available for download from the FTP. Please look for the PC titled: ON01 - 87803 - Matheson Constructors - T3 NT19 - DOM INT OM"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-09T11:31:09.095-0800",
+              "body": "Thanks Robert,\nPlease keep me posted. Make sure you are checking T1 and T3\nRegards,"
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-11-09T10:20:25.169-0800",
+              "body": "Hi Martin, Apologies for the incorrect control application. Control was applied to one side of the PC through a previously registered area but failed to apply with new controls on the other side. I have reapplied the control and have seen the PC move slightly. I will re-export this area today and notify you as soon as it has been uploaded."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-09T06:18:12.727-0800",
+              "body": "Hi  \nI have this question from our modeling team, could you please double check it?\nIt looks like the point cloud” ON01 - 87803 - Matheson Constructors - T3 NT19-1” is not coordinated with the other point clouds can you please check if its geo-located with the correct coordinates, see screenshot below.\n could you please help Robert to double check it?\nKeep me posted please.\nThanks"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-11-08T22:58:28.273-0800",
+              "body": "Hi   It looks like the point cloud ”ON01 - 87803 - Matheson Constructors - T3 NT19-1”is not coordinated with the other point clouds can you please check if its geo-located with the correct coordinates"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-11-06T04:59:01.694-0800",
+              "body": ""
+            },
+            {
+              "author": "Mike Auger",
+              "created": "2026-11-05T05:35:59.587-0800",
+              "body": "Good Morning,  \nIs this what we have done in the past for Matheson? We want to be consistent is my thoughts. @ISOLA Martinwhat do you think? \nMike Auger  Account Executive, Construction Technology Services Construction Software and Services Division Multivista, part of Hexagon  T: 416-716-9025  E: mike.auger@multivistasystems.com  LI: www.linkedin.com/in/mrmikeauger/  multivista.com| LinkedIn"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-11-05T04:29:47.196-0800",
+              "body": "Hi team, could you please confirm whether you need everything modeled in a single file or if we should split the files by discipline? \nArch& Strct \n\nMEP \n\nBaggage \n\nPlease confirm as soons as possible. Kind regards,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T10:07:02.877-0800",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T07:44:52.067-0800",
+              "body": ""
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6586",
+          "summary": "Scan to Services - TN01 - 90906 - Layson Building Company - 2023 Otter Creek",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-14T21:28:34.059-0800",
+          "dueDate": null,
+          "created": "2026-11-14T21:28:27.946-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TN01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011g8jFYAQ/view",
+          "quotedTurnaround": null,
+          "projectId": "90906",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-14T21:28:33.909-0800",
+              "body": "(240 kB)\n (2.19 MB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6568",
           "summary": "Scan to Services - GBR07 - 503857 - United Infrastructure - Rutland House",
@@ -113,91 +317,6 @@
               "author": "Multivista",
               "created": "2026-11-06T13:11:22.732-0800",
               "body": "(235 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6548",
-          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - Baggage Handling Upgrades - Priority 1 - Terminal 1_NT19 & 11",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-14T03:48:17.027-0800",
-          "dueDate": "2026-12-07",
-          "created": "2026-11-03T13:29:54.714-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "ON01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1,
-          "squareFootage": 29697,
-          "projectName": "Pearson Airport - Terminal 1_NT19 & 11",
-          "projectType": "Infrastructure",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000108r0EYAQ/view",
-          "quotedTurnaround": 22,
-          "projectId": "87803",
-          "originalDueDate": "2026-12-07",
-          "additionalInfo": null,
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-11-04",
-          "dataValidatedDate": "2026-11-05",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-05T06:55:37.692-0800",
-              "body": "Hi  I reviewed the point clouds with an overall analysis, but could you please check if they are falling on the correct spot? or if you see any issues?\nThanks,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-05T06:46:58.466-0800",
-              "body": "This ticket is for these 4 areas. One is missing, it should be ready by tomorrow."
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-11-05T05:40:04.911-0800",
-              "body": "Hi Martin, The remaining area is ‘domestic originating mainlines’. The other three areas were uploaded this morning \nRobert CalvertDocumentation SpecialistHexagon Multivista 1+ (647) 471-6336 robert.calvert@multivistasystems.com \n \nmultivista.com\n 42 Industrial Street, Suite 130. Toronto, Ontario M4G 1Y9"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-05T05:22:13.010-0800",
-              "body": "Hi Robert,\nThanks for the update. Could you help me to understand which one you already sent me?\nI understand that NT11 has been delivered, but which of the other three were included?\nRegards,"
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-11-05T05:11:28.904-0800",
-              "body": "Hi Martin. I have transferred over 3 of the 4 areas to be modelled for this ticket. The file name is: ON01 - 87803 - Matheson Constructors - T1 - NT11 - NT19 2 - NT 19 3. I experienced some registration issues which prevented me from completing the final area last night. That PC should be uploaded tonight. I will update you when it is available too."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-11-05T04:01:03.410-0800",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T10:39:34.067-0800",
-              "body": "Thanks, please keep me posted.\nRegards"
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-11-04T10:34:25.699-0800",
-              "body": "Hi Martin, I am completing the registration for these areas now. I should be able to upload the point cloud data either tonight or tomorrow morning, depending on processing times. I will be sure to update here in the ticket when point cloud data has been uploaded."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T09:53:23.056-0800",
-              "body": "Hi  \nJust a short note to ask you when you will be uploading the point clouds for this sector:Priority 1 Terminal 1, NT 19 and 11.Thank you,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T09:51:44.822-0800",
-              "body": ""
             }
           ]
         },
@@ -4810,88 +4929,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6547",
-          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - Baggage Handling Upgrades - Priority 1 Terminal 3_NT 19",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-12T03:30:17.733-0800",
-          "dueDate": "2026-11-27",
-          "created": "2026-11-03T13:29:49.524-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "ON01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1,
-          "squareFootage": 9588,
-          "projectName": "  Pearson Airport - Terminal 3_NT19",
-          "projectType": "Infrastructure",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000107n3WYAQ/view",
-          "quotedTurnaround": 17,
-          "projectId": "87803",
-          "originalDueDate": "2026-11-27",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-04",
-          "dataValidatedDate": "2026-11-04",
-          "comments": [
-            {
-              "author": "Robert Calvert",
-              "created": "2026-11-11T12:31:00.665-0800",
-              "body": "Hi Martin, I have corrected the NT19 Dom INT OM pointcloud and had Mark King confirm the alignment. The PC is now available for download from the FTP. Please look for the PC titled: ON01 - 87803 - Matheson Constructors - T3 NT19 - DOM INT OM"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-09T11:31:09.095-0800",
-              "body": "Thanks Robert,\nPlease keep me posted. Make sure you are checking T1 and T3\nRegards,"
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-11-09T10:20:25.169-0800",
-              "body": "Hi Martin, Apologies for the incorrect control application. Control was applied to one side of the PC through a previously registered area but failed to apply with new controls on the other side. I have reapplied the control and have seen the PC move slightly. I will re-export this area today and notify you as soon as it has been uploaded."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-09T06:18:12.727-0800",
-              "body": "Hi  \nI have this question from our modeling team, could you please double check it?\nIt looks like the point cloud” ON01 - 87803 - Matheson Constructors - T3 NT19-1” is not coordinated with the other point clouds can you please check if its geo-located with the correct coordinates, see screenshot below.\n could you please help Robert to double check it?\nKeep me posted please.\nThanks"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-11-08T22:58:28.273-0800",
-              "body": "Hi   It looks like the point cloud ”ON01 - 87803 - Matheson Constructors - T3 NT19-1”is not coordinated with the other point clouds can you please check if its geo-located with the correct coordinates"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-11-06T04:59:01.694-0800",
-              "body": ""
-            },
-            {
-              "author": "Mike Auger",
-              "created": "2026-11-05T05:35:59.587-0800",
-              "body": "Good Morning,  \nIs this what we have done in the past for Matheson? We want to be consistent is my thoughts. @ISOLA Martinwhat do you think? \nMike Auger  Account Executive, Construction Technology Services Construction Software and Services Division Multivista, part of Hexagon  T: 416-716-9025  E: mike.auger@multivistasystems.com  LI: www.linkedin.com/in/mrmikeauger/  multivista.com| LinkedIn"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-11-05T04:29:47.196-0800",
-              "body": "Hi team, could you please confirm whether you need everything modeled in a single file or if we should split the files by discipline? \nArch& Strct \n\nMEP \n\nBaggage \n\nPlease confirm as soons as possible. Kind regards,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T10:07:02.877-0800",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T07:44:52.067-0800",
-              "body": ""
-            }
-          ]
         },
         {
           "key": "SCAN-6555",
