@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T16:34:08.831Z",
+  "generatedAt": "2026-11-17T17:15:57.747Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -7,11 +7,232 @@
       "name": "SCAN",
       "totalIssues": 3344,
       "statusSummary": {
-        "To Do": 41,
-        "In Progress": 44,
+        "To Do": 40,
+        "In Progress": 45,
         "Done": 3259
       },
       "issues": [
+        {
+          "key": "SCAN-6584",
+          "summary": "Scan to Services - DC01 - 90858 - Harvey Cleary Builders - Colorado Building",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-17T09:06:08.628-0800",
+          "dueDate": "2026-12-21",
+          "created": "2026-11-13T11:41:06.429-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "DC01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 18753.6,
+          "squareFootage": 58623,
+          "projectName": "Colorado Building",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/dc01/90858/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/iTrDS3hJMdF6Vptg9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010L1TdYAK/viewhttps://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000009F3oP0AS/view",
+          "quotedTurnaround": 24,
+          "projectId": "90858",
+          "originalDueDate": "2026-12-21",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-16",
+          "dataValidatedDate": "2026-11-17",
+          "comments": [
+            {
+              "author": "Donald Williams",
+              "created": "2026-11-17T09:06:08.628-0800",
+              "body": "Thank you for the update, as indicated on the ticket, could you please have the project setup team integrate the HxDR point cloud to MDS drawings? \nThank you for your time, \nDonald Williams \nAsst. Operations Manager\n>Multivista, part of Hexagon \nM:512-788-8811 \nE: d.williams@multivista.com  \nmultivista.com| in"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-17T06:08:56.484-0800",
+              "body": ""
+            },
+            {
+              "author": "Donald Williams",
+              "created": "2026-11-16T19:54:00.994-0800",
+              "body": "Here is the 2nd half of the closed/won for this request: https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011fQ2JYAU/view \nThank you, \nDonald Williams \nAsst. Operations Manager\n>Multivista, part of Hexagon \nM:512-788-8811 \nE: d.williams@multivista.com  \nmultivista.com| in"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-13T11:41:11.220-0800",
+              "body": "(195 kB)\n (3.70 MB)\n (6.72 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6495",
+          "summary": "Scan to Services - GBR04 - 502353 - Wrexham Glyndwr University - Learning Gateway Building",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-17T08:58:37.189-0800",
+          "dueDate": "2026-11-18",
+          "created": "2026-10-27T06:24:41.016-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR04",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 6162,
+          "squareFootage": 33109,
+          "projectName": "Learning Gateway Building",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/502353/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/1aHr26cqp6yUMk3E8",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/0064Q00001l2eF1QAI/view",
+          "quotedTurnaround": 13,
+          "projectId": "502353",
+          "originalDueDate": "2026-11-18",
+          "additionalInfo": null,
+          "components": [
+            "Checklist Missing",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-10-28",
+          "dataValidatedDate": "2026-10-30",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-29T06:33:24.779-0700",
+              "body": "Hi James and Alex, \nThanks for the confirmation. Could you please help us identifying the scope?\nCould you please markup which is the correct builing?\nThanks"
+            },
+            {
+              "author": "James Kelly",
+              "created": "2026-10-29T00:43:37.071-0700",
+              "body": "Morning Scan 2, \nDefault setting please. \nJames. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
+            },
+            {
+              "author": "Alex Bauer",
+              "created": "2026-10-29T00:34:09.509-0700",
+              "body": "The SF link matches the checklist. Base with arc add on.  \nAlex Bauer Senior Consultant  \n>Multivista, part of Hexagon T: 0161 826 9133  M: 07950793758  E: a.bauer@multivista.com  multivista.com| LinkedIn"
+            },
+            {
+              "author": "James Kelly",
+              "created": "2026-10-29T00:11:56.041-0700",
+              "body": "Morning Alex, \nPlease see the issues below holding up the BIM model for Wrexham. \nThese are things I cant fix. \nRegards, \nJames Kelly. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-10-28T10:57:52.169-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-28T10:57:45.200-0700",
+              "body": "Hi Team,\nCould you also confirm this option?\nThanks"
+            },
+            {
+              "author": "Alex Bauer",
+              "created": "2026-10-28T08:53:37.520-0700",
+              "body": "[Learning Gateway Bldg. - UPSELL - 1 | Quote | Salesforce|https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000091owr0AA/view] \n  \nAlex Bauer Senior Consultant Multivista, part of Hexagon T: 0161 826 9133  M: 07950793758 E: a.bauer@multivista.com multivista.com: LinkedIn"
+            },
+            {
+              "author": "James Kelly",
+              "created": "2026-10-28T08:52:10.259-0700",
+              "body": "Martin, \nWe haven’t rescanned this area we are using the 2024 data for the BIM model. \nAlex: Can you provide a new sales force link for Martin please. \nRegards, \nJames Kelly. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-28T06:59:13.990-0700",
+              "body": "Hi team,\nCould you please give us somo context for this project?\nI can´t see new point clouds on the FTP (just 2024 ones)\nAdditionally, this link  is for the old SF platform, could you please send the one?\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-27T06:24:44.102-0700",
+              "body": "(247 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6533",
+          "summary": "Scan to Services - LA01 - 90475 - Plaid - The Blake Hotel",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-17T08:58:35.201-0800",
+          "dueDate": "2026-11-17",
+          "created": "2026-10-30T13:08:31.107-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "LA01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 3675,
+          "squareFootage": 16000,
+          "projectName": "The Blake Hotel - Room 913",
+          "projectType": "Hospitality",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/la01/90475/3D point clouds",
+          "mapLink": "https://maps.app.goo.gl/RA5idCxzWhhu92Yh9",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ000010gOiAYAU%2Fview&data=05%7C02%7Cb.walker%40multivista.com%7Ce3bce8a0b8014c1ec77408df36b4987e%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639289822036845817%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=KPiGQX6mY7RFWRfNqO1CL7TkJsvxfo0V%2Ft%2F%2BO62kSOQ%3D&reserved=0",
+          "quotedTurnaround": 11,
+          "projectId": "90475",
+          "originalDueDate": "2026-11-17",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-02",
+          "dataValidatedDate": "2026-11-02",
+          "comments": [
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-12T11:17:32.985-0800",
+              "body": "Hi Team,\nThe deliverables for Levels 1 and 2 are now available on FTP."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-02T10:50:40.816-0800",
+              "body": "5 Point clouds"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-30T13:08:33.821-0700",
+              "body": "(349 kB)\n (213 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6581",
+          "summary": "Scan to Services - GBR04 - 503503 - Robertson Construction - The Forge - Upsell",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-17T08:58:14.953-0800",
+          "dueDate": "2026-11-25",
+          "created": "2026-11-13T05:47:28.603-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR04",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 750,
+          "squareFootage": 2000,
+          "projectName": "The Forge",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503503/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/Mvc4h6tYdwthVuk38",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000005zbEH0AY/view",
+          "quotedTurnaround": 7,
+          "projectId": "503503",
+          "originalDueDate": "2026-11-25",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-13",
+          "dataValidatedDate": "2026-11-16",
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-13T05:47:31.573-0800",
+              "body": "(228 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6589",
           "summary": "Scan to Services - FL02 - 90947 - CDB Interior Design - 55 Ocean Front Dr",
@@ -532,53 +753,6 @@
               "author": "Multivista",
               "created": "2026-11-13T12:06:37.407-0800",
               "body": "(528 kB)\n (294 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6584",
-          "summary": "Scan to Services - DC01 - 90858 - Harvey Cleary Builders - Colorado Building",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-17T06:13:52.393-0800",
-          "dueDate": "2026-12-21",
-          "created": "2026-11-13T11:41:06.429-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "DC01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 18753.6,
-          "squareFootage": 58623,
-          "projectName": "Colorado Building",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/dc01/90858/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/iTrDS3hJMdF6Vptg9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010L1TdYAK/viewhttps://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000009F3oP0AS/view",
-          "quotedTurnaround": 24,
-          "projectId": "90858",
-          "originalDueDate": "2026-12-21",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-16",
-          "dataValidatedDate": "2026-11-17",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-17T06:08:56.484-0800",
-              "body": ""
-            },
-            {
-              "author": "Donald Williams",
-              "created": "2026-11-16T19:54:00.994-0800",
-              "body": "Here is the 2nd half of the closed/won for this request: https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011fQ2JYAU/view \nThank you, \nDonald Williams \nAsst. Operations Manager\n>Multivista, part of Hexagon \nM:512-788-8811 \nE: d.williams@multivista.com  \nmultivista.com| in"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-13T11:41:11.220-0800",
-              "body": "(195 kB)\n (3.70 MB)\n (6.72 MB)"
             }
           ]
         },
@@ -1163,43 +1337,6 @@
               "author": "Multivista",
               "created": "2026-11-11T08:03:32.662-0800",
               "body": "(1.84 MB)\n (111 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6581",
-          "summary": "Scan to Services - GBR04 - 503503 - Robertson Construction - The Forge - Upsell",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-17T04:00:31.026-0800",
-          "dueDate": "2026-11-25",
-          "created": "2026-11-13T05:47:28.603-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR04",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 750,
-          "squareFootage": 2000,
-          "projectName": "The Forge",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503503/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/Mvc4h6tYdwthVuk38",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000005zbEH0AY/view",
-          "quotedTurnaround": 7,
-          "projectId": "503503",
-          "originalDueDate": "2026-11-25",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-13",
-          "dataValidatedDate": "2026-11-16",
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-13T05:47:31.573-0800",
-              "body": "(228 kB)"
             }
           ]
         },
@@ -2363,138 +2500,6 @@
               "author": "Multivista",
               "created": "2026-10-16T15:32:31.787-0700",
               "body": "(495 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6495",
-          "summary": "Scan to Services - GBR04 - 502353 - Wrexham Glyndwr University - Learning Gateway Building",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-16T10:44:42.343-0800",
-          "dueDate": "2026-11-18",
-          "created": "2026-10-27T06:24:41.016-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR04",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 6162,
-          "squareFootage": 33109,
-          "projectName": "Learning Gateway Building",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/502353/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/1aHr26cqp6yUMk3E8",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/0064Q00001l2eF1QAI/view",
-          "quotedTurnaround": 13,
-          "projectId": "502353",
-          "originalDueDate": "2026-11-18",
-          "additionalInfo": null,
-          "components": [
-            "Checklist Missing",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-10-28",
-          "dataValidatedDate": "2026-10-30",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-29T06:33:24.779-0700",
-              "body": "Hi James and Alex, \nThanks for the confirmation. Could you please help us identifying the scope?\nCould you please markup which is the correct builing?\nThanks"
-            },
-            {
-              "author": "James Kelly",
-              "created": "2026-10-29T00:43:37.071-0700",
-              "body": "Morning Scan 2, \nDefault setting please. \nJames. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
-            },
-            {
-              "author": "Alex Bauer",
-              "created": "2026-10-29T00:34:09.509-0700",
-              "body": "The SF link matches the checklist. Base with arc add on.  \nAlex Bauer Senior Consultant  \n>Multivista, part of Hexagon T: 0161 826 9133  M: 07950793758  E: a.bauer@multivista.com  multivista.com| LinkedIn"
-            },
-            {
-              "author": "James Kelly",
-              "created": "2026-10-29T00:11:56.041-0700",
-              "body": "Morning Alex, \nPlease see the issues below holding up the BIM model for Wrexham. \nThese are things I cant fix. \nRegards, \nJames Kelly. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-10-28T10:57:52.169-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-28T10:57:45.200-0700",
-              "body": "Hi Team,\nCould you also confirm this option?\nThanks"
-            },
-            {
-              "author": "Alex Bauer",
-              "created": "2026-10-28T08:53:37.520-0700",
-              "body": "[Learning Gateway Bldg. - UPSELL - 1 | Quote | Salesforce|https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000091owr0AA/view] \n  \nAlex Bauer Senior Consultant Multivista, part of Hexagon T: 0161 826 9133  M: 07950793758 E: a.bauer@multivista.com multivista.com: LinkedIn"
-            },
-            {
-              "author": "James Kelly",
-              "created": "2026-10-28T08:52:10.259-0700",
-              "body": "Martin, \nWe haven’t rescanned this area we are using the 2024 data for the BIM model. \nAlex: Can you provide a new sales force link for Martin please. \nRegards, \nJames Kelly. \nJames Kelly \nOperations Manager \n>Multivista, part of Hexagon \nT:0161 826 9133  M: 07531543160  \nE: j.kelly@multivista.com \nmultivista.com| LinkedIn"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-28T06:59:13.990-0700",
-              "body": "Hi team,\nCould you please give us somo context for this project?\nI can´t see new point clouds on the FTP (just 2024 ones)\nAdditionally, this link  is for the old SF platform, could you please send the one?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-27T06:24:44.102-0700",
-              "body": "(247 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6533",
-          "summary": "Scan to Services - LA01 - 90475 - Plaid - The Blake Hotel",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-16T10:44:39.197-0800",
-          "dueDate": "2026-11-17",
-          "created": "2026-10-30T13:08:31.107-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "LA01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 3675,
-          "squareFootage": 16000,
-          "projectName": "The Blake Hotel - Room 913",
-          "projectType": "Hospitality",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/la01/90475/3D point clouds",
-          "mapLink": "https://maps.app.goo.gl/RA5idCxzWhhu92Yh9",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ000010gOiAYAU%2Fview&data=05%7C02%7Cb.walker%40multivista.com%7Ce3bce8a0b8014c1ec77408df36b4987e%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639289822036845817%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=KPiGQX6mY7RFWRfNqO1CL7TkJsvxfo0V%2Ft%2F%2BO62kSOQ%3D&reserved=0",
-          "quotedTurnaround": 11,
-          "projectId": "90475",
-          "originalDueDate": "2026-11-17",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-02",
-          "dataValidatedDate": "2026-11-02",
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-12T11:17:32.985-0800",
-              "body": "Hi Team,\nThe deliverables for Levels 1 and 2 are now available on FTP."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-02T10:50:40.816-0800",
-              "body": "5 Point clouds"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-30T13:08:33.821-0700",
-              "body": "(349 kB)\n (213 kB)"
             }
           ]
         },
