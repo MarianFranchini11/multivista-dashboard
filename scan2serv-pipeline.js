@@ -8,7 +8,7 @@ let S2S_ROWS = [];
 let selectedFranchises = new Set();
 let selectedOwners = new Set();
 let selectedStatuses = new Set();
-let selectedStage = "";
+let selectedStages = new Set();
 let sortKey = "usd";
 let sortDir = "desc";
 
@@ -128,9 +128,15 @@ function wireS2SControls() {
 
   document.querySelectorAll("#s2s-stage-chips .rm-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
-      selectedStage = chip.dataset.stage;
-      document.querySelectorAll("#s2s-stage-chips .rm-chip").forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
+      const stage = chip.dataset.stage;
+      if (stage === "") {
+        // "All Stages" clears any specific selection.
+        selectedStages = new Set();
+      } else {
+        if (selectedStages.has(stage)) selectedStages.delete(stage);
+        else selectedStages.add(stage);
+      }
+      updateStageChipsUI();
       renderAll();
     });
   });
@@ -149,9 +155,8 @@ function wireS2SControls() {
     selectedFranchises = new Set();
     selectedOwners = new Set();
     selectedStatuses = new Set();
-    selectedStage = "";
-    document.querySelectorAll("#s2s-stage-chips .rm-chip").forEach((c) => c.classList.remove("active"));
-    document.querySelector('#s2s-stage-chips .rm-chip[data-stage=""]').classList.add("active");
+    selectedStages = new Set();
+    updateStageChipsUI();
     updateChipSummary("s2s-franchise-summary", selectedFranchises);
     updateChipSummary("s2s-owner-summary", selectedOwners);
     updateChipSummary("s2s-status-summary", selectedStatuses);
@@ -180,6 +185,18 @@ function wireS2SControls() {
   });
 }
 
+function updateStageChipsUI() {
+  const allChip = document.querySelector('#s2s-stage-chips .rm-chip[data-stage=""]');
+  document.querySelectorAll("#s2s-stage-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+  if (selectedStages.size === 0) {
+    if (allChip) allChip.classList.add("active");
+  } else {
+    document.querySelectorAll("#s2s-stage-chips .rm-chip").forEach((c) => {
+      if (c.dataset.stage && selectedStages.has(c.dataset.stage)) c.classList.add("active");
+    });
+  }
+}
+
 function updateChipSummary(elId, selectedSet) {
   const el = document.getElementById(elId);
   if (!el) return;
@@ -198,7 +215,7 @@ function getFilteredRows() {
   const today = new Date().toISOString().slice(0, 10);
 
   return S2S_ROWS.filter((r) => {
-    if (selectedStage && r.stage !== selectedStage) return false;
+    if (selectedStages.size > 0 && !selectedStages.has(r.stage)) return false;
     if (selectedFranchises.size > 0 && !selectedFranchises.has(r.franchise)) return false;
     if (selectedOwners.size > 0 && !selectedOwners.has(r.owner)) return false;
     if (selectedStatuses.size > 0 && !selectedStatuses.has(r.status)) return false;
