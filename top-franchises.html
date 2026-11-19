@@ -75,6 +75,21 @@
           </details>
         </div>
         <div class="filter-group">
+          <label for="owner-details">Owner</label>
+          <details id="owner-details" class="due-date-filter">
+            <summary id="owner-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <div id="owner-checkboxes" class="month-checkbox-grid territory-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="owner-clear">Clear</button>
+                <button type="button" id="owner-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="filter-group">
           <label for="service-filter">Service type</label>
           <select id="service-filter">
             <option value="">All</option>

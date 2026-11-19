@@ -31,6 +31,7 @@ let selectedYear = "2026";
 let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
 let selectedTerritories = new Set();
+let selectedOwners = new Set();
 let categoryUrgencyFilter = { "due-soon": "", "todo-due": "", "done-due": "" };
 let categoryLastFilteredIssues = { "due-soon": [], "todo-due": [], "done-due": [] };
 let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded, shared across sections
@@ -138,6 +139,23 @@ async function initDashboardPage() {
     renderAll();
   });
 
+  document.getElementById("owner-apply").addEventListener("click", () => {
+    selectedOwners = new Set(
+      Array.from(document.querySelectorAll("#owner-checkboxes input:checked")).map((el) => el.value)
+    );
+    updateOwnerSummary();
+    document.getElementById("owner-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("owner-clear").addEventListener("click", () => {
+    document.querySelectorAll("#owner-checkboxes input").forEach((el) => (el.checked = false));
+    selectedOwners = new Set();
+    updateOwnerSummary();
+    document.getElementById("owner-details").open = false;
+    renderAll();
+  });
+
   document.querySelectorAll("#tier-chips .rm-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
       selectedTier = chip.dataset.tier;
@@ -151,6 +169,9 @@ async function initDashboardPage() {
     document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
     selectedTerritories = new Set();
     updateTerritorySummary();
+    document.querySelectorAll("#owner-checkboxes input").forEach((el) => (el.checked = false));
+    selectedOwners = new Set();
+    updateOwnerSummary();
     document.getElementById("service-filter").value = "";
     document.getElementById("status-filter").value = "";
     document.getElementById("year-select").value = "";
@@ -165,7 +186,7 @@ async function initDashboardPage() {
   });
 
   document.addEventListener("click", (e) => {
-    ["due-date-details", "territory-details"].forEach((id) => {
+    ["due-date-details", "territory-details", "owner-details"].forEach((id) => {
       const details = document.getElementById(id);
       if (details.open && !details.contains(e.target)) details.open = false;
     });
@@ -196,11 +217,24 @@ function updateTerritorySummary() {
   }
 }
 
+function updateOwnerSummary() {
+  const summary = document.getElementById("owner-summary");
+  if (selectedOwners.size === 0) {
+    summary.textContent = "All";
+  } else if (selectedOwners.size <= 2) {
+    summary.textContent = Array.from(selectedOwners).sort().join(", ");
+  } else {
+    summary.textContent = `${selectedOwners.size} selected`;
+  }
+}
+
 function populateFilters(issues) {
   const territories = new Set();
+  const owners = new Set();
   const services = new Set();
   for (const issue of issues) {
     territories.add(issue.territory || "Unassigned");
+    owners.add(issue.assignee || "Unassigned");
     if (issue.serviceType) services.add(issue.serviceType);
   }
 
@@ -216,6 +250,12 @@ function populateFilters(issues) {
   territoryContainer.innerHTML = territoryOptions
     .sort()
     .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
+    .join("");
+
+  const ownerContainer = document.getElementById("owner-checkboxes");
+  ownerContainer.innerHTML = Array.from(owners)
+    .sort()
+    .map((o) => `<label><input type="checkbox" value="${escapeHtml(o)}" />${escapeHtml(o)}</label>`)
     .join("");
 
   const serviceSelect = document.getElementById("service-filter");
@@ -251,6 +291,7 @@ function getFilteredIssues() {
 
   return allIssues.filter((issue) => {
     if (selectedTerritories.size > 0 && !selectedTerritories.has(issue.territory || "Unassigned")) return false;
+    if (selectedOwners.size > 0 && !selectedOwners.has(issue.assignee || "Unassigned")) return false;
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
     if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
