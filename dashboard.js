@@ -32,6 +32,21 @@ let selectedMonths = new Set(); // "01".."12"
 let selectedTier = "";
 let selectedTerritories = new Set();
 let selectedOwners = new Set();
+
+// Franchise ownership (NOT derived from ticket assignee). Keyed by
+// territory code -> array of owner names, same source as the Top
+// Franchises page scoping (franchises.json via loadFranchiseData()).
+let franchiseOwnersByTerritory = {};
+let allFranchiseOwners = []; // distinct owner names, sorted by last name
+
+// Sort key for "sort people by last name": takes the last whitespace-
+// separated token of the full name as the primary key, falling back to
+// the full name itself as a tiebreaker.
+function lastNameSortKey(fullName) {
+  const parts = (fullName || "").trim().split(/\s+/);
+  const last = parts[parts.length - 1] || "";
+  return `${last.toLowerCase()}|${(fullName || "").toLowerCase()}`;
+}
 let categoryUrgencyFilter = { "due-soon": "", "todo-due": "", "done-due": "" };
 let categoryLastFilteredIssues = { "due-soon": [], "todo-due": [], "done-due": [] };
 let dueSoonExpandedInfo = new Set(); // ticket keys whose Additional Info cell is expanded, shared across sections
@@ -51,6 +66,23 @@ async function initDashboardPage() {
   allIssues = flattenIssues(data);
   if (DASHBOARD_SCOPE_TERRITORIES) {
     allIssues = allIssues.filter((i) => DASHBOARD_SCOPE_TERRITORIES.includes(i.territory));
+  }
+
+  try {
+    const franchises = await loadFranchiseData();
+    franchiseOwnersByTerritory = {};
+    const ownerSet = new Set();
+    for (const f of franchises) {
+      for (const t of f.territories) franchiseOwnersByTerritory[t] = f.owners;
+      for (const o of f.owners) ownerSet.add(o);
+    }
+    allFranchiseOwners = Array.from(ownerSet).sort((a, b) =>
+      lastNameSortKey(a).localeCompare(lastNameSortKey(b))
+    );
+  } catch (err) {
+    console.error("Could not load franchise owner data:", err);
+    franchiseOwnersByTerritory = {};
+    allFranchiseOwners = [];
   }
 
   populateFilters(allIssues);
@@ -230,11 +262,9 @@ function updateOwnerSummary() {
 
 function populateFilters(issues) {
   const territories = new Set();
-  const owners = new Set();
   const services = new Set();
   for (const issue of issues) {
     territories.add(issue.territory || "Unassigned");
-    owners.add(issue.assignee || "Unassigned");
     if (issue.serviceType) services.add(issue.serviceType);
   }
 
@@ -252,9 +282,22 @@ function populateFilters(issues) {
     .map((t) => `<label><input type="checkbox" value="${escapeHtml(t)}" />${escapeHtml(t)}</label>`)
     .join("");
 
+  // Owner options come from franchise ownership (franchises.json), already
+  // sorted by last name -- NOT from issue assignees.
+  let ownerOptions = allFranchiseOwners;
+  if (DASHBOARD_SCOPE_TERRITORIES) {
+    // Belt-and-suspenders, same reasoning as the Territory filter above:
+    // on a scoped page, only offer owners who actually own a franchise
+    // within scope.
+    const inScope = new Set();
+    for (const t of DASHBOARD_SCOPE_TERRITORIES) {
+      for (const o of franchiseOwnersByTerritory[t] || []) inScope.add(o);
+    }
+    ownerOptions = ownerOptions.filter((o) => inScope.has(o));
+  }
+
   const ownerContainer = document.getElementById("owner-checkboxes");
-  ownerContainer.innerHTML = Array.from(owners)
-    .sort()
+  ownerContainer.innerHTML = ownerOptions
     .map((o) => `<label><input type="checkbox" value="${escapeHtml(o)}" />${escapeHtml(o)}</label>`)
     .join("");
 
@@ -291,7 +334,10 @@ function getFilteredIssues() {
 
   return allIssues.filter((issue) => {
     if (selectedTerritories.size > 0 && !selectedTerritories.has(issue.territory || "Unassigned")) return false;
-    if (selectedOwners.size > 0 && !selectedOwners.has(issue.assignee || "Unassigned")) return false;
+    if (selectedOwners.size > 0) {
+      const franchiseOwners = franchiseOwnersByTerritory[issue.territory] || [];
+      if (!franchiseOwners.some((o) => selectedOwners.has(o))) return false;
+    }
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
     if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
