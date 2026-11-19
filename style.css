@@ -546,20 +546,27 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 
 .month-checkbox-grid input { margin: 0; accent-color: var(--steel); }
 
-.territory-checkbox-grid {
-  grid-template-columns: repeat(3, 1fr);
-  max-height: 220px;
-  overflow-y: auto;
-  min-width: 280px;
-}
-
-/* Owner filter: one name per line (not a multi-column grid), sorted
-   alphabetically by last name in the JS that populates it. */
+/* Territory and Owner filters: one option per line (not a multi-column
+   grid), sorted alphabetically (by last name for Owner) in the JS that
+   populates them. */
+.territory-checkbox-grid,
 .owner-checkbox-list {
   grid-template-columns: 1fr;
   max-height: 260px;
   overflow-y: auto;
   min-width: 220px;
+}
+
+/* Type-to-filter box above the Territory/Owner checkbox lists. */
+.filter-search-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
 .due-date-panel-actions {

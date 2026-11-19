@@ -167,6 +167,7 @@ async function initDashboardPage() {
     document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
     selectedTerritories = new Set();
     updateTerritorySummary();
+    clearCheckboxSearch("territory-search", "territory-checkboxes");
     document.getElementById("territory-details").open = false;
     renderAll();
   });
@@ -184,9 +185,13 @@ async function initDashboardPage() {
     document.querySelectorAll("#owner-checkboxes input").forEach((el) => (el.checked = false));
     selectedOwners = new Set();
     updateOwnerSummary();
+    clearCheckboxSearch("owner-search", "owner-checkboxes");
     document.getElementById("owner-details").open = false;
     renderAll();
   });
+
+  wireCheckboxSearch("territory-search", "territory-checkboxes");
+  wireCheckboxSearch("owner-search", "owner-checkboxes");
 
   document.querySelectorAll("#tier-chips .rm-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -201,9 +206,11 @@ async function initDashboardPage() {
     document.querySelectorAll("#territory-checkboxes input").forEach((el) => (el.checked = false));
     selectedTerritories = new Set();
     updateTerritorySummary();
+    clearCheckboxSearch("territory-search", "territory-checkboxes");
     document.querySelectorAll("#owner-checkboxes input").forEach((el) => (el.checked = false));
     selectedOwners = new Set();
     updateOwnerSummary();
+    clearCheckboxSearch("owner-search", "owner-checkboxes");
     document.getElementById("service-filter").value = "";
     document.getElementById("status-filter").value = "";
     document.getElementById("year-select").value = "";
@@ -247,6 +254,28 @@ function updateTerritorySummary() {
   } else {
     summary.textContent = `${selectedTerritories.size} selected`;
   }
+}
+
+// Wires a "type to filter" text input to a checkbox-list container: typing
+// hides any <label> whose text doesn't match, so long Territory/Owner lists
+// can be narrowed down by keyboard instead of scrolling.
+function wireCheckboxSearch(inputId, containerId) {
+  const input = document.getElementById(inputId);
+  const container = document.getElementById(containerId);
+  if (!input || !container) return;
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+    container.querySelectorAll("label").forEach((label) => {
+      label.style.display = label.textContent.toLowerCase().includes(q) ? "" : "none";
+    });
+  });
+}
+
+function clearCheckboxSearch(inputId, containerId) {
+  const input = document.getElementById(inputId);
+  if (input) input.value = "";
+  const container = document.getElementById(containerId);
+  if (container) container.querySelectorAll("label").forEach((label) => (label.style.display = ""));
 }
 
 function updateOwnerSummary() {
