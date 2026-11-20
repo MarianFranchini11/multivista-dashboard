@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-19T20:28:37.795Z",
+  "generatedAt": "2026-11-20T02:12:30.417Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 3364,
+      "totalIssues": 3365,
       "statusSummary": {
-        "To Do": 25,
+        "To Do": 26,
         "In Progress": 62,
         "Done": 3277
       },
@@ -15,12 +15,12 @@
         {
           "key": "SCAN-6514",
           "summary": "Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St",
-          "status": "Done",
-          "statusCategory": "Done",
+          "status": "Reopened",
+          "statusCategory": "In Progress",
           "assignee": "Rocio Ferreyra",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-11-19T12:26:36.780-0800",
+          "updated": "2026-11-19T14:47:28.228-0800",
           "dueDate": "2026-11-19",
           "created": "2026-10-29T12:51:16.854-0700",
           "resolutionDate": "2026-11-19T12:17:45.076-0800",
@@ -41,6 +41,194 @@
           "components": [
             "Rush Request"
           ],
+          "inProgressDate": "2026-10-30",
+          "dataValidatedDate": "2026-10-30",
+          "comments": [
+            {
+              "author": "Daniel Tufano",
+              "created": "2026-11-19T14:47:28.228-0800",
+              "body": "Simplified way of saying what I had in my last email, can you guys only be modeling the singular units o have been sending in? And not add them to the overall buildings? The solo units are enough if that is possible Sent from my iPhone \nOn Nov 19, 2026, at 2:27 PM, Rocio Ferreyra <jira@multivista.atlassian.net> wrote:"
+            },
+            {
+              "author": "Daniel Tufano",
+              "created": "2026-11-19T13:45:23.617-0800",
+              "body": "Rocio \nIn regards to these new updated models, see below request from the client. Is this possible? \nDan- \nCan you ask your Revit team to create new worksets (with unit addresses & dates) for each new unit integrated into the building model? This will allow us to quickly isolate the target unit and incorporate it into our working model. \nDan Tufano  Senior Operations Manager  Mobile (630) 881-6285 \nwww.multivista.com: LinkedIn: Facebook: X: Instagram \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Thursday, November 19, 2026 2:27 PM To: Dan Tufano - Multivista <d.tufano@multivista.com> Subject:  Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St   \n—-—-—-—  \nReply above this line.   \nRocio Ferreyra commented: \nHi Daniel, \nThe updated model was transferred to MDS when the ticket was moved to Done. \nThanks! \n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com  \nView request· Turn off this request's notifications \nThis is shared with Daniel Tufano. \nPowered by Jira Service Management  \nSent on November 19, 2026 12:27:22 PM PST"
+            },
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-19T12:26:33.410-0800",
+              "body": "Hi Daniel,\nThe updated model was transferred to MDS when the ticket was moved to Done.\nThanks!"
+            },
+            {
+              "author": "Daniel Tufano",
+              "created": "2026-11-19T12:23:30.870-0800",
+              "body": "I don’t see this unit model on the files tab…was it just updated to the original model? \nDan Tufano  Senior Operations Manager  Mobile (630) 881-6285 \nwww.multivista.com: LinkedIn: Facebook: X: Instagram \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Thursday, November 19, 2026 2:19 PM To: Dan Tufano - Multivista <d.tufano@multivista.com> Subject:  Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St   \n—-—-—-—  \nReply above this line.   \nHi Daniel Tufano, \nThis is an automated response to let you know that your project deliverables are now available on the FTP and ready for transfer to the MDS files section. \nPlease note: It is the responsibility of the client to notify Multivista of any default or concern with the deliverables as soon as possible, but no later than 30 days after client has received the deliverables by Multivista. All claims or deficiencies will be deemed waived by client if not made within 30 days of receiving the deliverables by Multivista and will effectively be accepted by client.\n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com   \nHow was our service for this Scan to Services request? \n☆ Very poor \n☆ Poor \n☆ Average \n☆ Good \n☆ Very good \nView request· Turn off this request's notifications \nThis is shared with Daniel Tufano. \nPowered by Jira Service Management  \nSent on November 19, 2026 12:18:47 PM PST"
+            },
+            {
+              "author": "Yasmin Soria",
+              "created": "2026-11-17T10:37:58.728-0800",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-30T13:52:44.908-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-29T12:51:20.724-0700",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6610",
+          "summary": "Scan to Services - IL01 - 91124 - Elizabeth Krueger Design - 1838 Burling",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-19T14:11:47.180-0800",
+          "dueDate": null,
+          "created": "2026-11-19T14:11:43.306-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000zh6TfYAI%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7b06f4e86a154f363f5a08df1d988d5f%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639262213677242986%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=zuc8FK7BXLcrbKhuisCh11ZSjJRoIMRUPEa5kKuNthA%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "91124",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-19T14:11:47.037-0800",
+              "body": "(222 kB)\n (1.51 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6549",
+          "summary": "Scan to Services - GA02 - 90550 - May Construction - St Peters Catholic Church",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "Melina Aldana Gavioli",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-19T13:01:25.516-0800",
+          "dueDate": "2026-11-20",
+          "created": "2026-11-04T08:54:49.019-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA02",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 3497,
+          "squareFootage": 10000,
+          "projectName": "St Peters Catholic Church",
+          "projectType": "Recreation",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/90550/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/zfc58ieqPbuThT277",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010No21YAC/view",
+          "quotedTurnaround": 11,
+          "projectId": "90550",
+          "originalDueDate": "2026-11-19",
+          "additionalInfo": null,
+          "components": [
+            "Corporate Delay"
+          ],
+          "inProgressDate": "2026-11-04",
+          "dataValidatedDate": "2026-11-04",
+          "comments": [
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-19T12:59:22.471-0800",
+              "body": "Hi Team,\nWe’re in the final stage of QC and need one additional day to complete the process.\nWe apologize for the delay and appreciate your understanding. We’ll be sending the final deliverables tomorrow.\nKind regards,"
+            },
+            {
+              "author": "Patrick Strickland",
+              "created": "2026-11-09T18:36:22.305-0800",
+              "body": "Patrick Strickland  Director of Laser Scanning  Mobile (205) 568-9711 \nwww.multivista.com \n125 Park of Commerce Drive 215 Savannah, GA 31405 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Monday, November 9, 2026 12:16 PM To: Patrick Strickland - Multivista <p.strickland@multivista.com> Subject:  Scan to Services - GA02 - 90550 - May Construction - St Peters Catholic Church   \n—-—-—-—  \nReply above this line.   \nRocio Ferreyra commented: \nHi Team, \nCould you please check the UAV site? We’re still unable to download the data. \n \nThanks for your help!\n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com  \nView request· Turn off this request's notifications \nThis is shared with Patrick Strickland, Brett Feemster, Cade Loyd, and Zack Alderson. \nPowered by Jira Service Management  \nSent on November 9, 2026 9:16:24 AM PST"
+            },
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-09T09:15:18.626-0800",
+              "body": "Hi Team,\nCould you please check the UAV site? We’re still unable to download the data.\nThanks for your help!"
+            },
+            {
+              "author": "Brett Feemster",
+              "created": "2026-11-05T11:47:34.085-0800",
+              "body": "Focus the majority of the interior elevation plans on the sanctuary area \nBrett Feemster Multivista- Savannah c: 706.338.5773 e: b.feemster@multivista.com http://www.multivista.com/ \nSent from my iPhone  \nOn Nov 5, 2026, at 1:51 PM, Maria Constanza Aguero Gomez <jira@multivista.atlassian.net> wrote:"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-11-05T10:50:12.496-0800",
+              "body": "Hi team, I wanted to follow up on this request regarding the interior elevations location: \nWe need the confirmation as soon as possible. Kind regards,"
+            },
+            {
+              "author": "Patrick Strickland",
+              "created": "2026-11-04T10:40:20.645-0800",
+              "body": "It was just submitted this morning so may take a day or 2 to be up for the roof. \n \nThanks,      \nPatrick Strickland Director of Laser Scan Office(912) 659-7987Mobile(205) 568-9711\nwww.multivista.com\n 125 Park of Commerce Drive, Suite 215, Savannah, Georgia 31405  \n<http://www.multivista.com/>"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T10:38:51.732-0800",
+              "body": "Hi,\nAdditionally, could you please check the UAV site? It is not working on my side\nThank you,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T10:37:43.337-0800",
+              "body": "Hi Team,\nCould you please indicate on this plan screenshot where the client needs the interior elevations? The quote shows there are 10 available.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-04T10:34:48.650-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-04T08:54:51.596-0800",
+              "body": "(198 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6560",
+          "summary": "Scan to Services - GBR02 - 503161 - New City College - BSIX Building - New City College - Colour-coded",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Yasmin Soria",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-19T12:50:30.806-0800",
+          "dueDate": "2026-11-19",
+          "created": "2026-11-10T09:26:16.648-0800",
+          "resolutionDate": "2026-11-19T12:50:30.781-0800",
+          "deliveryStatus": "On time",
+          "territory": "GBR02",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 750,
+          "squareFootage": 121000,
+          "projectName": "BSIX Building - New City College",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503161/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/QnaE3A7BpNsscMtY6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011UrVdYAK/view",
+          "quotedTurnaround": 6,
+          "projectId": "503161",
+          "originalDueDate": "2026-11-19",
+          "additionalInfo": null,
+          "components": [],
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
@@ -1520,83 +1708,6 @@
           ]
         },
         {
-          "key": "SCAN-6549",
-          "summary": "Scan to Services - GA02 - 90550 - May Construction - St Peters Catholic Church",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Melina Aldana Gavioli",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-19T03:40:19.351-0800",
-          "dueDate": "2026-11-19",
-          "created": "2026-11-04T08:54:49.019-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GA02",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 3497,
-          "squareFootage": 10000,
-          "projectName": "St Peters Catholic Church",
-          "projectType": "Recreation",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/90550/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/zfc58ieqPbuThT277",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010No21YAC/view",
-          "quotedTurnaround": 11,
-          "projectId": "90550",
-          "originalDueDate": "2026-11-19",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-04",
-          "dataValidatedDate": "2026-11-04",
-          "comments": [
-            {
-              "author": "Patrick Strickland",
-              "created": "2026-11-09T18:36:22.305-0800",
-              "body": "Patrick Strickland  Director of Laser Scanning  Mobile (205) 568-9711 \nwww.multivista.com \n125 Park of Commerce Drive 215 Savannah, GA 31405 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Monday, November 9, 2026 12:16 PM To: Patrick Strickland - Multivista <p.strickland@multivista.com> Subject:  Scan to Services - GA02 - 90550 - May Construction - St Peters Catholic Church   \n—-—-—-—  \nReply above this line.   \nRocio Ferreyra commented: \nHi Team, \nCould you please check the UAV site? We’re still unable to download the data. \n \nThanks for your help!\n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com  \nView request· Turn off this request's notifications \nThis is shared with Patrick Strickland, Brett Feemster, Cade Loyd, and Zack Alderson. \nPowered by Jira Service Management  \nSent on November 9, 2026 9:16:24 AM PST"
-            },
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-09T09:15:18.626-0800",
-              "body": "Hi Team,\nCould you please check the UAV site? We’re still unable to download the data.\nThanks for your help!"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-11-05T11:47:34.085-0800",
-              "body": "Focus the majority of the interior elevation plans on the sanctuary area \nBrett Feemster Multivista- Savannah c: 706.338.5773 e: b.feemster@multivista.com http://www.multivista.com/ \nSent from my iPhone  \nOn Nov 5, 2026, at 1:51 PM, Maria Constanza Aguero Gomez <jira@multivista.atlassian.net> wrote:"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-11-05T10:50:12.496-0800",
-              "body": "Hi team, I wanted to follow up on this request regarding the interior elevations location: \nWe need the confirmation as soon as possible. Kind regards,"
-            },
-            {
-              "author": "Patrick Strickland",
-              "created": "2026-11-04T10:40:20.645-0800",
-              "body": "It was just submitted this morning so may take a day or 2 to be up for the roof. \n \nThanks,      \nPatrick Strickland Director of Laser Scan Office(912) 659-7987Mobile(205) 568-9711\nwww.multivista.com\n 125 Park of Commerce Drive, Suite 215, Savannah, Georgia 31405  \n<http://www.multivista.com/>"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T10:38:51.732-0800",
-              "body": "Hi,\nAdditionally, could you please check the UAV site? It is not working on my side\nThank you,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T10:37:43.337-0800",
-              "body": "Hi Team,\nCould you please indicate on this plan screenshot where the client needs the interior elevations? The quote shows there are 10 available.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-04T10:34:48.650-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-04T08:54:51.596-0800",
-              "body": "(198 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6606",
           "summary": "Scan to Services - IL01 - 88475 - KOO Architecture - 1326-36 W Hastings St",
           "status": "Validation",
@@ -2092,53 +2203,6 @@
               "author": "Multivista",
               "created": "2026-11-12T12:16:04.231-0800",
               "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6560",
-          "summary": "Scan to Services - GBR02 - 503161 - New City College - BSIX Building - New City College - Colour-coded",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Yasmin Soria",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T11:12:48.323-0800",
-          "dueDate": "2026-11-19",
-          "created": "2026-11-10T09:26:16.648-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR02",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 750,
-          "squareFootage": 121000,
-          "projectName": "BSIX Building - New City College",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503161/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/QnaE3A7BpNsscMtY6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011UrVdYAK/view",
-          "quotedTurnaround": 6,
-          "projectId": "503161",
-          "originalDueDate": "2026-11-19",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-11",
-          "dataValidatedDate": "2026-11-11",
-          "comments": [
-            {
-              "author": "Callum Parsley",
-              "created": "2026-11-10T12:37:43.322-0800",
-              "body": "Here you go.  \nhttps://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011UrVdYAK/view  \n \nCallum Parsley Account Manager - Healthcare & Higher EducationMultivista, part of Hexagon T: 07949 055 161 E: c.parsley@multivista.com3 Scrutton Street, London, EC2A 4HFmultivista.com: LinkedIn\n \n \n<http://www.multivista.com/>\n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-11-10T09:35:30.269-0800",
-              "body": "Hi Team,  \nHope you are doing well.  \nFor some reason, MDS is not allowing me to upload the email that contained the client's instructions regarding the colour-coding requirements discussed when we originally submitted the ticket.  \nAlthough I appreciate that this project was completed some time ago, the colour-coding requirements were included as part of the original scope and I believe it was included in the upsell scope.  \n@Callum Parsley, can you please provide the SF link for the upsell?   \nPlease let me know if you have any questions or require any further information, and I will be happy to assist. \nBest Regards,  \nAlvin Chan  Reality Capture Operations Manager Multivista, part of Hexagon  T: +44 (0) 2086 109 869  M: +44 (0) 7946 632 567  E: a.chan@multivista.com  \n3 Scrutton Street, London EC2A 4HF United Kingdom  multivista.com| LinkedIn  -- The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors--\n (4.48 MB)"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-10T09:26:20.861-0800",
-              "body": "(8.69 MB)"
             }
           ]
         },
