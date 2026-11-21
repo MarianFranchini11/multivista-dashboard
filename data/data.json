@@ -1,17 +1,975 @@
 {
-  "generatedAt": "2026-11-20T20:02:22.472Z",
+  "generatedAt": "2026-11-21T02:04:47.029Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 3367,
+      "totalIssues": 3358,
       "statusSummary": {
-        "To Do": 23,
-        "In Progress": 63,
-        "Done": 3281
+        "To Do": 15,
+        "In Progress": 57,
+        "Done": 3286
       },
       "issues": [
+        {
+          "key": "SCAN-6485",
+          "summary": "Scan to Services - FL02 - 90504 - Urban Robot LLC - Miami Supper Club",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T13:18:35.477-0800",
+          "dueDate": "2026-11-23",
+          "created": "2026-10-23T09:04:58.824-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "FL02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 4020.42,
+          "squareFootage": 4758,
+          "projectName": "Miami Supper Club",
+          "projectType": "Retail",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/fl02/90504",
+          "mapLink": "https://maps.app.goo.gl/uuXWwjrdMMFXBJ6h9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000108zqbYAA/view",
+          "quotedTurnaround": 17,
+          "projectId": "90504",
+          "originalDueDate": "2026-11-20",
+          "additionalInfo": null,
+          "components": [
+            "Checklist Missing",
+            "Corporate Delay"
+          ],
+          "inProgressDate": "2026-10-26",
+          "dataValidatedDate": "2026-10-28",
+          "comments": [
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-20T13:18:11.262-0800",
+              "body": "Hi Team,\nWe’re currently in the final QC stage and will need one additional day to complete the project. In the meantime, we’ve uploaded a WIP version to FTP for your review.\nWe’ll be uploading the final deliverables on Monday, November 23rd.\nWe apologize for the delay and appreciate your understanding.\nKind regards,"
+            },
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-11-13T10:17:56.510-0800",
+              "body": "Hi Team,\nThe requested WIP model (RVT and IFC) are now available on FTP.\nBest regards,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-28T06:08:08.299-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-27T13:23:46.994-0700",
+              "body": "Hi team,\nPlease make sure you are using the correct naming convention for the FTP folders,\nJust use the project number (90504) without any other letter or character after. MDS can´t recognize these ones.\nThanks"
+            },
+            {
+              "author": "Reece Vick",
+              "created": "2026-10-26T14:09:08.001-0700",
+              "body": "<http://www.multivista.com/> \nReece Vick  Operations  Office (561) 272-2223 <tel:(561)%20272-2223>  Mobile (561) 573-8210 www.multivista.com 277 SE 5th Ave, Delray Beach, FL 33483 \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   --   \nOn Oct 26, 2026, at 4:48 PM, Jira automation <automation@multivista.atlassian.net> wrote:\n﻿Hi Team,\nThis is an automated response to let you know that your Scan to Services ticket is ON HOLD as we are ‘Waiting on Checklist'.\nThis could be for any of the following reasons:• No checklist was uploaded with the Scan to Services ticket• The received checklist contained incorrect or incomplete information• The received checklist does not match the approved Salesforce quote\nYou will receive a communication with further details of the issue and corrective action required shortly.\nPlease respond directly to this ticket/email/message with the fully completed, correct checklist for this project.  Failure to do so will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com \n  (218 kB)"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-10-26T13:48:49.461-0700",
+              "body": "Email sent to customer requesting checklist."
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6608",
+          "summary": "Scan to Services - GA01 - 91055 - Cooper Carry & Associates  - Confidential Project",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T13:15:08.052-0800",
+          "dueDate": "2026-12-18",
+          "created": "2026-11-19T05:05:06.942-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 19536.36,
+          "squareFootage": 49480,
+          "projectName": "1245 Old Alpharetta Rd",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga01/91055/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/B6SNpAVKyx7Q459Q8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010GTrxYAG/view",
+          "quotedTurnaround": 20,
+          "projectId": "91055",
+          "originalDueDate": "2026-12-18",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-20",
+          "dataValidatedDate": "2026-11-20",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-20T13:14:44.490-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-19T05:05:09.213-0800",
+              "body": "(213 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6596",
+          "summary": "Scan to Services - IL01 - 88479 - KOO Architecture - 1333-51 W Hastings St",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T13:11:57.889-0800",
+          "dueDate": null,
+          "created": "2026-11-17T10:31:22.663-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "88479",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-18",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-17T10:31:26.754-0800",
+              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6600",
+          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T13:10:56.612-0800",
+          "dueDate": null,
+          "created": "2026-11-17T11:08:46.683-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "88480",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-18",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-17T11:08:50.735-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6503",
+          "summary": "Scan to Services - IL01 - 88482 - KOO Architecture - ABLA Brooks - 1332-42 S Throop St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:34:22.690-0800",
+          "dueDate": "2026-11-20",
+          "created": "2026-10-28T10:51:12.504-0700",
+          "resolutionDate": "2026-11-20T12:34:22.670-0800",
+          "deliveryStatus": "On time",
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1332-42 S Throop St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88482",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88482",
+          "originalDueDate": "2026-11-20",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6487",
+          "summary": "Scan to Services - NV01 - 90436 - The Venetian - Venetian High Limit Slots",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:31:00.870-0800",
+          "dueDate": "2026-11-26",
+          "created": "2026-10-23T13:50:10.839-0700",
+          "resolutionDate": "2026-11-16T12:01:38.790-0800",
+          "deliveryStatus": "On time",
+          "territory": "NV01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 6763,
+          "squareFootage": 20570,
+          "projectName": "Venetian High Limit Slots",
+          "projectType": "Entertainment",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/90436/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/Ld1Pn3mthanN4mNaA",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zNjkVYAS/view",
+          "quotedTurnaround": 15,
+          "projectId": "90436",
+          "originalDueDate": "2026-11-16",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6505",
+          "summary": "Scan to Services - IL01 - 88492 - KOO Architecture - ABLA Brooks - 1242-56 S Throop St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:30:59.654-0800",
+          "dueDate": "2026-11-20",
+          "created": "2026-10-28T12:51:03.824-0700",
+          "resolutionDate": "2026-11-20T12:30:59.626-0800",
+          "deliveryStatus": "On time",
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1242-56 S Throop St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88492",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88492",
+          "originalDueDate": "2026-11-20",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6604",
+          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - 1301-13 W Hastings St",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:28:36.391-0800",
+          "dueDate": null,
+          "created": "2026-11-17T11:50:16.568-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "88481",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-18",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-17T11:50:20.936-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6514",
+          "summary": "Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:28:10.480-0800",
+          "dueDate": "2026-11-19",
+          "created": "2026-10-29T12:51:16.854-0700",
+          "resolutionDate": "2026-11-19T12:17:45.076-0800",
+          "deliveryStatus": "On time",
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1200-12 W 13th St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88469",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C44efe870720542955c4e08de59e4a085%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047035659627076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JjK%2BUYg3%2FtCPKBot0E5wxSw7ZXxwI5bi71kjGX1IvwE%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88469",
+          "originalDueDate": "2026-11-20",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Rush Request"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6571",
+          "summary": "Scan to Services - GA02 - 90933 - Effingham County Board of Commissioners  - Springfield Recreation Building",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Maria Constanza Aguero Gomez",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:27:18.288-0800",
+          "dueDate": "2026-11-24",
+          "created": "2026-11-11T18:20:32.876-0800",
+          "resolutionDate": "2026-11-20T10:24:54.291-0800",
+          "deliveryStatus": "On time",
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 1393.51,
+          "squareFootage": 5400,
+          "projectName": "Springfield Recreation Building",
+          "projectType": "Recreation",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/90933/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/6n11zgnDGEd7oZVU8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011g2PKYAY/view",
+          "quotedTurnaround": 8,
+          "projectId": "90933",
+          "originalDueDate": "2026-11-24",
+          "additionalInfo": null,
+          "components": [
+            "Point Cloud Orientation Issue",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6611",
+          "summary": "Scan to Services - NY02 - 90788 - Steeldeck NY - BUILDING 340",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:27:11.936-0800",
+          "dueDate": null,
+          "created": "2026-11-20T04:45:19.966-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NY02",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000012FzxZYAS/view",
+          "quotedTurnaround": null,
+          "projectId": "90788",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-20",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-20T04:45:22.141-0800",
+              "body": "(231 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6610",
+          "summary": "Scan to Services - IL01 - 91124 - Elizabeth Krueger Design - 1838 Burling",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:27:03.096-0800",
+          "dueDate": null,
+          "created": "2026-11-19T14:11:43.306-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000zh6TfYAI%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7b06f4e86a154f363f5a08df1d988d5f%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639262213677242986%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=zuc8FK7BXLcrbKhuisCh11ZSjJRoIMRUPEa5kKuNthA%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "91124",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-20",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-11-19T14:11:47.037-0800",
+              "body": "(222 kB)\n (1.51 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6573",
+          "summary": "Scan to Services - IL01 - 88456 - KOO Architecture - ABLA Brooks - 1327-43 W Washburne Ave",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:49.655-0800",
+          "dueDate": "2026-11-27",
+          "created": "2026-11-12T06:56:51.630-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks Homes-1327-43 W Washburne Ave",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88456",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88456",
+          "originalDueDate": "2026-12-03",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-12",
+          "dataValidatedDate": "2026-11-12",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-12T11:50:46.611-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-12T06:56:55.997-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6574",
+          "summary": "Scan to Services - IL01 - 88466 - KOO Architecture - ABLA Brooks - 1247-63 S Throop St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:47.136-0800",
+          "dueDate": "2026-11-27",
+          "created": "2026-11-12T07:18:44.108-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1247-63 S Throop St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88466",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88466",
+          "originalDueDate": "2026-12-03",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-12",
+          "dataValidatedDate": "2026-11-12",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-12T11:52:26.389-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-12T07:18:47.944-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6575",
+          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:45.039-0800",
+          "dueDate": "2026-11-27",
+          "created": "2026-11-12T07:38:27.341-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1302-18 W 14th St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88488",
+          "originalDueDate": "2026-12-03",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-12",
+          "dataValidatedDate": "2026-11-12",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-12T12:01:01.894-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-12T07:38:32.071-0800",
+              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6509",
+          "summary": "Scan to Services - IL01 - 88477 - KOO Architecture - ABLA Brooks - 1302-12 W Hastings St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:30.580-0800",
+          "dueDate": "2026-11-25",
+          "created": "2026-10-28T18:42:40.457-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1302-12 W Hastings St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88477",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88477",
+          "originalDueDate": "2026-11-23",
+          "additionalInfo": null,
+          "components": [
+            "Corporate Delay"
+          ],
+          "inProgressDate": "2026-10-30",
+          "dataValidatedDate": "2026-11-02",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-02T04:23:45.949-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-28T18:42:44.003-0700",
+              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6517",
+          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - ABLA Brooks - 1301-13 W Hastings St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:28.012-0800",
+          "dueDate": "2026-11-25",
+          "created": "2026-10-29T13:33:21.771-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1301-13 W Hastings St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88481",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C44efe870720542955c4e08de59e4a085%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047035659627076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JjK%2BUYg3%2FtCPKBot0E5wxSw7ZXxwI5bi71kjGX1IvwE%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88481",
+          "originalDueDate": "2026-11-23",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-10-30",
+          "dataValidatedDate": "2026-11-02",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-12T12:35:07.279-0800",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-02T04:34:31.879-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-29T13:33:25.780-0700",
+              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6555",
+          "summary": "Scan to Services - IL01 - 88462 - KOO Architecture - ABLA Brooks - 1232-44 S Racine Ave",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:25.105-0800",
+          "dueDate": "2026-11-26",
+          "created": "2026-11-10T07:47:51.754-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1232-44 S Racine Ave",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88462",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 10,
+          "projectId": "88462",
+          "originalDueDate": "2026-11-25",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-11",
+          "dataValidatedDate": "2026-11-11",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-11T06:24:23.244-0800",
+              "body": ""
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6559",
+          "summary": "Scan to Services - IL01 - 88486 - KOO Architecture - ABLA Brooks - 1334-52 W 14th St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:22.546-0800",
+          "dueDate": "2026-11-26",
+          "created": "2026-11-10T09:18:54.919-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": "ABLA Brooks - 1334-52 W 14th St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88486",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 10,
+          "projectId": "88486",
+          "originalDueDate": "2026-11-25",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-11",
+          "dataValidatedDate": "2026-11-11",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-11T06:30:29.781-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-10T09:18:58.940-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6576",
+          "summary": "Scan to Services - IL01 - 88478 - KOO Architecture - ABLA Brooks - 1312-22 S Throop St",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:20.869-0800",
+          "dueDate": "2026-11-26",
+          "created": "2026-11-12T11:18:31.490-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 3362,
+          "projectName": " ABLA Brooks - 1312-22 S Throop St",
+          "projectType": "Multi-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88478",
+          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
+          "quotedTurnaround": 15,
+          "projectId": "88478",
+          "originalDueDate": "2026-12-03",
+          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
+          "components": [
+            "Corporate Delay",
+            "Rush Request"
+          ],
+          "inProgressDate": "2026-11-12",
+          "dataValidatedDate": "2026-11-12",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-12T12:24:12.574-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-12T11:18:35.962-0800",
+              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6585",
+          "summary": "Scan to Services - FL03 - 90981 - Cleveland Street Alliance, LLC  - Angies - Scan - 2026",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "Melina Aldana Gavioli",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:26:06.882-0800",
+          "dueDate": "2026-11-30",
+          "created": "2026-11-13T12:06:34.247-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "FL03",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 2710.82,
+          "squareFootage": 2166,
+          "projectName": "Angies",
+          "projectType": "Retail",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/fl03/90981",
+          "mapLink": "https://maps.app.goo.gl/qToMaiuyDtygWxea8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011tjQ3YAI/view",
+          "quotedTurnaround": 9,
+          "projectId": "90981",
+          "originalDueDate": "2026-11-30",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-16",
+          "dataValidatedDate": "2026-11-17",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-17T06:23:47.196-0800",
+              "body": ""
+            },
+            {
+              "author": "Joshua Slocum",
+              "created": "2026-11-13T12:16:15.736-0800",
+              "body": "Hello All, \nThe registered data from this new scan has been uploaded and tickets sent in . \nUploaded to truView: \nFL03_90981_Angies_725_cleveland_st 1.lgs \nUploaded to FTP: \n/fl03/90981/FL03_90981_Angies_725_cleveland_st 1 Support \nLevel 1 plan has been sent into project setup also today. –  Project Setup \nThanks, \nJosh Slocum VP of Operations Central FL/ FAA Cert.UAV Pilot  Mobile (386) 562-6408<tel:(386)%20562-6408> \nmultivista.com \n<http://www.multivista.com/> \n--  The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors -- \n (294 kB)\n (528 kB)"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-13T12:06:37.407-0800",
+              "body": "(528 kB)\n (294 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6607",
+          "summary": "Scan to Services - NY02 - 90930 - EstateHaus - Little Plains Road",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:23:28.950-0800",
+          "dueDate": "2026-12-14",
+          "created": "2026-11-18T16:22:33.941-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NY02",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 7185,
+          "squareFootage": 12150,
+          "projectName": "Little Plains Road",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ny02/90930/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/U9HSmXsJJYQKc3Vt5",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011VEATYA4/view",
+          "quotedTurnaround": 16,
+          "projectId": "90930",
+          "originalDueDate": "2026-12-14",
+          "additionalInfo": null,
+          "components": [],
+          "inProgressDate": "2026-11-20",
+          "dataValidatedDate": "2026-11-20",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-20T12:23:17.577-0800",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-18T16:22:36.121-0800",
+              "body": "(211 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6605",
+          "summary": "Scan to Services - IL01 - 91094 - Fucarino Residence - Fucarino Residence",
+          "status": "Waiting for Checklist",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-20T12:03:29.036-0800",
+          "dueDate": null,
+          "created": "2026-11-17T16:37:49.578-0800",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 2200,
+          "squareFootage": 3000,
+          "projectName": "Fucarino Residence",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/91094",
+          "mapLink": "https://maps.app.goo.gl/B1qJr531rGyuNRW66",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ000011MrvpYAC%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C1bef3c6fbce746915c3608df3a953a7a%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639294084744498180%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=4WgQxDQo1EkTUqG331%2Frv4vsqc22scO%2BxrJ7cp0QIj0%3D&reserved=0",
+          "quotedTurnaround": 10,
+          "projectId": "91094",
+          "originalDueDate": null,
+          "additionalInfo": null,
+          "components": [
+            "Checklist Missing",
+            "Salesforce/Checklist discrepancies"
+          ],
+          "inProgressDate": "2026-11-19",
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Automation for Jira",
+              "created": "2026-11-20T12:03:28.935-0800",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-20T12:03:23.136-0800",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-11-20T11:24:43.507-0800",
+              "body": "Hi team,Could you please confirm the scope for this project? The checklist doesn´t match with the quote.\nThe CL ask for Plumbing but the quote for Mech. Also, Elec is not selected.\nAdditionally, could you please confirm this option?\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-11-17T16:37:53.889-0800",
+              "body": "(491 kB)\n (236 kB)\n (5.44 MB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6549",
           "summary": "Scan to Services - GA02 - 90550 - May Construction - St Peters Catholic Church",
@@ -391,360 +1349,6 @@
           ]
         },
         {
-          "key": "SCAN-6573",
-          "summary": "Scan to Services - IL01 - 88456 - KOO Architecture - ABLA Brooks - 1327-43 W Washburne Ave",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:25:49.333-0800",
-          "dueDate": "2026-11-27",
-          "created": "2026-11-12T06:56:51.630-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks Homes-1327-43 W Washburne Ave",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88456",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88456",
-          "originalDueDate": "2026-12-03",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-12",
-          "dataValidatedDate": "2026-11-12",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T11:50:46.611-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-12T06:56:55.997-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6574",
-          "summary": "Scan to Services - IL01 - 88466 - KOO Architecture - ABLA Brooks - 1247-63 S Throop St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:25:17.483-0800",
-          "dueDate": "2026-11-27",
-          "created": "2026-11-12T07:18:44.108-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1247-63 S Throop St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88466",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88466",
-          "originalDueDate": "2026-12-03",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-12",
-          "dataValidatedDate": "2026-11-12",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T11:52:26.389-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-12T07:18:47.944-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6605",
-          "summary": "Scan to Services - IL01 - 91094 - Fucarino Residence - Fucarino Residence",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:24:43.580-0800",
-          "dueDate": null,
-          "created": "2026-11-17T16:37:49.578-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 2200,
-          "squareFootage": 3000,
-          "projectName": "Fucarino Residence",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/91094",
-          "mapLink": "https://maps.app.goo.gl/B1qJr531rGyuNRW66",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ000011MrvpYAC%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C1bef3c6fbce746915c3608df3a953a7a%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639294084744498180%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=4WgQxDQo1EkTUqG331%2Frv4vsqc22scO%2BxrJ7cp0QIj0%3D&reserved=0",
-          "quotedTurnaround": 10,
-          "projectId": "91094",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [
-            "Checklist Missing",
-            "Salesforce/Checklist discrepancies"
-          ],
-          "inProgressDate": "2026-11-19",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-20T11:24:43.507-0800",
-              "body": "Hi team,Could you please confirm the scope for this project? The checklist doesn´t match with the quote.\nThe CL ask for Plumbing but the quote for Mech. Also, Elec is not selected.\nAdditionally, could you please confirm this option?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T16:37:53.889-0800",
-              "body": "(491 kB)\n (236 kB)\n (5.44 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6575",
-          "summary": "Scan to Services - IL01 - 88488 - KOO Architecture - ABLA Brooks - 1302-18 W 14th St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:24:20.113-0800",
-          "dueDate": "2026-11-27",
-          "created": "2026-11-12T07:38:27.341-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1302-18 W 14th St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88488",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88488",
-          "originalDueDate": "2026-12-03",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-12",
-          "dataValidatedDate": "2026-11-12",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T12:01:01.894-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-12T07:38:32.071-0800",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6509",
-          "summary": "Scan to Services - IL01 - 88477 - KOO Architecture - ABLA Brooks - 1302-12 W Hastings St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:23:38.039-0800",
-          "dueDate": "2026-11-25",
-          "created": "2026-10-28T18:42:40.457-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1302-12 W Hastings St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88477",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88477",
-          "originalDueDate": "2026-11-23",
-          "additionalInfo": null,
-          "components": [
-            "Corporate Delay"
-          ],
-          "inProgressDate": "2026-10-30",
-          "dataValidatedDate": "2026-11-02",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-02T04:23:45.949-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-28T18:42:44.003-0700",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6555",
-          "summary": "Scan to Services - IL01 - 88462 - KOO Architecture - ABLA Brooks - 1232-44 S Racine Ave",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:22:51.726-0800",
-          "dueDate": "2026-11-26",
-          "created": "2026-11-10T07:47:51.754-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1232-44 S Racine Ave",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88462",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 10,
-          "projectId": "88462",
-          "originalDueDate": "2026-11-25",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-11",
-          "dataValidatedDate": "2026-11-11",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-11T06:24:23.244-0800",
-              "body": ""
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6559",
-          "summary": "Scan to Services - IL01 - 88486 - KOO Architecture - ABLA Brooks - 1334-52 W 14th St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:21:39.772-0800",
-          "dueDate": "2026-11-26",
-          "created": "2026-11-10T09:18:54.919-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1334-52 W 14th St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88486",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 10,
-          "projectId": "88486",
-          "originalDueDate": "2026-11-25",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-11",
-          "dataValidatedDate": "2026-11-11",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-11T06:30:29.781-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-10T09:18:58.940-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6576",
-          "summary": "Scan to Services - IL01 - 88478 - KOO Architecture - ABLA Brooks - 1312-22 S Throop St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:20:16.591-0800",
-          "dueDate": "2026-11-26",
-          "created": "2026-11-12T11:18:31.490-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": " ABLA Brooks - 1312-22 S Throop St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88478",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88478",
-          "originalDueDate": "2026-12-03",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-11-12",
-          "dataValidatedDate": "2026-11-12",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T12:24:12.574-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-12T11:18:35.962-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6499",
           "summary": "Scan to Services - IL01 - 88472 - KOO Architecture - ABLA Brooks - 1301-11 W 13th St",
           "status": "S2S Production",
@@ -838,56 +1442,6 @@
           ]
         },
         {
-          "key": "SCAN-6517",
-          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - ABLA Brooks - 1301-13 W Hastings St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T11:14:50.067-0800",
-          "dueDate": "2026-11-25",
-          "created": "2026-10-29T13:33:21.771-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1301-13 W Hastings St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88481",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C44efe870720542955c4e08de59e4a085%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047035659627076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JjK%2BUYg3%2FtCPKBot0E5wxSw7ZXxwI5bi71kjGX1IvwE%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88481",
-          "originalDueDate": "2026-11-23",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-10-30",
-          "dataValidatedDate": "2026-11-02",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T12:35:07.279-0800",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-02T04:34:31.879-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-29T13:33:25.780-0700",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6459",
           "summary": "Scan to Services - SC01 - 89952 - Midlands Technical College - 3245 Platt Springs Road",
           "status": "S2S Production",
@@ -976,91 +1530,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6571",
-          "summary": "Scan to Services - GA02 - 90933 - Effingham County Board of Commissioners  - Springfield Recreation Building",
-          "status": "Reopened",
-          "statusCategory": "In Progress",
-          "assignee": "Maria Constanza Aguero Gomez",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T10:36:55.149-0800",
-          "dueDate": "2026-11-24",
-          "created": "2026-11-11T18:20:32.876-0800",
-          "resolutionDate": "2026-11-20T10:24:54.291-0800",
-          "deliveryStatus": "On time",
-          "territory": "GA02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 1393.51,
-          "squareFootage": 5400,
-          "projectName": "Springfield Recreation Building",
-          "projectType": "Recreation",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga02/90933/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/6n11zgnDGEd7oZVU8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011g2PKYAY/view",
-          "quotedTurnaround": 8,
-          "projectId": "90933",
-          "originalDueDate": "2026-11-24",
-          "additionalInfo": null,
-          "components": [
-            "Point Cloud Orientation Issue",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-11-12",
-          "dataValidatedDate": "2026-11-12",
-          "comments": [
-            {
-              "author": "Patrick Strickland",
-              "created": "2026-11-16T13:12:51.512-0800",
-              "body": "Hey Martin does this work? \nPatrick Strickland  Director of Laser Scanning  Mobile (205) 568-9711 \nwww.multivista.com \n125 Park of Commerce Drive 215 Savannah, GA 31405 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Martin Isola <jira@multivista.atlassian.net> Sent: Thursday, November 12, 2026 4:01 PM To: Patrick Strickland - Multivista <p.strickland@multivista.com> Subject:  Scan to Services - GA02 - 90933 - Effingham County Board of Commissioners - Springfield Recreation Building   \n—-—-—-—  \nReply above this line.   \nMartin Isola commented: \nHi Brett, \nWe can rotate the point cloud manually and add a true north arrow. \nYou will need to provide that rotation angle. \nThanks,\n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com  \nView request· Turn off this request's notifications \nThis is shared with Patrick Strickland, Brett Feemster, Cade Loyd, and Zack Alderson. \nPowered by Jira Service Management  \nSent on November 12, 2026 1:00:53 PM PST"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-11-13T03:58:48.224-0800",
-              "body": "Patrick see below \nBrett Feemster Multivista- Savannah c: 706.338.5773 e: b.feemster@multivista.com http://www.multivista.com/ \nSent from my iPhone  \nOn Nov 13, 2026, at 1:02 AM, Martin Isola <jira@multivista.atlassian.net> wrote:"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T12:59:51.148-0800",
-              "body": "Hi Brett,\nWe can rotate the point cloud manually and add a true north arrow.\nYou will need to provide that rotation angle.\nThanks,"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-11-12T09:19:45.363-0800",
-              "body": "Martin, \nIf we did square up and zero’d would there be a compass showing the direction of North?? \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-11-12T09:04:54.222-0800",
-              "body": "If we delivered it square up and zero’d would there be a compass arrow showing what true north is? \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T09:00:20.052-0800",
-              "body": "Hi Brett,\nPlease provided a rotated point cloud with the correct angle. \nThanks"
-            },
-            {
-              "author": "Brett Feemster",
-              "created": "2026-11-12T08:55:48.524-0800",
-              "body": "Do rotated if the checklist says it \nBrett T. Feemster \nSenior Regional Partner & Director of National Accounts\n>Multivista, part of Hexagon \nM:706-338-5773 \nmultivista.com"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T08:53:11.254-0800",
-              "body": "Hi team,\nThis point cloud is squared but the checklist asks for rotated, please confirm\nCould you please confirm?\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-12T08:48:53.568-0800",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-11T18:20:35.161-0800",
-              "body": "(202 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6295",
@@ -1256,90 +1725,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6514",
-          "summary": "Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St",
-          "status": "Reopened",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T08:14:41.995-0800",
-          "dueDate": "2026-11-19",
-          "created": "2026-10-29T12:51:16.854-0700",
-          "resolutionDate": "2026-11-19T12:17:45.076-0800",
-          "deliveryStatus": "On time",
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1200-12 W 13th St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88469",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C44efe870720542955c4e08de59e4a085%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047035659627076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=JjK%2BUYg3%2FtCPKBot0E5wxSw7ZXxwI5bi71kjGX1IvwE%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88469",
-          "originalDueDate": "2026-11-20",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-10-30",
-          "dataValidatedDate": "2026-10-30",
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-20T08:14:41.995-0800",
-              "body": "Hi Daniel,\nOk, We’ll start following this approach for the remaining pending deliveries from now on.\nThanks!"
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-11-20T06:45:50.341-0800",
-              "body": "Option 2 please Sent from my iPhone \nOn Nov 20, 2026, at 6:18 AM, Rocio Ferreyra <jira@multivista.atlassian.net> wrote:"
-            },
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-20T04:17:16.742-0800",
-              "body": "Hi Daniel,\nBefore we apply changes, could you please clarify which workflow the client prefers? We noticed two different requests:\nIntegrated Model with Worksets (Recommended): Keeping the new rooms integrated within the existing building model and assigning all new elements to a dedicated Workset (with unit address & date). This is the cleanest approach for geometry alignment, wall joins, and coordinates, avoiding messy overlaps when they link it on their end.\n\nSeparate Standalone Model: Modeling only the newly scanned rooms in a separate file, completely detached from the existing building model.\n\nPlease confirm if they want us to proceed with Option 1 (Integrated + Workset)—and if so, let us know the exact Workset naming convention they'd like us to use.\nThanks!"
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-11-19T14:47:28.228-0800",
-              "body": "Simplified way of saying what I had in my last email, can you guys only be modeling the singular units o have been sending in? And not add them to the overall buildings? The solo units are enough if that is possible Sent from my iPhone \nOn Nov 19, 2026, at 2:27 PM, Rocio Ferreyra <jira@multivista.atlassian.net> wrote:"
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-11-19T13:45:23.617-0800",
-              "body": "Rocio \nIn regards to these new updated models, see below request from the client. Is this possible? \nDan- \nCan you ask your Revit team to create new worksets (with unit addresses & dates) for each new unit integrated into the building model? This will allow us to quickly isolate the target unit and incorporate it into our working model. \nDan Tufano  Senior Operations Manager  Mobile (630) 881-6285 \nwww.multivista.com: LinkedIn: Facebook: X: Instagram \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Thursday, November 19, 2026 2:27 PM To: Dan Tufano - Multivista <d.tufano@multivista.com> Subject:  Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St   \n—-—-—-—  \nReply above this line.   \nRocio Ferreyra commented: \nHi Daniel, \nThe updated model was transferred to MDS when the ticket was moved to Done. \nThanks! \n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com  \nView request· Turn off this request's notifications \nThis is shared with Daniel Tufano. \nPowered by Jira Service Management  \nSent on November 19, 2026 12:27:22 PM PST"
-            },
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-19T12:26:33.410-0800",
-              "body": "Hi Daniel,\nThe updated model was transferred to MDS when the ticket was moved to Done.\nThanks!"
-            },
-            {
-              "author": "Daniel Tufano",
-              "created": "2026-11-19T12:23:30.870-0800",
-              "body": "I don’t see this unit model on the files tab…was it just updated to the original model? \nDan Tufano  Senior Operations Manager  Mobile (630) 881-6285 \nwww.multivista.com: LinkedIn: Facebook: X: Instagram \n1955 Raymond Drive, STE 105 Northbrook IL 60062 \n <http://www.multivista.com/> \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Thursday, November 19, 2026 2:19 PM To: Dan Tufano - Multivista <d.tufano@multivista.com> Subject:  Scan to Services - IL01 - 88469 - KOO Architecture - ABLA Brooks - 1200-12 W 13th St   \n—-—-—-—  \nReply above this line.   \nHi Daniel Tufano, \nThis is an automated response to let you know that your project deliverables are now available on the FTP and ready for transfer to the MDS files section. \nPlease note: It is the responsibility of the client to notify Multivista of any default or concern with the deliverables as soon as possible, but no later than 30 days after client has received the deliverables by Multivista. All claims or deficiencies will be deemed waived by client if not made within 30 days of receiving the deliverables by Multivista and will effectively be accepted by client.\n>Respectfully yours, \nHexagon Scan to Services scantoservices@multivista.com   \nHow was our service for this Scan to Services request? \n☆ Very poor \n☆ Poor \n☆ Average \n☆ Good \n☆ Very good \nView request· Turn off this request's notifications \nThis is shared with Daniel Tufano. \nPowered by Jira Service Management  \nSent on November 19, 2026 12:18:47 PM PST"
-            },
-            {
-              "author": "Yasmin Soria",
-              "created": "2026-11-17T10:37:58.728-0800",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-30T13:52:44.908-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-29T12:51:20.724-0700",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6567",
@@ -1755,100 +2140,6 @@
           ]
         },
         {
-          "key": "SCAN-6611",
-          "summary": "Scan to Services - NY02 - 90788 - Steeldeck NY - BUILDING 340",
-          "status": "Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:45:22.280-0800",
-          "dueDate": null,
-          "created": "2026-11-20T04:45:19.966-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NY02",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000012FzxZYAS/view",
-          "quotedTurnaround": null,
-          "projectId": "90788",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-20T04:45:22.141-0800",
-              "body": "(231 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6487",
-          "summary": "Scan to Services - NV01 - 90436 - The Venetian - Venetian High Limit Slots",
-          "status": "Reopened",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:33:37.311-0800",
-          "dueDate": "2026-11-26",
-          "created": "2026-10-23T13:50:10.839-0700",
-          "resolutionDate": "2026-11-16T12:01:38.790-0800",
-          "deliveryStatus": "On time",
-          "territory": "NV01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 6763,
-          "squareFootage": 20570,
-          "projectName": "Venetian High Limit Slots",
-          "projectType": "Entertainment",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/nv01/90436/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/Ld1Pn3mthanN4mNaA",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000zNjkVYAS/view",
-          "quotedTurnaround": 15,
-          "projectId": "90436",
-          "originalDueDate": "2026-11-16",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-10-26",
-          "dataValidatedDate": "2026-10-26",
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-11-20T01:49:59.574-0800",
-              "body": "Hi  The scope document provided has a clear mark up of the region and the elevation is not covered by the scope region provided"
-            },
-            {
-              "author": "Franco Agustín Morfino",
-              "created": "2026-11-19T11:29:50.506-0800",
-              "body": "Hi . The client sent some comments for a missing a portion of the exterior on The Venetian High Limit Slots model. The area is present in the point cloud (highlighted in blue) and is part of the project scope. Could you please have this portion completed and incorporated into the model? Thanks."
-            },
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-16T12:01:29.959-0800",
-              "body": "Hi Team,\nAlong with the deliverables, we’re also sharing this QC Compliance PDF as part of an internal process we’re implementing. For now, this applies only to a few selected projects while we refine our approach.  \nWe’d really appreciate any feedback or suggestions you may have, as your input would be very valuable to us.\nThanks!"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-26T14:15:55.734-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-23T13:50:13.801-0700",
-              "body": "(213 kB)\n (2.63 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6440",
           "summary": "Scan to Services - AL01 - 79947 - Montgomery Public Schools - McKee Pre-K - Facility Management",
           "status": "S2S Production",
@@ -2054,90 +2345,6 @@
             {
               "author": "Multivista",
               "created": "2026-10-02T12:19:53.040-0700",
-              "body": "(213 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6585",
-          "summary": "Scan to Services - FL03 - 90981 - Cleveland Street Alliance, LLC  - Angies - Scan - 2026",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Melina Aldana Gavioli",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:00:53.527-0800",
-          "dueDate": "2026-11-30",
-          "created": "2026-11-13T12:06:34.247-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "FL03",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 2710.82,
-          "squareFootage": 2166,
-          "projectName": "Angies",
-          "projectType": "Retail",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/fl03/90981",
-          "mapLink": "https://maps.app.goo.gl/qToMaiuyDtygWxea8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011tjQ3YAI/view",
-          "quotedTurnaround": 9,
-          "projectId": "90981",
-          "originalDueDate": "2026-11-30",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-16",
-          "dataValidatedDate": "2026-11-17",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-17T06:23:47.196-0800",
-              "body": ""
-            },
-            {
-              "author": "Joshua Slocum",
-              "created": "2026-11-13T12:16:15.736-0800",
-              "body": "Hello All, \nThe registered data from this new scan has been uploaded and tickets sent in . \nUploaded to truView: \nFL03_90981_Angies_725_cleveland_st 1.lgs \nUploaded to FTP: \n/fl03/90981/FL03_90981_Angies_725_cleveland_st 1 Support \nLevel 1 plan has been sent into project setup also today. –  Project Setup \nThanks, \nJosh Slocum VP of Operations Central FL/ FAA Cert.UAV Pilot  Mobile (386) 562-6408<tel:(386)%20562-6408> \nmultivista.com \n<http://www.multivista.com/> \n--  The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors -- \n (294 kB)\n (528 kB)"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-13T12:06:37.407-0800",
-              "body": "(528 kB)\n (294 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6608",
-          "summary": "Scan to Services - GA01 - 91055 - Cooper Carry & Associates  - Confidential Project",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:00:51.840-0800",
-          "dueDate": null,
-          "created": "2026-11-19T05:05:06.942-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GA01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000010GTrxYAG/view",
-          "quotedTurnaround": null,
-          "projectId": "91055",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-20",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-19T05:05:09.213-0800",
               "body": "(213 kB)"
             }
           ]
@@ -2483,43 +2690,6 @@
           ]
         },
         {
-          "key": "SCAN-6607",
-          "summary": "Scan to Services - NY02 - 90930 - EstateHaus - ",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:00:41.975-0800",
-          "dueDate": null,
-          "created": "2026-11-18T16:22:33.941-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NY02",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ000011VEATYA4/view",
-          "quotedTurnaround": null,
-          "projectId": "90930",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-20",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-18T16:22:36.121-0800",
-              "body": "(211 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6468",
           "summary": "Scan to Services - ON01 - 90096 - Siemens Canada - 3D Scanning Modelling for Digital Twin Building X",
           "status": "S2S Production",
@@ -2781,43 +2951,6 @@
           ]
         },
         {
-          "key": "SCAN-6610",
-          "summary": "Scan to Services - IL01 - 91124 - Elizabeth Krueger Design - 1838 Burling",
-          "status": "Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-19T14:11:47.180-0800",
-          "dueDate": null,
-          "created": "2026-11-19T14:11:43.306-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000zh6TfYAI%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C7b06f4e86a154f363f5a08df1d988d5f%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639262213677242986%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=zuc8FK7BXLcrbKhuisCh11ZSjJRoIMRUPEa5kKuNthA%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "91124",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-19T14:11:47.037-0800",
-              "body": "(222 kB)\n (1.51 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6560",
           "summary": "Scan to Services - GBR02 - 503161 - New City College - BSIX Building - New City College - Colour-coded",
           "status": "Done",
@@ -2882,51 +3015,6 @@
           "comments": []
         },
         {
-          "key": "SCAN-6505",
-          "summary": "Scan to Services - IL01 - 88492 - KOO Architecture - ABLA Brooks - 1242-56 S Throop St",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-19T12:21:48.186-0800",
-          "dueDate": "2026-11-20",
-          "created": "2026-10-28T12:51:03.824-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1242-56 S Throop St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88492",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88492",
-          "originalDueDate": "2026-11-20",
-          "additionalInfo": "We adjusted the due date to account for the overall project volume.",
-          "components": [
-            "Corporate Delay",
-            "Rush Request"
-          ],
-          "inProgressDate": "2026-10-29",
-          "dataValidatedDate": "2026-10-30",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-30T12:41:58.734-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-28T12:51:07.561-0700",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6506",
           "summary": "Scan to Services - IL01 - 88483 - KOO Architecture - ABLA Brooks - 1333-43 S Throop St",
           "status": "Done",
@@ -2958,48 +3046,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6503",
-          "summary": "Scan to Services - IL01 - 88482 - KOO Architecture - ABLA Brooks - 1332-42 S Throop St",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-19T12:02:36.487-0800",
-          "dueDate": "2026-11-20",
-          "created": "2026-10-28T10:51:12.504-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 3362,
-          "projectName": "ABLA Brooks - 1332-42 S Throop St",
-          "projectType": "Multi-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/il01/88482",
-          "mapLink": "https://maps.app.goo.gl/ZyyfUmmcHAoMgqsV6",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmds.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000jCjfNYAS%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7C870adbd262d249eaffe508de59dfbe95%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639047014819384508%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pWDAZrfv1dEE9JLyIYlfXFQIFZ69p%2Bj6i1KW82i%2BtkE%3D&reserved=0",
-          "quotedTurnaround": 15,
-          "projectId": "88482",
-          "originalDueDate": "2026-11-20",
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-10-29",
-          "dataValidatedDate": "2026-10-30",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-30T13:39:41.372-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-28T10:51:16.897-0700",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6498",
@@ -3613,302 +3659,6 @@
           "comments": []
         },
         {
-          "key": "SCAN-6594",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:41:04.043-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:08:33.167-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:08:37.358-0800",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6595",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:41:01.607-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:15:13.121-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:15:17.089-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6596",
-          "summary": "Scan to Services - IL01 - 88479 - KOO Architecture - 1333-51 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:59.075-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:31:22.663-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88479",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:31:26.754-0800",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6597",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:56.472-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:35:29.250-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:35:33.564-0800",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6598",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:54.898-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:41:53.622-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:41:57.475-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6599",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:50.202-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:56:20.642-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:56:24.726-0800",
-              "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6600",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:46.716-0800",
-          "dueDate": null,
-          "created": "2026-11-17T11:08:46.683-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T11:08:50.735-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6601",
-          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - 1301-13 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:44.284-0800",
-          "dueDate": null,
-          "created": "2026-11-17T11:17:53.018-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88481",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T11:17:57.209-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6602",
           "summary": "Scan to Services - IL01 - 88471 - KOO Architecture - 1313-23 W1 3th St",
           "status": "Validation",
@@ -3942,117 +3692,6 @@
               "author": "Multivista",
               "created": "2026-11-17T11:24:17.067-0800",
               "body": "(3.19 MB)\n (1.09 MB)\n (259 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6603",
-          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - 1301-13 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:39.341-0800",
-          "dueDate": null,
-          "created": "2026-11-17T11:39:45.207-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88481",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T11:39:49.253-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6604",
-          "summary": "Scan to Services - IL01 - 88481 - KOO Architecture - 1301-13 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:36.494-0800",
-          "dueDate": null,
-          "created": "2026-11-17T11:50:16.568-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88481",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T11:50:20.936-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6593",
-          "summary": "Scan to Services - IL01 - 88480 - KOO Architecture - 1315-31 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:20.407-0800",
-          "dueDate": null,
-          "created": "2026-11-17T10:00:02.080-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88480",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T10:00:06.649-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
             }
           ]
         },
@@ -4094,43 +3733,6 @@
           ]
         },
         {
-          "key": "SCAN-6591",
-          "summary": "Scan to Services - IL01 - 88479 - KOO Architecture - 1333-51 W Hastings St",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T09:40:14.910-0800",
-          "dueDate": null,
-          "created": "2026-11-17T09:18:51.132-0800",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbsJd%2Fview&data=05%7C02%7Cd.tufano%40multivista.com%7Ceefadb557f6e4518acd808dea55db423%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639130019015912859%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XmXdSQSFsU7AfoqRPcHUzX8poNfvpZtDFI%2Bsr3oBa6k%3D&reserved=0",
-          "quotedTurnaround": null,
-          "projectId": "88479",
-          "originalDueDate": null,
-          "additionalInfo": null,
-          "components": [],
-          "inProgressDate": "2026-11-18",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-11-17T09:18:54.767-0800",
-              "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6590",
           "summary": "Scan to Services - IL01 - 88486 - KOO Architecture - 1334-52 W 14th St",
           "status": "Validation",
@@ -4164,65 +3766,6 @@
               "author": "Multivista",
               "created": "2026-11-17T09:16:55.423-0800",
               "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6485",
-          "summary": "Scan to Services - FL02 - 90504 - Urban Robot LLC - Miami Supper Club",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-18T08:01:54.066-0800",
-          "dueDate": "2026-11-20",
-          "created": "2026-10-23T09:04:58.824-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "FL02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 4020.42,
-          "squareFootage": 4758,
-          "projectName": "Miami Supper Club",
-          "projectType": "Retail",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/fl02/90504",
-          "mapLink": "https://maps.app.goo.gl/uuXWwjrdMMFXBJ6h9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ0000108zqbYAA/view",
-          "quotedTurnaround": 17,
-          "projectId": "90504",
-          "originalDueDate": "2026-11-20",
-          "additionalInfo": null,
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-10-26",
-          "dataValidatedDate": "2026-10-28",
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-11-13T10:17:56.510-0800",
-              "body": "Hi Team,\nThe requested WIP model (RVT and IFC) are now available on FTP.\nBest regards,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-28T06:08:08.299-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-27T13:23:46.994-0700",
-              "body": "Hi team,\nPlease make sure you are using the correct naming convention for the FTP folders,\nJust use the project number (90504) without any other letter or character after. MDS can´t recognize these ones.\nThanks"
-            },
-            {
-              "author": "Reece Vick",
-              "created": "2026-10-26T14:09:08.001-0700",
-              "body": "<http://www.multivista.com/> \nReece Vick  Operations  Office (561) 272-2223 <tel:(561)%20272-2223>  Mobile (561) 573-8210 www.multivista.com 277 SE 5th Ave, Delray Beach, FL 33483 \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors   --   \nOn Oct 26, 2026, at 4:48 PM, Jira automation <automation@multivista.atlassian.net> wrote:\n﻿Hi Team,\nThis is an automated response to let you know that your Scan to Services ticket is ON HOLD as we are ‘Waiting on Checklist'.\nThis could be for any of the following reasons:• No checklist was uploaded with the Scan to Services ticket• The received checklist contained incorrect or incomplete information• The received checklist does not match the approved Salesforce quote\nYou will receive a communication with further details of the issue and corrective action required shortly.\nPlease respond directly to this ticket/email/message with the fully completed, correct checklist for this project.  Failure to do so will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com \n  (218 kB)"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-10-26T13:48:49.461-0700",
-              "body": "Email sent to customer requesting checklist."
             }
           ]
         },
