@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T23:47:59.647Z",
+  "generatedAt": "2026-11-24T05:14:28.492Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -12,6 +12,50 @@
         "Done": 3284
       },
       "issues": [
+        {
+          "key": "SCAN-6440",
+          "summary": "Scan to Services - AL01 - 79947 - Montgomery Public Schools - McKee Pre-K - Facility Management",
+          "status": "S2S QC",
+          "statusCategory": "In Progress",
+          "assignee": "RARISH P",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-11-23T20:17:14.373-0800",
+          "dueDate": "2026-11-24",
+          "created": "2026-10-12T13:07:25.131-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "AL01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 2165,
+          "squareFootage": 50000,
+          "projectName": "McKee Pre-K",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/79947/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/Quo7EyYEFBWUJXLz9",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/opportunity/0064q00001%7C2cq9qaa/view",
+          "quotedTurnaround": 15,
+          "projectId": "79947",
+          "originalDueDate": "2026-11-03",
+          "additionalInfo": "The delivery date has been updated based on the volume of Montgomery projects received. The initially quoted turnaround time was an estimate.",
+          "components": [
+            "Corporate Delay"
+          ],
+          "inProgressDate": "2026-10-13",
+          "dataValidatedDate": "2026-10-13",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-10-13T06:39:35.137-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-10-12T13:07:27.605-0700",
+              "body": "(715 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6485",
           "summary": "Scan to Services - FL02 - 90504 - Urban Robot LLC - Miami Supper Club",
@@ -3701,50 +3745,6 @@
               "author": "Martin Isola",
               "created": "2026-11-04T09:51:44.822-0800",
               "body": ""
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6440",
-          "summary": "Scan to Services - AL01 - 79947 - Montgomery Public Schools - McKee Pre-K - Facility Management",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "RARISH P",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-11-20T04:30:31.299-0800",
-          "dueDate": "2026-11-24",
-          "created": "2026-10-12T13:07:25.131-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AL01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 2165,
-          "squareFootage": 50000,
-          "projectName": "McKee Pre-K",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/79947/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/Quo7EyYEFBWUJXLz9",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/opportunity/0064q00001%7C2cq9qaa/view",
-          "quotedTurnaround": 15,
-          "projectId": "79947",
-          "originalDueDate": "2026-11-03",
-          "additionalInfo": "The delivery date has been updated based on the volume of Montgomery projects received. The initially quoted turnaround time was an estimate.",
-          "components": [
-            "Corporate Delay"
-          ],
-          "inProgressDate": "2026-10-13",
-          "dataValidatedDate": "2026-10-13",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-10-13T06:39:35.137-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-10-12T13:07:27.605-0700",
-              "body": "(715 kB)"
             }
           ]
         },
