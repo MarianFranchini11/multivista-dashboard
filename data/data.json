@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T21:07:15.291Z",
+  "generatedAt": "2026-11-28T03:12:20.704Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -8,23 +8,23 @@
       "totalIssues": 3378,
       "statusSummary": {
         "To Do": 29,
-        "In Progress": 38,
-        "Done": 3311
+        "In Progress": 37,
+        "Done": 3312
       },
       "issues": [
         {
           "key": "SCAN-6589",
           "summary": "Scan to Services - FL02 - 90947 - CDB Interior Design - 55 Ocean Front Dr",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
+          "status": "Done",
+          "statusCategory": "Done",
           "assignee": "Rocio Ferreyra",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-11-27T13:03:16.638-0700",
+          "updated": "2026-11-27T14:43:39.938-0700",
           "dueDate": "2026-11-27",
           "created": "2026-11-16T20:05:42.976-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
+          "resolutionDate": "2026-11-27T14:41:16.568-0700",
+          "deliveryStatus": "On time",
           "territory": "FL02",
           "serviceType": "Scan to Plan (plans only)",
           "price": 1072.89,
@@ -39,45 +39,9 @@
           "originalDueDate": "2026-11-27",
           "additionalInfo": null,
           "components": [],
-          "inProgressDate": "2026-11-17",
-          "dataValidatedDate": "2026-11-17",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-18T04:39:01.926-0700",
-              "body": "Thanks, I will let you know if we have any questions.\nBest Regards,"
-            },
-            {
-              "author": "Parker Lowden",
-              "created": "2026-11-17T18:47:38.823-0700",
-              "body": "New LGS File is live in GeoCloud 90947_55 Ocean Front Dr 1.lgsx And files are uploaded to filezilla \n  \n \nParker LowdenOperations Manager - Miami Dade / Broward CountyOffice (561) 272-2223Mobile (954) 860-5271\nmultivista.com\n 277 SE 5th Ave Delray Beach FL, 33483   \nMultivista - Part of Hexagon<http://www.multivista.com/>\n \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors"
-            },
-            {
-              "author": "Parker Lowden",
-              "created": "2026-11-17T14:36:51.099-0700",
-              "body": "These files are all uploading now in filezilla and Geocloud the new folder is in the same folder in filezilla labled \"Update\" \n  \n \nParker LowdenOperations Manager - Miami Dade / Broward CountyOffice (561) 272-2223Mobile (954) 860-5271\nmultivista.com\n 277 SE 5th Ave Delray Beach FL, 33483   \nMultivista - Part of Hexagon<http://www.multivista.com/>\n \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors"
-            },
-            {
-              "author": "Parker Lowden",
-              "created": "2026-11-17T13:49:47.802-0700",
-              "body": "Re exporting this now and will let you know when new files are uploaded . Thank you \n  \n \nParker LowdenOperations Manager - Miami Dade / Broward CountyOffice (561) 272-2223Mobile (954) 860-5271\nmultivista.com\n 277 SE 5th Ave Delray Beach FL, 33483   \nMultivista - Part of Hexagon<http://www.multivista.com/>\n \n \n--   The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-17T09:26:54.429-0700",
-              "body": "Hi team,Could you please review he registration and provide a corrected point cloud? As you can see on the screenshots, there are a missing corner\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-11-17T09:25:03.512-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-11-16T20:05:45.503-0700",
-              "body": "(193 kB)"
-            }
-          ]
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
         },
         {
           "key": "SCAN-6574",
